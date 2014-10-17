@@ -6,7 +6,7 @@ set :branch, "master"
 # at filepaths
 set :deploy_to, "/home/rails/pvpersson"
 
-server '178.62.200.128', user: 'root', roles: %w{web app db}, primary: true
+server '178.62.227.238', user: 'rails', roles: %w{web app db}, primary: true
 set :nginx_server_name, 'pvpersson.se'
 # dont try and infer something as important as environment from
 # stage name.
