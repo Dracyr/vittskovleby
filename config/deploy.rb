@@ -14,11 +14,6 @@ set :scm, :git
 set :format, :pretty
 
 namespace :deploy do
-  # make sure we're deploying what we think we're deploying
-  before :deploy, "deploy:check_revision"
-  # only allow a deploy with passing tests to deployed
-  before :deploy, "deploy:run_tests"
-  # compile assets locally then rsync
   after :finishing, 'deploy:cleanup'
 
   # As of Capistrano 3.1, the `deploy:restart` task is not called

@@ -14,6 +14,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 group :development do
 	gem 'spring'
  	gem 'capistrano-rails'
+ 	gem 'capistrano-unicorn-nginx', '~> 3.1.0'
  	gem 'better_errors'
   	gem 'binding_of_caller'
 end
