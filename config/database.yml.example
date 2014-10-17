@@ -12,7 +12,3 @@ development:
 test:
   <<: *default
   database: pvpersson_test
-
-production:
-  <<: *default
-  database: pvpersson_production
