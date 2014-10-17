@@ -12,9 +12,10 @@ gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.1.1'
 
 group :development do
-	gem 'spring'
  	gem 'capistrano-rails'
  	gem 'capistrano-unicorn-nginx', '~> 3.1.0'
+ 	gem 'capistrano-bundler', '~> 1.1.2'
+	gem 'spring'
  	gem 'better_errors'
   	gem 'binding_of_caller'
 end
