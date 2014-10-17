@@ -1,7 +1,7 @@
 # config valid only for Capistrano 3.1
 lock '3.2.1'
 set :application, 'pvpersson'
-set :deploy_user, 'rails'
+set :deploy_user, 'root'
 
 set :stages, 'production'
 set :default_stage, "production"
