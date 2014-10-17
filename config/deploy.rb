@@ -2,6 +2,7 @@
 lock '3.2.1'
 set :application, 'pvpersson'
 set :deploy_user, 'rails'
+set :rbenv_ruby, '2.1.3'
 
 set :rvm_ruby_version, '2.1.3'
 set :default_env, { rvm_bin_path: '~/.rvm/bin' }
