@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'rails', '4.1.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
