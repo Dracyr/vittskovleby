@@ -28,6 +28,7 @@ group :development do
   gem 'binding_of_caller'
   gem 'pry'
   gem 'pry-rails'
+  gem 'pry-doc'
 end
 
 group :test do
