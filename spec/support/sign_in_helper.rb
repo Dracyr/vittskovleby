@@ -3,5 +3,6 @@ module SignInHelper
     visit new_user_session_path
     fill_form(:user, {email: user.email, password: "testtest"})
     click_button 'Sign in'
+    user
   end
 end

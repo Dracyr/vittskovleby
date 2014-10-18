@@ -3,5 +3,6 @@ en:
     submit:
       page:
         create: Create page
+        update: Edit page
       post:
         create: Create post

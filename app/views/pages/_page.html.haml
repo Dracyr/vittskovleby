@@ -1,0 +1,7 @@
+%ul.dd-list
+  - page.children.each do |child|
+    %li.dd-item{'data-id' => page.id}
+      .dd-handle
+        = child.title
+        = link_to 'Edit', edit_page_path(child)
+        = link_to 'Delete', page_path(child), method: :delete

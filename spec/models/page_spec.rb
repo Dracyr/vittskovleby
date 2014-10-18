@@ -16,4 +16,16 @@ describe Page do
     page = FactoryGirl.build(:page, title: "Page title")
     expect(page).to be_invalid
   end
+
+  describe "orphans" do
+    let(:parent_page) { FactoryGirl.create(:page_with_children) }
+
+    it "should include parent page" do
+      expect(Page.orphans).to include(parent_page)
+    end
+
+    it "should not include children" do
+      expect(Page.orphans).to_not include(parent_page.children.first)
+    end
+  end
 end

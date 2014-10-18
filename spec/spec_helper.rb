@@ -11,6 +11,8 @@ RSpec.configure do |config|
   # Include FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
+  Faker::Config.locale = 'sv'
+
   config.include SignInHelper
 
   config.filter_run_excluding :broken => true
