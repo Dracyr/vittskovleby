@@ -11,6 +11,8 @@ RSpec.configure do |config|
   # Include FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
+  config.include SignInHelper
+
   config.filter_run_excluding :broken => true
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your

@@ -15,6 +15,7 @@ gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'responders'
 gem 'devise'
+gem 'cancancan', '~> 1.9'
 
 group :development do
  	gem 'capistrano-rails'
