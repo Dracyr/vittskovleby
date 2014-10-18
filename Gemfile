@@ -28,7 +28,6 @@ group :test do
   gem 'shoulda-matchers', require: false
   gem 'formulaic'
   gem 'faker'
-  gem 'database_cleaner'
   gem 'fuubar'
 end
 
