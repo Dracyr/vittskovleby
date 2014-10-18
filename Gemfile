@@ -13,6 +13,7 @@ gem 'bootstrap-sass', '~> 3.1.1'
 gem 'haml'
 gem 'autoprefixer-rails'
 gem 'simple_form'
+gem 'responders'
 
 group :development do
  	gem 'capistrano-rails'
@@ -21,8 +22,8 @@ group :development do
  	gem 'capistrano-rbenv'
 	gem 'spring'
   gem 'guard-rspec', require: false
- 	gem 'better_errors'
-	gem 'binding_of_caller'
+  gem 'better_errors'
+  gem 'binding_of_caller'
 end
 
 group :test do

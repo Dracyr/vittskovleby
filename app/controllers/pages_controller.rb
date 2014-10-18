@@ -10,11 +10,7 @@ class PagesController < ApplicationController
 
   def create
     @page = Page.create page_params
-    if @page.save
-      redirect_to @page, notice: "Page created successfully"
-    else
-      render 'new'
-    end
+    respond_with @page
   end
 
 

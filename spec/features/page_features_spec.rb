@@ -7,6 +7,6 @@ feature "User creates a page" do
     fill_form :page, {title: "Page title", content: "Page content"}
     click_on submit(:page)
 
-    expect(page).to have_text "Page created successfully"
+    expect(page).to have_text "Page was successfully created."
   end
 end
