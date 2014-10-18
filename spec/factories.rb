@@ -19,6 +19,7 @@ FactoryGirl.define do
 
   factory :page do
     title
+    permalink { title.parameterize }
     content { Faker::Lorem.paragraph }
 
     factory :page_with_children do

@@ -1,5 +1,6 @@
 class PagesController < ApplicationController
-  load_and_authorize_resource
+  load_resource find_by: :permalink
+  authorize_resource
 
   def index
     @orphan_pages = @pages.orphans

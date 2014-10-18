@@ -11,6 +11,21 @@ describe Page do
     expect(page).to be_invalid
   end
 
+  it "is invalid without a permalink" do
+    page = FactoryGirl.build(:page, title: "")
+    expect(page).to be_invalid
+  end
+
+  it "is invalid when permalink is a reserved name" do
+    page = FactoryGirl.build(:page, title: "users")
+    expect(page).to be_invalid
+  end
+
+  it "creates a permalink" do
+    page = FactoryGirl.create(:page, title: "Some text right here")
+    expect(page.permalink).to eq(page.title.parameterize)
+  end
+
   it "does not allow duplicate titles" do
     FactoryGirl.create(:page, title: "Page title")
     page = FactoryGirl.build(:page, title: "Page title")

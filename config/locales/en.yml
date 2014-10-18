@@ -6,3 +6,5 @@ en:
         update: Edit page
       post:
         create: Create post
+  errors:
+    permalink_reserved: cannot be a reserved name

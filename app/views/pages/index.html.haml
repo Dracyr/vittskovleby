@@ -7,7 +7,7 @@
   .panel-body
     = link_to "Create new page", new_page_path, class: "btn btn-primary"
 
-
+= link_to "Sign out", destroy_user_session_path, method: :delete
 .panel.panel-default
   .panel-heading
     Pages
@@ -21,7 +21,7 @@
               = page.title
               = link_to 'Edit', edit_page_path(page)
               = link_to 'Delete', page_path(page), method: :delete
-              = link_to 'Create child', new_page_path(parent_id: page)
+              = link_to 'Create child', new_page_path(parent_id: page.id)
             - if page.children.any?
               %ol.dd-list
                 - page.children.each do |child|
