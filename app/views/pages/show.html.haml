@@ -1,4 +1,11 @@
-%h1
-  = @page.title
-%p
+.page-header
+  %h1
+    = @page.title
+- if can? :edit, @page
+  .panel.panel-default
+    .panel-heading
+      Tools
+    .panel-body
+      = link_to "Edit page", edit_page_path(@page), class: "btn btn-primary"
+.page-content
   = @page.content
