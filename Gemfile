@@ -23,6 +23,18 @@ group :development do
 	gem 'binding_of_caller'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', require: false
+  gem 'formulaic'
+  gem 'faker'
+  gem 'database_cleaner'
+  gem 'fuubar'
+end
+
+gem 'factory_girl_rails', :group => [:development, :test]
+gem 'rspec-rails', '~> 3.0.0', :group => [:development, :test]
+
 group :production do
 	gem 'unicorn'
 end
