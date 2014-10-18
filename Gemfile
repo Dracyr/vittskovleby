@@ -14,6 +14,7 @@ gem 'haml'
 gem 'autoprefixer-rails'
 gem 'simple_form'
 gem 'responders'
+gem 'devise'
 
 group :development do
  	gem 'capistrano-rails'
