@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.1.1'
+gem 'haml'
 
 group :development do
  	gem 'capistrano-rails'
