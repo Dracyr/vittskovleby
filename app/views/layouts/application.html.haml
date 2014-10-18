@@ -7,4 +7,8 @@
     = csrf_meta_tags
   %body
     =# render 'layouts/navbar'
-    = yield
+    - flash.each do |name, msg|
+      %div{class: flash_class(name)}
+        = msg
+    .container
+      = yield

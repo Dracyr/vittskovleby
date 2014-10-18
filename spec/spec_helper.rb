@@ -3,7 +3,6 @@ ENV["RAILS_ENV"] = 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
-require 'database_cleaner'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
@@ -12,27 +11,12 @@ RSpec.configure do |config|
   # Include FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
-  config.before(:suite) do
-    DatabaseCleaner.clean_with :truncation
-    DatabaseCleaner.strategy = :transaction
-    FactoryGirl.lint
-    FactoryGirl.create(:season)
-  end
-
-  config.before(:each) do
-    DatabaseCleaner.start
-  end
-
-  config.after(:each) do
-    DatabaseCleaner.clean
-  end
-
   config.filter_run_excluding :broken => true
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   config.infer_spec_type_from_file_location!
 
