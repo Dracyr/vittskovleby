@@ -3,3 +3,5 @@ en:
     submit:
       page:
         create: Create page
+      post:
+        create: Create post

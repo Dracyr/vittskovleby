@@ -8,6 +8,11 @@ FactoryGirl.define do
     role :admin
   end
 
+  factory :post do
+    title { Faker::Lorem.word.titleize }
+    content { Faker::Lorem.paragraph }
+  end
+
   factory :page do
     title { Faker::Lorem.word.titleize }
     content { Faker::Lorem.paragraph }

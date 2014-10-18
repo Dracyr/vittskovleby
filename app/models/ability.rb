@@ -6,6 +6,7 @@ class Ability
 
     if user.admin?
       can :manage, Page
+      can :manage, Post
     end
   end
 end

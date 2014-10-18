@@ -2,11 +2,9 @@ class PagesController < ApplicationController
   load_and_authorize_resource
 
   def show
-    @page = Page.find params[:id]
   end
 
   def new
-    @page = Page.new
   end
 
   def create
