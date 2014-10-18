@@ -16,5 +16,9 @@ describe Page do
     expect(page).to be_invalid
   end
 
-
+  it "does not allow duplicate titles" do
+    FactoryGirl.create(:page)
+    page = FactoryGirl.build(:page)
+    expect(page).to be_invalid
+  end
 end
