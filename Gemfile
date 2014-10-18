@@ -1,6 +1,5 @@
 source 'https://rubygems.org'
 
-gem 'dotenv-rails', :require => 'dotenv/rails-now'
 gem 'rails', '4.1.1'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
@@ -17,6 +16,7 @@ gem 'simple_form', '>= 3.1.0.rc1'
 gem 'responders'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
+gem 'dotenv-rails'
 
 group :development do
  	gem 'capistrano-rails'

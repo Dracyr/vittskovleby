@@ -6,7 +6,7 @@ set :deploy_user, 'rails'
 set :rbenv_ruby, '2.1.3'
 set :rvm_ruby_version, '2.1.3'
 set :keep_releases, 1
-set :linked_files, %w{config/database.yml}
+set :linked_files, %w{config/database.yml .env}
 set :repo_url, 'git@github.com:Dracyr/pvpersson.git'
 set :scm, :git
 set :format, :pretty
