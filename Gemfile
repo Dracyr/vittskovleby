@@ -17,6 +17,8 @@ gem 'responders'
 gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'dotenv-rails'
+gem 'codemirror-rails'
+gem "font-awesome-rails"
 
 group :development do
  	gem 'capistrano-rails'

@@ -65,6 +65,8 @@ GEM
       xpath (~> 2.0)
     celluloid (0.16.0)
       timers (~> 4.0.0)
+    codemirror-rails (4.5)
+      railties (>= 3.0, < 5)
     coderay (1.1.0)
     coffee-rails (4.0.1)
       coffee-script (>= 2.2.0)
@@ -96,6 +98,8 @@ GEM
     faker (1.4.3)
       i18n (~> 0.5)
     ffi (1.9.6)
+    font-awesome-rails (4.1.0.0)
+      railties (>= 3.2, < 5.0)
     formatador (0.2.5)
     formulaic (0.1.2)
       activesupport
@@ -268,11 +272,13 @@ DEPENDENCIES
   capistrano-rbenv
   capistrano-unicorn-nginx (~> 3.1.0)
   capybara
+  codemirror-rails
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
   factory_girl_rails
   faker
+  font-awesome-rails
   formulaic
   fuubar
   guard-rspec

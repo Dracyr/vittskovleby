@@ -8,4 +8,4 @@
     .panel-body
       = link_to "Edit page", edit_page_path(@page), class: "btn btn-primary"
 .page-content
-  = @page.content
+  = @page.content.html_safe

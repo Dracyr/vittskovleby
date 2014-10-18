@@ -2,6 +2,11 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "jquery.nestable";
+@import "summernote";
+@import "summernote-bs3";
+@import "codemirror";
+@import "codemirror/themes/solarized";
+@import "font-awesome";
 
 .top-container {
   margin-top: 50px;
