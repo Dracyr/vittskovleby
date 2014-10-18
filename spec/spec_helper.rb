@@ -16,7 +16,6 @@ RSpec.configure do |config|
     DatabaseCleaner.clean_with :truncation
     DatabaseCleaner.strategy = :transaction
     FactoryGirl.lint
-    FactoryGirl.create(:season)
   end
 
   config.before(:each) do
