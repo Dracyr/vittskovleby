@@ -19,6 +19,7 @@ gem 'cancancan', '~> 1.9'
 gem 'dotenv-rails'
 gem 'codemirror-rails'
 gem "font-awesome-rails"
+gem 'acts_as_list'
 
 group :development do
  	gem 'capistrano-rails'
@@ -32,6 +33,7 @@ group :development do
   gem 'pry'
   gem 'pry-rails'
   gem 'pry-doc'
+  gem 'meta_request'
 end
 
 group :test do

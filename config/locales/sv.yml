@@ -1,0 +1,10 @@
+sv:
+  helpers:
+    submit:
+      page:
+        create: Skapa sida
+        update: Redigera sida
+      post:
+        create: Skapa inlägg
+  errors:
+    permalink_reserved: kan inte vara ett reserverat namn

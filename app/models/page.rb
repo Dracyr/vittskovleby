@@ -1,15 +1,15 @@
 class Page < ActiveRecord::Base
 
-  validates :title, presence: true
-  validates :title, uniqueness: true
-  validates :permalink, presence: true
-  validates :permalink, uniqueness: true
-  validate  :permalink_not_reserved_name
+  validates :title, presence: true, uniqueness: true
   validates :content, presence: true
+  validates :permalink, presence: true, uniqueness: true,
+                    exclusion: { in: %w(users posts pages) }
 
   has_many :children, class_name: "Page", foreign_key: "parent_id"
   belongs_to :parent, class_name: "Page"
+  acts_as_list scope: :parent
 
+  default_scope -> { order("position ASC") }
   scope :orphans, -> { where(parent: nil) }
 
   before_validation :set_permalink
@@ -20,12 +20,5 @@ class Page < ActiveRecord::Base
 
   def to_param
     permalink
-  end
-
-  def permalink_not_reserved_name
-    reserved_names = %w(users posts pages)
-    if reserved_names.include? permalink
-      errors.add(:permalink, I18n.t('errors.permalink_reserved'))
-    end
   end
 end

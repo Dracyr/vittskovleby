@@ -8,5 +8,8 @@ Rails.application.routes.draw do
   get ':id',    to: 'pages#show', as: :page
   patch ':id',  to: 'pages#update'
   delete ':id', to: 'pages#destroy'
-  resources :pages, except: [:show, :update, :delete, :index]
+  resources :pages, except: [:show, :update, :delete, :index] do
+    post 'update_all', on: :collection
+  end
+
 end

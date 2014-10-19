@@ -30,5 +30,3 @@ jQuery ->
       ['misc', ['fullscreen', 'codeview']],
       ['help', ['help']],
     ]
-
-

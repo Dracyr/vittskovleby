@@ -1,35 +1,50 @@
 .page-header
   %h1 Pages
 
-.panel.panel-default
-  .panel-heading
-    Tools
-  .panel-body
-    = link_to "Create new page", new_page_path, class: "btn btn-primary"
+.row
+  .col-sm-12
+    .panel.panel-default
+      .panel-heading
+        Tools
+      .panel-body
+        = link_to "Create new page", new_page_path, class: "btn btn-primary"
+        %button{class: "btn btn-default", id: "pages-save-tree"}
+          Save page order
 
-= link_to "Sign out", destroy_user_session_path, method: :delete
-.panel.panel-default
-  .panel-heading
-    Pages
-  .panel-body
-    .dd
-      %ol.dd-list
-        - @orphan_pages.each do |page|
-          %li.dd-item{'data-id' => page.id}
-            .dd-handle.dd3-handle
-            .dd3-content
-              = page.title
-              = link_to 'Edit', edit_page_path(page)
-              = link_to 'Delete', page_path(page), method: :delete
-              = link_to 'Create child', new_page_path(parent_id: page.id)
-            - if page.children.any?
-              %ol.dd-list
-                - page.children.each do |child|
-                  %li.dd-item{'data-id' => child.id}
-                    .dd-handle.dd3-handle
-                    .dd3-content
-                      = child.title
-                      = link_to 'Edit', edit_page_path(child)
-                      = link_to 'Delete', page_path(child), method: :delete
+.row
+  .col-sm-6
+    .panel.panel-default
+      .panel-heading
+        Pages
+      .panel-body
+        .dd
+          %ol.dd-list
+            - @orphan_pages.each do |page|
+              %li.dd-item{'data-id' => page.id}
+                .dd-handle.dd3-handle
+                .dd3-content
+                  = link_to page.title, page
+                  .pull-right
+                    = link_to new_page_path(parent_id: page.id) do
+                      %i.glyphicon.glyphicon.glyphicon-plus-sign
+                    = link_to edit_page_path(page) do
+                      %i.glyphicon.glyphicon.glyphicon-edit
+                    = link_to page_path(page), method: :delete do
+                      %i.glyphicon.glyphicon.glyphicon-trash
+                - if page.children.any?
+                  %ol.dd-list
+                    - page.children.each do |child|
+                      %li.dd-item{'data-id' => child.id}
+                        .dd-handle.dd3-handle
+                        .dd3-content
+                          = link_to child.title, child
+                          .pull-right
+                            = link_to edit_page_path(child) do
+                              %i.glyphicon.glyphicon.glyphicon-edit
+                            = link_to page_path(child), method: :delete do
+                              %i.glyphicon.glyphicon.glyphicon-trash
+
+
+
 
 
