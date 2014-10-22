@@ -1,4 +1,7 @@
 class NavigationOrderer
+
+  # Expects JSON formatted like this, which is what nestable.js gives us.
+  # [{"id":13},{"id":14},{"id":15,"children":[{"id":16},{"id":17},{"id":18}]}]
   def initialize(param)
     @data = JSON.parse(param)
   end
