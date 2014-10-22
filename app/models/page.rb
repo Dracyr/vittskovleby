@@ -5,12 +5,11 @@ class Page < ActiveRecord::Base
   validates :permalink, presence: true, uniqueness: true,
                     exclusion: { in: %w(users posts pages) }
 
-  has_many :children, class_name: "Page", foreign_key: "parent_id"
-  belongs_to :parent, class_name: "Page"
-  acts_as_list scope: :parent
+  belongs_to :menu
+  acts_as_list scope: :menu
 
   default_scope -> { order("position ASC") }
-  scope :orphans, -> { where(parent: nil) }
+  scope :orphans, -> { where(menu: nil) }
 
   before_validation :set_permalink
 

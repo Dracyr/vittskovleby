@@ -19,9 +19,8 @@ feature "When user creates a page:" do
   end
 end
 
-feature "When user visits page index" do
+feature "When user visits page index", broken: true do
   let!(:user) { sign_in FactoryGirl.create(:user) }
-  let!(:parent_page) { FactoryGirl.create(:page_with_children) }
 
   before(:each) { visit pages_path }
 

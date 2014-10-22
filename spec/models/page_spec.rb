@@ -33,14 +33,16 @@ describe Page do
   end
 
   describe "orphans" do
-    let(:parent_page) { FactoryGirl.create(:page_with_children) }
+    let(:menu) { FactoryGirl.create(:menu) }
+    let(:page) { FactoryGirl.create(:page, menu: menu) }
+    let(:other_page) { FactoryGirl.create(:page) }
 
     it "should include parent page" do
-      expect(Page.orphans).to include(parent_page)
+      expect(Page.orphans).to include(other_page)
     end
 
     it "should not include children" do
-      expect(Page.orphans).to_not include(parent_page.children.first)
+      expect(Page.orphans).to_not include(page)
     end
   end
 end

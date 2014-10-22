@@ -8,8 +8,7 @@
         Tools
       .panel-body
         = link_to "Create new page", new_page_path, class: "btn btn-primary"
-        %button{class: "btn btn-default", id: "pages-save-tree"}
-          Save page order
+        = link_to "Create new menu", new_menu_path, class: "btn btn-primary"
 
 .row
   .col-sm-6
@@ -17,34 +16,38 @@
       .panel-heading
         Pages
       .panel-body
-        .dd
-          %ol.dd-list
-            - @orphan_pages.each do |page|
-              %li.dd-item{'data-id' => page.id}
-                .dd-handle.dd3-handle
-                .dd3-content
-                  = link_to page.title, page
-                  .pull-right
-                    = link_to new_page_path(parent_id: page.id) do
-                      %i.glyphicon.glyphicon.glyphicon-plus-sign
-                    = link_to edit_page_path(page) do
-                      %i.glyphicon.glyphicon.glyphicon-edit
-                    = link_to page_path(page), method: :delete do
-                      %i.glyphicon.glyphicon.glyphicon-trash
-                - if page.children.any?
-                  %ol.dd-list
-                    - page.children.each do |child|
-                      %li.dd-item{'data-id' => child.id}
-                        .dd-handle.dd3-handle
-                        .dd3-content
-                          = link_to child.title, child
-                          .pull-right
-                            = link_to edit_page_path(child) do
-                              %i.glyphicon.glyphicon.glyphicon-edit
-                            = link_to page_path(child), method: :delete do
-                              %i.glyphicon.glyphicon.glyphicon-trash
-
-
-
-
-
+        %ol
+          - @menus.each do |menu|
+            %li
+              = link_to page.title, page
+              .pull-right
+                = link_to new_page_path(menu_id: menu.id) do
+                  %i.glyphicon.glyphicon.glyphicon-plus-sign
+                = link_to edit_menu_path(menu) do
+                  %i.glyphicon.glyphicon.glyphicon-edit
+                = link_to menu_path(menu), method: :delete do
+                  %i.glyphicon.glyphicon.glyphicon-trash
+              - if menu.pages.any?
+                %ol
+                  - menu.pages.each do |child|
+                    %li
+                      = link_to child.title, child
+                      .pull-right
+                        = link_to edit_page_path(child) do
+                          %i.glyphicon.glyphicon.glyphicon-edit
+                        = link_to page_path(child), method: :delete do
+                          %i.glyphicon.glyphicon.glyphicon-trash
+  .col-sm-6
+    .panel.panel-default
+      .panel-heading
+        Hidden Pages
+      .panel-body
+        %ol
+          - @orphan_pages.each do |page|
+            %li
+              = link_to page.title, page
+              .pull-right
+                = link_to edit_page_path(page) do
+                  %i.glyphicon.glyphicon.glyphicon-edit
+                = link_to page_path(page), method: :delete do
+                  %i.glyphicon.glyphicon.glyphicon-trash

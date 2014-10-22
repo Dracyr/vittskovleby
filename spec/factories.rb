@@ -21,12 +21,9 @@ FactoryGirl.define do
     title
     permalink { title.parameterize }
     content { Faker::Lorem.paragraph }
+  end
 
-    factory :page_with_children do
-      transient { child_count 3 }
-      after(:create) do |page, evaluator|
-        create_list(:page, evaluator.child_count, parent: page)
-      end
-    end
+  factory :menu do
+    title
   end
 end

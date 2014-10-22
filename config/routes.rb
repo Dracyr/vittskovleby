@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   root 'static#home'
 
   resources :posts
+  resources :menus, expect: [:index, :show]
 
   get 'pages',  to: 'pages#index'
   get ':id',    to: 'pages#show', as: :page

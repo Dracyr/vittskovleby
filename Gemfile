@@ -38,7 +38,6 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'shoulda-matchers', require: false
   gem 'formulaic'
   gem 'faker'
   gem 'fuubar'

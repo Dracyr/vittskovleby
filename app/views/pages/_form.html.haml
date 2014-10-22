@@ -5,7 +5,7 @@
     = simple_form_for @page, html: { class: 'form-horizontal' } do |f|
       = f.input :title
       = f.input :content, input_html: { class: "summernote_editor" }
-      = f.input :parent_id, as: :hidden, input_html: { value: params[:parent_id] }
+      = f.input :menu_id, as: :hidden, input_html: { value: params[:menu_id] }
 
       = f.button :submit, class: "btn-primary"
       = link_to 'Cancel', pages_path, class: "btn btn-default"
