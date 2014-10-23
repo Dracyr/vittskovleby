@@ -11,8 +11,6 @@
 #= require_tree .
 
 jQuery ->
-  $('.dd').nestable
-    maxDepth: 2
   $('.summernote_editor').summernote
     height: 300
     codemirror:

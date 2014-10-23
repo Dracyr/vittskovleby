@@ -1,10 +1,10 @@
 .panel.panel-default
   .panel-heading
-    Page form
+    Post form
   .panel-body
     = simple_form_for @post, html: { class: 'form-horizontal' } do |f|
       = f.input :title
-      = f.input  :content, class: "summernote"
+      = f.input  :content, input_html: { class: "summernote_editor" }
 
       = f.button :submit, class: "btn-primary"
       = link_to 'Cancel', :back, class: "btn btn-default"
