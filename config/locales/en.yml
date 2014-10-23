@@ -3,8 +3,12 @@ en:
     submit:
       page:
         create: Create page
-        update: Edit page
+        update: Save page
       post:
         create: Create post
+        update: Save post
+      menu:
+        create: Create menu
+        update: Save menu
   errors:
     permalink_reserved: cannot be a reserved name

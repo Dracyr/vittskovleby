@@ -3,8 +3,12 @@ sv:
     submit:
       page:
         create: Skapa sida
-        update: Redigera sida
+        update: Spara sida
       post:
         create: Skapa inlägg
+        update: Spara inlägg
+      menu:
+        create: Skapa meny
+        update: Spara meny
   errors:
     permalink_reserved: kan inte vara ett reserverat namn

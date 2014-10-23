@@ -19,7 +19,7 @@
         %ol
           - @menus.each do |menu|
             %li
-              = link_to page.title, page
+              = menu.title
               .pull-right
                 = link_to new_page_path(menu_id: menu.id) do
                   %i.glyphicon.glyphicon.glyphicon-plus-sign

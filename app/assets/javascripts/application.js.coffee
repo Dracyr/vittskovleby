@@ -3,7 +3,6 @@
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap
-#= require jquery.nestable
 #= require codemirror
 #= require codemirror/modes/http
 #= require codemirror/modes/htmlmixed
