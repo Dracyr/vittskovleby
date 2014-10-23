@@ -2,4 +2,4 @@
   %h1 Images
 
 - @images.each do |image|
-  = image_tag image.file.url
+  = image_tag image.file.thumb('200x200').url

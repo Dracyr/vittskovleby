@@ -7,6 +7,11 @@
           - menu.pages.each do |page|
             = navbar_item page.title, page_path(page)
     = navbar_group align: 'right' do
+      - if can? :manage, :all
+        = navbar_dropdown "Admin" do
+          = navbar_item "Pages", pages_path
+          = navbar_item "Posts", posts_path
+          = navbar_item "Images", images_path
       - if current_user
         = navbar_item "Sign Out", '/sign_out'
       - else
