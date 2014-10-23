@@ -21,3 +21,5 @@ config/database.yml
 
 #Ignore uploaded images
 /public/system/*
+#Ignore precompiled stuff, remove if it causes trouble
+/public/assets/*

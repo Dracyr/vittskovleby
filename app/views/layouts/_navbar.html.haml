@@ -1,10 +1,13 @@
-.navbar.navbar-default.navbar-fixed-top{:role => "navigation"}
-  .container
-    .navbar-header
-      %button.navbar-toggle{"data-target" => ".navbar-collapse", "data-toggle" => "collapse", :type => "button"}
-        %span.sr-only Toggle navigation
-        %span.icon-bar
-        %span.icon-bar
-        %span.icon-bar
-      %a.navbar-brand{:href => "#"} PVPersson
-    .navbar-collapse.collapse
+= navbar fixed: :top do
+  = navbar_header brand: 'PVPersson', brand_link: '/'
+  = navbar_collapse do
+    = navbar_group class: 'foo', id: 'menu' do
+      - @nav_menus.each do |menu|
+        = navbar_dropdown menu.title do
+          - menu.pages.each do |page|
+            = navbar_item page.title, page_path(page)
+    = navbar_group align: 'right' do
+      - if current_user
+        = navbar_item "Sign Out", '/sign_out'
+      - else
+        = navbar_item "Sign In", '/sign_in'

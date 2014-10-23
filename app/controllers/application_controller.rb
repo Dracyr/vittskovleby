@@ -11,4 +11,21 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |exception|
     redirect_to root_url, :alert => exception.message
   end
+
+  before_filter :load_navigation_menu
+  layout :layout_by_resource
+
+  protected
+
+  def load_navigation_menu
+    @nav_menus = Menu.all
+  end
+
+  def layout_by_resource
+    if devise_controller?
+      "devise_layout"
+    else
+      "application"
+    end
+  end
 end

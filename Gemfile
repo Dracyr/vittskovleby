@@ -21,6 +21,7 @@ gem 'codemirror-rails'
 gem "font-awesome-rails"
 gem 'acts_as_list'
 gem 'dragonfly', '~> 1.0.7'
+gem 'rails_bootstrap_navbar'
 
 group :development do
  	gem 'capistrano-rails'
