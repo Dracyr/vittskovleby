@@ -1,9 +1,10 @@
 require "spec_helper"
 
-feature "When user creates a page:" do
+feature "Page management," do
   let(:user) { FactoryGirl.create(:user) }
+  let(:this_page) { FactoryGirl.create(:page) }
 
-  scenario "they see the page" do
+  scenario "can create pages" do
     sign_in user
     visit new_page_path
 
@@ -13,45 +14,46 @@ feature "When user creates a page:" do
     expect(page).to have_text "Page was successfully created."
   end
 
+  scenario "can edit pages" do
+    sign_in user
+    visit edit_page_path(this_page)
+
+    fill_form :page, {title: "Page title", content: "Page content"}
+    click_on submit(:page, :update)
+
+    expect(page).to have_text "Page was successfully updated."
+  end
+
   scenario "a regular user is not allowed" do
     visit new_page_path
     expect(page).to have_text "You are not authorized to access this page."
   end
 end
 
-feature "When user visits page index", broken: true do
+feature "When user visits page index," do
   let!(:user) { sign_in FactoryGirl.create(:user) }
 
-  before(:each) { visit pages_path }
-
   scenario "it does not have errors" do
+    visit pages_path
     expect(page).to have_text "Pages"
   end
 
-  scenario "it should show the pages" do
-    expect(page).to have_text parent_page.title
-  end
-
   scenario "he can destroy pages" do
-    expect { first('.dd3-content').click_on('Delete') }.to change { Page.count }.by(-1)
-  end
-
-  scenario "he can edit pages" do
-    first('.dd3-content').click_link 'Edit'
-    fill_form :page, {title: "Page title", content: "Page content"}
-    click_on submit(:page, :update)
-    expect(page).to have_text "Page was successfully updated."
+    FactoryGirl.create(:page)
+    visit pages_path
+    expect { find_parent(".glyphicon-trash").click }.to change { Page.count }.by(-1)
   end
 
   scenario "he can create child page" do
-    find(:xpath, "//li[@data-id='#{parent_page.id}']").click_on 'Create child'
+    FactoryGirl.create(:menu)
+    visit pages_path
+
+    find_parent(".glyphicon-plus-sign").click
 
     fill_form :page, {title: "Child page", content: "Page content"}
     click_on submit(:page)
 
     visit pages_path
-    within(:xpath, "//li[@data-id='#{parent_page.id}']") do
-      expect(page).to have_text "Child page"
-    end
+    expect(page).to have_text "Child page"
   end
 end

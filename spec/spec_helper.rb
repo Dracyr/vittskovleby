@@ -14,6 +14,7 @@ RSpec.configure do |config|
   Faker::Config.locale = 'sv'
 
   config.include SignInHelper
+  config.include TestsHelper
 
   config.filter_run_excluding :broken => true
 
