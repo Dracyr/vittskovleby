@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :posts
   resources :menus, expect: [:index, :show]
+  resources :images, expect: :show
 
   get 'pages',  to: 'pages#index'
   get ':id',    to: 'pages#show', as: :page

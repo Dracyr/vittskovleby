@@ -29,6 +29,7 @@ GEM
       tzinfo (~> 1.1)
     acts_as_list (0.4.0)
       activerecord (>= 3.0)
+    addressable (2.3.6)
     arel (5.0.1.20140414130214)
     autoprefixer-rails (3.1.2.20141016)
       execjs
@@ -91,6 +92,10 @@ GEM
     dotenv (1.0.2)
     dotenv-rails (1.0.2)
       dotenv (= 1.0.2)
+    dragonfly (1.0.7)
+      addressable (~> 2.3)
+      multi_json (~> 1.0)
+      rack
     erubis (2.7.0)
     execjs (2.2.2)
     factory_girl (4.5.0)
@@ -168,6 +173,8 @@ GEM
     pry-rails (0.3.2)
       pry (>= 0.9.10)
     rack (1.5.2)
+    rack-cache (1.2)
+      rack (>= 0.4)
     rack-contrib (1.1.0)
       rack (>= 0.9.1)
     rack-test (0.6.2)
@@ -284,6 +291,7 @@ DEPENDENCIES
   coffee-rails (~> 4.0.0)
   devise
   dotenv-rails
+  dragonfly (~> 1.0.7)
   factory_girl_rails
   faker
   font-awesome-rails
@@ -298,6 +306,7 @@ DEPENDENCIES
   pry
   pry-doc
   pry-rails
+  rack-cache
   rails (= 4.1.1)
   responders
   rspec-rails (~> 3.0.0)

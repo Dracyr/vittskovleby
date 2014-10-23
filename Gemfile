@@ -20,6 +20,7 @@ gem 'dotenv-rails'
 gem 'codemirror-rails'
 gem "font-awesome-rails"
 gem 'acts_as_list'
+gem 'dragonfly', '~> 1.0.7'
 
 group :development do
  	gem 'capistrano-rails'
@@ -48,4 +49,5 @@ gem 'rspec-rails', '~> 3.0.0', :group => [:development, :test]
 
 group :production do
 	gem 'unicorn'
+  gem 'rack-cache', :require => 'rack/cache'
 end
