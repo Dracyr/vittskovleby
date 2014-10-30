@@ -1,11 +1,11 @@
-.page-header
-  %h1 Pages
+- breadcrumb :pages
 
 .row
   .col-sm-12
-    .panel.panel-default
+    .panel.panel-primary
       .panel-heading
-        Tools
+        %h3
+          Tools
       .panel-body
         = link_to "Create new page", new_page_path, class: "btn btn-primary"
         = link_to "Create new menu", new_menu_path, class: "btn btn-primary"
@@ -14,7 +14,8 @@
   .col-sm-6
     .panel.panel-default
       .panel-heading
-        Menus
+        %h3
+          Menus
       .panel-body
         %ol
           - @menus.each do |menu|
@@ -40,7 +41,8 @@
   .col-sm-6
     .panel.panel-default
       .panel-heading
-        Hidden Pages
+        %h3
+          Hidden Pages
       .panel-body
         %ol
           - @orphan_pages.each do |page|

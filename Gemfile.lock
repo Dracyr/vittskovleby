@@ -119,6 +119,8 @@ GEM
       rspec (~> 3.0)
       ruby-progressbar (~> 1.4)
     gem_config (0.3.1)
+    gretel (3.0.7)
+      rails (>= 3.2.0)
     guard (2.6.1)
       formatador (>= 0.2.4)
       listen (~> 2.7)
@@ -303,6 +305,7 @@ DEPENDENCIES
   font-awesome-rails
   formulaic
   fuubar
+  gretel
   guard-rspec
   haml
   jquery-rails

@@ -1,5 +1,10 @@
-= simple_form_for @image, html: { class: 'form-horizontal' } do |f|
-  = f.input :title
-  = f.input :file, as: :file
+.panel.panel-default
+  .panel-heading
+    %h3
+      Menu form
+  .panel-body
+    = simple_form_for @image, html: { class: 'form-horizontal' } do |f|
+      = f.input :title
+      = f.input :file, as: :file
 
-  = f.button :submit, class: "btn btn-primary"
+      = f.button :submit, class: "btn btn-primary"
