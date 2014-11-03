@@ -2,12 +2,12 @@
 
 .row
   .col-sm-12
-    .panel.panel-default
+    .panel.panel-primary
       .panel-heading
         %h3
           Tools
       .panel-body
         = link_to "Upload image", new_image_path, class: "btn btn-primary"
 
-- @images.each do |image|
-  = image_tag image.file.thumb('200x200').url
+.row
+  = render @images

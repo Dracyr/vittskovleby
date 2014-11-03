@@ -1,13 +1,16 @@
 - breadcrumb :page, @page
 
-.page-header
-  %h1
-    = @page.title
 - if can? :edit, @page
-  .panel.panel-default
+  .panel.panel-primary
     .panel-heading
-      Tools
+      %h3
+        Tools
     .panel-body
       = link_to "Edit page", edit_page_path(@page), class: "btn btn-primary"
 .page-content
-  = @page.content.html_safe
+  .panel.panel-default
+    .panel-heading
+      %h1
+        = @page.title
+    .panel-body
+    = @page.content.html_safe

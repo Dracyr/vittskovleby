@@ -1,0 +1,14 @@
+.col-sm-3
+  .photo
+    .head
+      %h4
+        = image.title
+    .img
+      = image_tag image.file.thumb('300x300#').url
+      .overlay
+        .links
+          = link_to edit_image_path(image) do
+            %i.glyphicon.glyphicon-edit
+          = link_to image_path(image), method: :delete do
+            %i.glyphicon.glyphicon-trash
+

@@ -8,6 +8,9 @@
 @import "codemirror/themes/solarized";
 @import "font-awesome";
 
+@import "images";
+@import "bootstrap-modifications";
+
 //Fix for routing error
 @font-face {
     font-family: 'Glyphicons Halflings';
@@ -36,34 +39,9 @@
   }
 }
 
-.panel {
-  margin-bottom: 40px;
-  padding: 20px 20px;
-  position: relative;
-
-  border-left: 1px solid #efefef;
-  border-right: 1px solid #efefef;
-  border-bottom: 1px solid #e2e2e2;
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04);
-  transition: padding 500ms;
-  .panel-heading {
-    transition: border 500ms;
-    border-bottom: 1px solid #dadada;
-    h3 {
-      margin-top: 0px;
-    }
-  }
-  &.panel-primary, &.panel-info, &.panel-success,
-  &.panel-warning, &.panel-danger {
-    .panel-heading {
-      margin: -20px -20px 0px -20px;
-      padding: 20px 0px 0px 20px;
-    }
-  }
-}
-
 .breadcrumbs {
   font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 5px;
   margin-bottom: 20px;
 }
+
