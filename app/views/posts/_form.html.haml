@@ -1,6 +1,7 @@
 .panel.panel-default
   .panel-heading
-    Post form
+    %h3
+      Post
   .panel-body
     = simple_form_for @post, html: { class: 'form-horizontal' } do |f|
       = f.input :title

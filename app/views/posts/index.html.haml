@@ -4,13 +4,15 @@
   .col-sm-12
     .panel.panel-default
       .panel-heading
-        Tools
+        %h3
+          Tools
       .panel-body
         = link_to "Create new post", new_post_path, class: "btn btn-primary"
 
 - @posts.each do |post|
   .panel.panel-default
     .panel-heading
-      = post.title
+      %h3
+        = post.title
     .panel-body
       = post.content
