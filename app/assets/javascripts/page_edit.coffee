@@ -1,4 +1,4 @@
-$ ->
+$(document).on "page:change", ->
   $('#edit-content').click edit_page_content
 
 post_page_content = ->

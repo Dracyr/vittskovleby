@@ -1,5 +1,4 @@
 #= require jquery
-#= require jquery.turbolinks
 #= require jquery_ujs
 #= require turbolinks
 #= require bootstrap
@@ -10,7 +9,9 @@
 #= require summernote-sv-SE
 #= require_tree .
 
-jQuery ->
+Turbolinks.enableTransitionCache()
+
+$(document).on "page:change", ->
   $('.summernote_editor').summernote
     height: 300
     codemirror:
