@@ -13,6 +13,6 @@
           = navbar_item "Posts", posts_path
           = navbar_item "Images", images_path
       - if current_user
-        = navbar_item "Sign Out", '/sign_out'
+        %li= link_to "Sign Out", '/sign_out', method: :delete
       - else
         = navbar_item "Sign In", '/sign_in'

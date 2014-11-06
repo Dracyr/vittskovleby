@@ -11,8 +11,7 @@
 .page-content
   .panel.panel-default
     .panel-heading
-      %h1
-        = @page.title
+      %h1= @page.title
     .panel-body
       .editable-content
         = @page.content.html_safe
