@@ -1,6 +1,12 @@
-.container.top-container
-  .row
+.greetings-box
+  .container
     .col-lg-12
       .greetings-text
         %h1 Hejsan :)
         %p Här hade det kunnat stå en massa häftiga saker, men det gör det inte!
+.container-fluid
+  .row
+    .col-lg-6
+      = render 'timeline'
+    .col-lg-6.skills-box
+      = render 'skills'

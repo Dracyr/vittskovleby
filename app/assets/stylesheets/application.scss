@@ -7,9 +7,12 @@
 @import "codemirror";
 @import "codemirror/themes/solarized";
 @import "font-awesome";
+@import "timeline";
 
-@import "images";
 @import "bootstrap-modifications";
+@import "summernote-modifications";
+@import "images";
+@import "static-pages";
 
 //Fix for routing error
 @font-face {
@@ -23,25 +26,13 @@
   padding-top: 20px;
 }
 
-.greetings {
-  background-color: #18D0BF;
-}
-
-.greetings-text {
-  color: #FFF;
-  margin-top: 120px;
-  text-align: center;
-  h1 {
-    font-size: 120px;
-  }
-  p {
-    font-size: 20px;
-  }
-}
-
 .breadcrumbs {
   font-family: "Raleway", Helvetica, sans-serif;
   margin-top: 5px;
   margin-bottom: 20px;
 }
 
+.unstyled-list {
+  list-style: none;
+  padding-left: 0;
+}

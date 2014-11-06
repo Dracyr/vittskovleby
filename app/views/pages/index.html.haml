@@ -17,7 +17,7 @@
         %h3
           Menus
       .panel-body
-        %ol
+        %ol.unstyled-list
           - @menus.each do |menu|
             %li
               = menu.title
@@ -29,7 +29,7 @@
                 = link_to menu_path(menu), method: :delete do
                   %i.glyphicon.glyphicon.glyphicon-trash
               - if menu.pages.any?
-                %ol
+                %ol.unstyled-list
                   - menu.pages.each do |child|
                     %li
                       = link_to child.title, child
@@ -44,7 +44,7 @@
         %h3
           Hidden Pages
       .panel-body
-        %ol
+        %ol.unstyled-list
           - @orphan_pages.each do |page|
             %li
               = link_to page.title, page

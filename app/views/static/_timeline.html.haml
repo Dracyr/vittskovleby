@@ -1,0 +1,36 @@
+%ul.timeline
+  %li
+    .timeline-badge.info
+      %i.fa.fa-child
+    .timeline-panel
+      .timeline-heading
+        %h4.timeline-title Föddes
+        %p
+          %small.text-muted
+            %i.glyphicon.glyphicon-time
+            = distance_of_time_in_words_to_now(Date.new(1993,8,11))
+            ago
+      .timeline-body
+        %p I Huaröd
+  %li.timeline-inverted
+    .timeline-panel
+      .timeline-heading
+        %h4.timeline-title Skola
+      .timeline-body
+        %p Huaröd
+  %li
+    .timeline-badge.success
+      %i.glyphicon.glyphicon-book
+    .timeline-panel
+      .timeline-heading
+        %h4.timeline-title Gymnasie
+      .timeline-body
+        %p Kristianstad
+  %li.timeline-inverted
+    .timeline-badge.primary
+      %i.glyphicon.glyphicon-certificate
+    .timeline-panel
+      .timeline-heading
+        %h4.timeline-title Lunds Tekniska Högskola
+      .timeline-body
+        %p Mycket skoj
