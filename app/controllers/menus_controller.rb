@@ -17,6 +17,11 @@ class MenusController < ApplicationController
     respond_with @menu, location: pages_path
   end
 
+  def destroy
+    @menu.destroy
+    respond_with @menu, location: pages_path
+  end
+
   private
 
   def menu_params

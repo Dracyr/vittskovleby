@@ -27,13 +27,6 @@ class PagesController < ApplicationController
     respond_with @page
   end
 
-  def update_all
-    NavigationOrderer.new(params[:page_data]).update
-    respond_to do |format|
-      format.js { render js: "window.location.reload();" }
-    end
-  end
-
   def destroy
     @page.destroy
     respond_with @page

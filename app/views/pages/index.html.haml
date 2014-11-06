@@ -29,7 +29,7 @@
                 = link_to menu_path(menu), method: :delete do
                   %i.glyphicon.glyphicon.glyphicon-trash
               - if menu.pages.any?
-                %ol.unstyled-list
+                %ol
                   - menu.pages.each do |child|
                     %li
                       = link_to child.title, child
