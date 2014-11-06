@@ -22,6 +22,7 @@ gem 'acts_as_list'
 gem 'dragonfly', '~> 1.0.7'
 gem 'rails_bootstrap_navbar'
 gem 'gretel'
+gem 'remotipart', '~> 1.2' #Ajax file uploads
 
 group :development do
  	gem 'capistrano-rails'

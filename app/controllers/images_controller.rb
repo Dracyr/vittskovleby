@@ -9,7 +9,17 @@ class ImagesController < ApplicationController
 
   def create
     @image = Image.create image_params
-    respond_with @image, location: images_path
+    respond_to do |format|
+      format.html { respond_with @image, location: images_path }
+
+      format.js do
+        if @image.save
+          render action: 'upload_success'
+        else
+          render json: @image.errors, status: :unprocessable_entity
+        end
+      end
+    end
   end
 
   def edit

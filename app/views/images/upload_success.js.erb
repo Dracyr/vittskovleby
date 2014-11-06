@@ -1,0 +1,5 @@
+$('#insertImageModal').trigger({
+  type: 'image_uploaded',
+  image_source: '<%= escape_javascript(@image.file.url) %>',
+  image_id: '<%= escape_javascript(@image.id.to_s) %>'
+});

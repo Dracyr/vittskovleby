@@ -204,6 +204,7 @@ GEM
     rb-fsevent (0.9.4)
     rb-inotify (0.9.5)
       ffi (>= 0.5.0)
+    remotipart (1.2.1)
     responders (1.1.1)
       railties (>= 3.2, < 4.2)
     rspec (3.0.0)
@@ -314,6 +315,7 @@ DEPENDENCIES
   rack-cache
   rails (= 4.1.1)
   rails_bootstrap_navbar
+  remotipart (~> 1.2)
   responders
   rspec-rails (~> 3.0.0)
   sass-rails (~> 4.0.3)

@@ -1,5 +1,29 @@
 $(document).on "page:change", ->
   $('#edit-content').click edit_page_content
+  $('.summernote_editor').summernote
+    height: 300
+    codemirror:
+      lineNumbers: true
+      tabSize: 2
+      theme: "solarized light"
+    toolbar: [
+      ['style', [ 'style',]],
+      ['format', [ 'bold', 'italic', 'underline', 'strikethrough', 'clear']],
+      ['layout', ['ul', 'ol']],
+      ['para', ['ul', 'ol', 'paragraph']],
+      ['insert', ['link', 'picture', 'table', 'hr']],
+      ['controls', ['undo', 'redo']],
+      ['misc', ['fullscreen', 'codeview']],
+      ['help', ['help']],
+    ]
+    showImageDialog: ->
+      $.Deferred (deferred) ->
+        $('#insertImageModal').modal()
+        $("#insertImageModal").on "image_uploaded", null, (event) ->
+          $("#insertImageModal").modal "hide"
+          deferred.resolve(event.image_source)
+        $('#insertImageModal').on 'hide.bs.modal', ->
+          deferred.reject()
 
 post_page_content = ->
   # Destroy summernote
