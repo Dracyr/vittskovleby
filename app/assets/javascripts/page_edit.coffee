@@ -28,12 +28,28 @@ $(document).on "page:change", ->
 post_page_content = ->
   # Destroy summernote
   $('.editable-content').destroy()
-  # Send Ajax Request
-  $.ajax
-    type: "POST"
-    url: $('#save-content').data('page')
-    data: {"page": {"content": $('.editable-content').html()}}
-    dataType: "JSON"
+  $('[data-editable]').destroy()
+
+  # Send changed content for editable fields
+  if $('[data-editable]').exists()
+    # Create JSON for editable fields
+    editable_fields = $.map $('[data-editable]'), (field) ->
+      {'title': $(field).data('editable'), 'content': $(field).html()}
+    $.ajax
+      type: "POST"
+      url: 'editable_fields'
+      data: 'editable_fields': JSON.stringify(editable_fields)
+      dataType: "JSON"
+
+  # Send changed content for pages
+  if $(".editable-content").exists()
+    # Send Ajax Request
+    $.ajax
+      type: "POST"
+      url: $('#save-content').data('page')
+      data: {"page": {"content": $('.editable-content').html()}}
+      dataType: "JSON"
+
   # Change buttons
   $('#save-content, #edit-content').html('Quick-Edit')
   $('#save-content').removeClass('btn-success').addClass('btn-default')
@@ -44,9 +60,10 @@ edit_page_content = ->
   # Init summernote
   $(".editable-content").summernote
     airMode: true
+  $('[data-editable]').summernote
+    airMode: true
   # Change buttons
   $('#save-content, #edit-content').html('Save changes')
   $('#edit-content').removeClass('btn-default').addClass('btn-success')
   $('#edit-content').attr('id', 'save-content')
   $('#save-content').off().click post_page_content
-

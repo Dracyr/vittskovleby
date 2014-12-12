@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   resources :menus, expect: [:index, :show]
   resources :images, expect: :show
 
+  post '/editable_fields', to: 'editable_fields#update'
+
   get 'pages',  to: 'pages#index'
   get ':id',    to: 'pages#show', as: :page
   patch ':id',  to: 'pages#update'

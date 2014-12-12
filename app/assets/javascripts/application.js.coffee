@@ -12,3 +12,7 @@
 #= require_tree .
 
 Turbolinks.enableTransitionCache()
+
+# Convenience function for checking if jquery has selected something
+$.fn.exists = ->
+  @length isnt 0

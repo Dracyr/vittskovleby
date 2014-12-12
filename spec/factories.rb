@@ -1,5 +1,9 @@
 require 'faker'
-FactoryGirl.define do
+FactoryGirl.define do  factory :editable_field do
+    title "MyString"
+content "MyString"
+  end
+
 
   sequence :title do
     Faker::Lorem.words.join(' ').titleize

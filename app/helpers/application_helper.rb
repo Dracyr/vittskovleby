@@ -7,4 +7,12 @@ module ApplicationHelper
       when "alert" then "alert alert-warning"
     end
   end
+
+  def editable_field field_title
+    field = EditableField.find_by_title field_title
+    content = field ? field.content : "Field not found: #{field_title}"
+    content_tag :div, data: { editable: field_title } do
+      raw content
+    end
+  end
 end

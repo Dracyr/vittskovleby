@@ -11,10 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023204408) do
+ActiveRecord::Schema.define(version: 20141212221551) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "editable_fields", force: true do |t|
+    t.string   "title",      default: "", null: false
+    t.text     "content",    default: "", null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "images", force: true do |t|
     t.string "title",     default: "", null: false
