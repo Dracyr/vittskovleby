@@ -16,8 +16,5 @@ Rails.application.routes.draw do
   patch ':id',  to: 'pages#update'
   post  ':id',  to: 'pages#update'
   delete ':id', to: 'pages#destroy'
-  resources :pages, except: [:show, :update, :delete, :index] do
-    post 'update_all', on: :collection
-  end
-
+  resources :pages, except: [:show, :update, :delete, :index]
 end
