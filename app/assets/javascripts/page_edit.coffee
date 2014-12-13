@@ -33,12 +33,13 @@ post_page_content = ->
   # Send changed content for editable fields
   if $('[data-editable]').exists()
     # Create JSON for editable fields
-    editable_fields = $.map $('[data-editable]'), (field) ->
+    editable_fields_data = $.map $('[data-editable]'), (field) ->
       {'title': $(field).data('editable'), 'content': $(field).html()}
+    # Send AJAX request
     $.ajax
       type: "POST"
       url: 'editable_fields'
-      data: 'editable_fields': JSON.stringify(editable_fields)
+      data: 'editable_fields': JSON.stringify(editable_fields_data)
       dataType: "JSON"
 
   # Send changed content for pages
