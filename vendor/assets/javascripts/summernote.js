@@ -3753,7 +3753,7 @@
     var insertImages = function ($editable, files) {
       var callbacks = $editable.data('callbacks');
 
-      // If onImageUpload options setted
+      // If onImageUpload options set
       if (callbacks.onImageUpload) {
         callbacks.onImageUpload(files, editor, $editable);
       // else insert Image as dataURL

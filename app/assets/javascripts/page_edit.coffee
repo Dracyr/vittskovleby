@@ -20,10 +20,13 @@ $(document).on "page:change", ->
       $.Deferred (deferred) ->
         $('#insertImageModal').modal()
         $("#insertImageModal").on "image_uploaded", null, (event) ->
-          $("#insertImageModal").modal "hide"
           deferred.resolve(event.image_source)
+          # Hiding needs to be done after resolving deferred event
+          $("#insertImageModal").modal "hide"
         $('#insertImageModal').on 'hide.bs.modal', ->
           deferred.reject()
+
+
 
 post_page_content = ->
   # Destroy summernote
