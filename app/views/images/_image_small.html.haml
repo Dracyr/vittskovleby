@@ -1,0 +1,8 @@
+.photo.photo-small
+  .img{data: {"image-source" => image.file.url}}
+    = image_tag image.file.thumb('300x300#').url
+    .overlay
+      .links
+        = link_to '#' do
+          %i.glyphicon.glyphicon-ok
+

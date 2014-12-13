@@ -2,6 +2,19 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.13);
   margin-bottom: 20px;
 
+  &.photo-small {
+    margin-bottom: 7px;
+    display: inline-block;
+    width: 100px;
+
+    .overlay a {
+      margin-right: 0px !important;
+    }
+    .img .links { margin-top: 10px; }
+    .img:hover .links { margin-top: 26px; }
+    #img-selected .links { margin-top: 26px; }
+  }
+
   .head {
     padding: 10px 10px;
     background: #FFF;
@@ -13,6 +26,9 @@
     &:hover {
       .overlay  { opacity: 0.8; }
       .links { margin-top: 40%; }
+    }
+    &#img-selected {
+      .overlay  { opacity: 0.8; }
     }
   }
 

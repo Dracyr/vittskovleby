@@ -1,7 +1,11 @@
 $(document).on "page:change", ->
+  $(".img").click (event) ->
+    clicked_image = event.currentTarget
+    $('#img-selected').attr('id', '')
+    $(clicked_image).attr('id', "img-selected")
   $('#edit-content').click edit_page_content
   $('.summernote_editor').summernote
-    height: 300
+    height: 400
     codemirror:
       lineNumbers: true
       tabSize: 2
@@ -23,8 +27,14 @@ $(document).on "page:change", ->
           deferred.resolve(event.image_source)
           # Hiding needs to be done after resolving deferred event
           $("#insertImageModal").modal "hide"
+        $('#insert-image').click (event) ->
+          image_source = $('#img-selected').data('image-source')
+          console.log image_source
+          deferred.resolve(image_source)
+          $("#insertImageModal").modal "hide"
         $('#insertImageModal').on 'hide.bs.modal', ->
           deferred.reject()
+
 
 finished_editing = ->
   # Destroy summernote

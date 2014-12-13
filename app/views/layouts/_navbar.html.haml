@@ -13,13 +13,14 @@
             %li= link_to "Sign Out", '/sign_out', method: :delete
           - else
             = navbar_item "Sign In", '/sign_in'
-  .admin-nav
-    .container.navbar-inverse
-      = navbar_header brand: 'Admin'
-      = navbar_collapse do
-        = yield :navbar_tools
-        = navbar_group align: 'right' do
-          - if can? :manage, :all
-            = navbar_item "Pages", pages_path
-            = navbar_item "Posts", posts_path
-            = navbar_item "Images", images_path
+  - if current_user.try(:admin?)
+    .admin-nav
+      .container.navbar-inverse
+        = navbar_header brand: 'Admin'
+        = navbar_collapse do
+          = yield :navbar_tools
+          = navbar_group align: 'right' do
+            - if can? :manage, :all
+              = navbar_item "Pages", pages_path
+              = navbar_item "Posts", posts_path
+              = navbar_item "Images", images_path
