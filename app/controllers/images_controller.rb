@@ -27,6 +27,7 @@ class ImagesController < ApplicationController
 
   def update
     @image.update image_params
+    respond_with @image, location: images_path
   end
 
   private

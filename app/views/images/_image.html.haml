@@ -3,6 +3,7 @@
     .head
       %h4
         = image.title
+        = "Unknown title" if image.title.blank?
     .img
       = image_tag image.file.thumb('300x300#').url
       .overlay
