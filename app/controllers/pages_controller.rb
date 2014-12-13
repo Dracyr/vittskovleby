@@ -24,7 +24,10 @@ class PagesController < ApplicationController
 
   def update
     @page.update page_params
-    respond_with @page
+    respond_to do |format|
+      format.html { respond_with @page }
+      format.js   { head :ok }
+    end
   end
 
   def destroy

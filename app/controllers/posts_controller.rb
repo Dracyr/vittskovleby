@@ -21,7 +21,10 @@ class PostsController < ApplicationController
 
   def update
     @post.update post_params
-    respond_with @post
+    respond_to do |format|
+      format.html { respond_with @post }
+      format.js   { head :ok }
+    end
   end
 
   def destroy

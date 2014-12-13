@@ -1,3 +1,6 @@
+- content_for :navbar_tools do
+  = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default"
+
 .container.top-container
   .panel.panel-primary
     .greetings-text
@@ -5,12 +8,6 @@
       %p Här hade det kunnat stå en massa häftiga saker, men det gör det inte!
       / Snart kanske det gör det!
 .container
-  .panel.panel-primary
-    .panel-heading
-      %h3
-        Tools
-    .panel-body
-      = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-default"
   .panel.panel-default
     .row
       .col-lg-4
@@ -21,5 +18,3 @@
 
       .col-lg-4
         = editable_field :third_thing
-
-

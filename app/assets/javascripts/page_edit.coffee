@@ -37,19 +37,28 @@ post_page_content = ->
       {'title': $(field).data('editable'), 'content': $(field).html()}
     # Send AJAX request
     $.ajax
-      type: "POST"
+      type: "PATCH"
       url: 'editable_fields'
       data: 'editable_fields': JSON.stringify(editable_fields_data)
       dataType: "JSON"
 
-  # Send changed content for pages
+  # Send changed content for pages and posts
   if $(".editable-content").exists()
-    # Send Ajax Request
-    $.ajax
-      type: "POST"
-      url: $('#save-content').data('page')
-      data: {"page": {"content": $('.editable-content').html()}}
-      dataType: "JSON"
+    console.log "Det finns content"
+    if $('#save-content').data('post')
+      console.log "Post conetnt"
+      $.ajax
+        type: "PATCH"
+        url: $('#save-content').data('post')
+        data: {"post": {"content": $('.editable-content').html()}}
+        dataType: "JSON"
+    if $('#save-content').data('page')
+      # Send Ajax Request
+      $.ajax
+        type: "PATCH"
+        url: $('#save-content').data('page')
+        data: {"page": {"content": $('.editable-content').html()}}
+        dataType: "JSON"
 
   # Change buttons
   $('#save-content, #edit-content').html('Quick-Edit')

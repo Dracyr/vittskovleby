@@ -1,7 +1,7 @@
 - if can? :edit, @post
   - content_for :navbar_tools do
     = link_to "Edit post", edit_post_path(@post), class: "btn btn-xs btn-default"
-
+    = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default", data: {post: @post.id}
 
 - breadcrumb :post, @post
 
@@ -11,4 +11,4 @@
       %h1= @post.title
     .panel-body
       .editable-content
-        = @post.content.html_safe
+        = raw @post.content

@@ -11,12 +11,11 @@ Rails.application.routes.draw do
   resources :menus, expect: [:index, :show]
   resources :images, expect: :show
 
-  post '/editable_fields', to: 'editable_fields#update'
+  patch '/editable_fields', to: 'editable_fields#update'
 
   get 'pages',  to: 'pages#index'
   get ':id',    to: 'pages#show', as: :page
-  patch ':id',  to: 'pages#update'
-  post  ':id',  to: 'pages#update'
+  patch  ':id',  to: 'pages#update'
   delete ':id', to: 'pages#destroy'
   resources :pages, except: [:show, :update, :delete, :index]
 end
