@@ -1,14 +1,14 @@
+- if can? :edit, @post
+  - content_for :navbar_tools do
+    = link_to "Edit post", edit_post_path(@post), class: "btn btn-xs btn-default"
+
+
 - breadcrumb :post, @post
 
-.page-header
-  %h1
-    = @post.title
-- if can? :edit, @post
+.page-content
   .panel.panel-default
     .panel-heading
-      %h3
-        Tools
+      %h1= @post.title
     .panel-body
-      = link_to "Edit post", edit_post_path(@post), class: "btn btn-primary"
-.post-content
-  = @post.content
+      .editable-content
+        = @post.content.html_safe

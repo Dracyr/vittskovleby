@@ -1,13 +1,7 @@
-- breadcrumb :posts
+- content_for :navbar_tools do
+  = link_to "Create new post", new_post_path, class: "btn btn-xs btn-primary"
 
-.row
-  .col-sm-12
-    .panel.panel-primary
-      .panel-heading
-        %h3
-          Tools
-      .panel-body
-        = link_to "Create new post", new_post_path, class: "btn btn-primary"
+- breadcrumb :posts
 
 - @posts.each do |post|
   .panel.panel-default
@@ -16,3 +10,5 @@
         = post.title
     .panel-body
       = post.content
+      .pull-right
+        = link_to "Read More", post

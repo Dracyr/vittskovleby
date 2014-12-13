@@ -1,18 +1,25 @@
-= navbar fixed: :top do
-  = navbar_header brand: 'PVPersson', brand_link: '/'
-  = navbar_collapse do
-    = navbar_group class: 'foo', id: 'menu' do
-      - @nav_menus.each do |menu|
-        = navbar_dropdown menu.title do
-          - menu.pages.each do |page|
-            = navbar_item page.title, page_path(page)
-    = navbar_group align: 'right' do
-      - if can? :manage, :all
-        = navbar_dropdown "Admin" do
-          = navbar_item "Pages", pages_path
-          = navbar_item "Posts", posts_path
-          = navbar_item "Images", images_path
-      - if current_user
-        %li= link_to "Sign Out", '/sign_out', method: :delete
-      - else
-        = navbar_item "Sign In", '/sign_in'
+%nav.navbar.navbar-fixed-top{role: 'navigation'}
+  .default-nav.navbar-default
+    .container
+      = navbar_header brand: 'PVPersson', brand_link: '/'
+      = navbar_collapse do
+        = navbar_group class: 'foo', id: 'menu' do
+          - @nav_menus.each do |menu|
+            = navbar_dropdown menu.title do
+              - menu.pages.each do |page|
+                = navbar_item page.title, page_path(page)
+        = navbar_group align: 'right' do
+          - if current_user
+            %li= link_to "Sign Out", '/sign_out', method: :delete
+          - else
+            = navbar_item "Sign In", '/sign_in'
+  .admin-nav
+    .container.navbar-inverse
+      = navbar_header brand: 'Admin'
+      = navbar_collapse do
+        = yield :navbar_tools
+        = navbar_group align: 'right' do
+          - if can? :manage, :all
+            = navbar_item "Pages", pages_path
+            = navbar_item "Posts", posts_path
+            = navbar_item "Images", images_path

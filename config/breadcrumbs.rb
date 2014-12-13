@@ -61,7 +61,7 @@ end
 
 crumb :edit_image do |image|
   link "Edit #{image.title}"
-  parent :image, image
+  parent :images
 end
 
 # crumb :projects do
