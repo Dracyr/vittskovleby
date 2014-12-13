@@ -10,6 +10,6 @@
         .links
           = link_to edit_image_path(image) do
             %i.glyphicon.glyphicon-edit
-          = link_to image_path(image), method: :delete do
+          = link_to image_path(image), method: :delete, data: {confirm: "Do you really want to delete this?"} do
             %i.glyphicon.glyphicon-trash
 

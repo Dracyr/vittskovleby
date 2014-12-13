@@ -30,6 +30,11 @@ class ImagesController < ApplicationController
     respond_with @image, location: images_path
   end
 
+  def destroy
+    @image.destroy
+    respond_with @image, location: images_path
+  end
+
   private
 
   def image_params
