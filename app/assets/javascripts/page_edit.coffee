@@ -22,20 +22,7 @@ $(document).on "page:change", ->
       ['misc', ['fullscreen', 'codeview']],
       ['help', ['help']],
     ]
-    showImageDialog: ->
-      $.Deferred (deferred) ->
-        $('#insertImageModal').modal()
-        $("#insertImageModal").on "image_uploaded", null, (event) ->
-          deferred.resolve(event.image_source)
-          # Hiding needs to be done after resolving deferred event
-          $("#insertImageModal").modal "hide"
-        $('#insert-image').click (event) ->
-          image_source = $('#img-selected').data('image-source')
-          console.log image_source
-          deferred.resolve(image_source)
-          $("#insertImageModal").modal "hide"
-        $('#insertImageModal').on 'hide.bs.modal', ->
-          deferred.reject()
+    showImageDialog: imageDialog
 
 
 finished_editing = ->
@@ -94,3 +81,26 @@ edit_page_content = ->
   $('#edit-content').removeClass('btn-default').addClass('btn-success')
   $('#edit-content').attr('id', 'save-content')
   $('#save-content').off().click finished_editing
+
+imageDialog = ($editable, $dialog) ->
+  $.Deferred (deferred) ->
+    $('#insertImageModal').one("shown.bs.modal", ->
+      $("#insertImageModal").on "image_uploaded", null, (event) ->
+        deferred.resolve(event.image_source)
+        # Hiding needs to be done after resolving deferred event
+        $("#insertImageModal").modal "hide"
+        return
+      $('#insert-image').click (event) ->
+        event.preventDefault()
+        image_source = $('#img-selected').data('image-source')
+        deferred.resolve(image_source)
+        $('#img-selected').attr('id', '')
+        $("#insertImageModal").modal "hide"
+        return
+    ).one('hidden.bs.modal', ->
+        $("#insertImageModal").off "image_uploaded"
+        $('#insert-image').off "click"
+        deferred.reject() if deferred.state() is "pending"
+        return
+    ).modal "show"
+    return

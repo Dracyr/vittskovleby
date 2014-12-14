@@ -1,34 +1,27 @@
 / Modal
-#insertImageModal.modal.fade{:role => "dialog", :tabindex => "-1"}
+#insertImageModal.modal.fade
   .modal-dialog.modal-lg
     .modal-content
       .modal-header
-        %button.close{"data-dismiss" => "modal", :type => "button"}
-          %span{"aria-hidden" => "true"} ×
-          %span.sr-only Close
-        %h4#myModalLabel.modal-title Insert Image
-      %div{role: 'tabpanel'}
-        .tab-content
-          #upload-image.tab-pane{role: :tabpanel}
-            .modal-body
-              - @image = Image.new
-              = simple_form_for @image, html: { class: 'form-horizontal' }, remote: true do |f|
-                = f.input :title
-                = f.input :file, as: :file
-                .modal-footer
-                  %button.btn.btn-default{"data-dismiss" => "modal", :type => "button"}
-                    Close
-                  = f.button :submit, class: "btn btn-primary"
-          #select-image.tab-pane.active{role: :tabpanel}
-            .modal-body
-              - @images = Image.all
-              = render partial: 'images/image_small', collection: @images, as: :image
-            .modal-footer
-              = button_tag "Insert Image", id: 'insert-image', class: "btn btn-primary"
-        %ul.nav.nav-tabs{role: 'tablist'}
-          %li{role: 'presentation'}
-            %a{href: '#upload-image', role: 'tab', data: {toggle: 'tab'}}
-              Upload Image
-          %li.active{role: 'presentation'}
-            %a{href: '#select-image', role: 'tab', data: {toggle: 'tab'}}
-              Select Image
+        %h2#myModalLabel.modal-title Insert Image
+      .tab-content
+        #select-image.tab-pane.active
+          .modal-body
+            = render partial: 'images/image_small', collection: Image.all, as: :image
+          .modal-footer
+            = button_tag "Insert Image", id: 'insert-image', class: "btn btn-primary"
+        #upload-image.tab-pane
+          .modal-body
+            - @image = Image.new
+            = simple_form_for @image, html: { class: 'form-horizontal' }, remote: true do |f|
+              = f.input :title
+              = f.input :file, as: :file
+              .modal-footer
+                = f.button :submit, class: "btn btn-primary"
+      %ul.nav.nav-tabs
+        %li.active
+          %a{href: '#select-image', role: 'tab', data: {toggle: 'tab'}}
+            Select Image
+        %li
+          %a{href: '#upload-image', data: {toggle: 'tab'}}
+            Upload Image
