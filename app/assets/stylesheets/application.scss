@@ -10,6 +10,7 @@
 @import "timeline";
 @import "bootstrap-dialog";
 @import "rails_bootstrap_forms";
+@import "icheck/square/blue";
 
 @import "bootstrap-modifications";
 @import "summernote-modifications";
@@ -79,4 +80,9 @@
 // Find out why this is needed
 .modal-lg {
   width: 900px !important;
+}
+
+// Better padding with iCheck
+.radio label, .checkbox label {
+  padding-left: 10px;
 }

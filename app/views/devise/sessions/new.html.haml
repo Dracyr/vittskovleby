@@ -5,12 +5,16 @@
     = bootstrap_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
       = f.email_field :email, autofocus: true, placeholder: 'Email', hide_label: true, prepend: i('user')
       = f.password_field :password, placeholder: 'Password', hide_label: true, prepend: i('lock')
-      = f.check_box :remember_me if devise_mapping.rememberable?
-      = f.submit "Sign in", class: 'btn btn-primary pull-right'
+      .row
+        .col-xs-6
+          = f.check_box :remember_me, checked: true if devise_mapping.rememberable?
+        .col-xs-6
+          = f.submit "Sign in", class: 'btn btn-primary btn-signin'
+
 .panel.panel-default
   %h4.text-primary Forgot your password?
-  Don't worry
+  Don't worry,
   = link_to "Click Here", new_password_path(resource_name)
-  to get a new one
+  to get a new one.
 
 

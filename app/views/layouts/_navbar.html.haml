@@ -16,8 +16,14 @@
   - if current_user.try(:admin?)
     .admin-nav
       .container.navbar-inverse
-        = navbar_header brand: 'Admin'
-        = navbar_collapse do
+        .navbar-header
+          %button.navbar-toggle{"data-target" => "#navbar-collapsable-admin", "data-toggle" => "collapse", :type => "button"}
+            %span.sr-only Toggle navigation
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          .navbar-brand Admin
+        #navbar-collapsable-admin.collapse.navbar-collapse
           = yield :navbar_tools
           = navbar_group align: 'right' do
             - if can? :manage, :all
