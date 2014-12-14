@@ -73,7 +73,7 @@ patch_page_content = ->
 edit_page_content = ->
   # Init summernote
   $(".editable-content").summernote
-    airMode: true
+    airMode: true,
   $('[data-editable]').summernote
     airMode: true
   # Change buttons
@@ -89,18 +89,14 @@ imageDialog = ($editable, $dialog) ->
         deferred.resolve(event.image_source)
         # Hiding needs to be done after resolving deferred event
         $("#insertImageModal").modal "hide"
-        return
       $('#insert-image').click (event) ->
         event.preventDefault()
         image_source = $('#img-selected').data('image-source')
         deferred.resolve(image_source)
         $('#img-selected').attr('id', '')
         $("#insertImageModal").modal "hide"
-        return
     ).one('hidden.bs.modal', ->
         $("#insertImageModal").off "image_uploaded"
         $('#insert-image').off "click"
         deferred.reject() if deferred.state() is "pending"
-        return
     ).modal "show"
-    return
