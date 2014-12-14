@@ -1,6 +1,7 @@
 - content_for :navbar_tools do
   = link_to "Create new page", new_page_path, class: "btn btn-xs btn-primary"
   = link_to "Create new menu", new_menu_path, class: "btn btn-xs btn-primary"
+  = link_to "save menu", '#', id: 'save-menu-order', class: "btn btn-xs btn-primary"
 
 - breadcrumb :pages
 
@@ -11,32 +12,14 @@
         %h3
           Menus
       .panel-body
-        %ol.unstyled-list
-          - @menus.each do |menu|
-            %li
-              = menu.title
-              .pull-right
-                = link_to new_page_path(menu_id: menu.id) do
-                  %i.glyphicon.glyphicon.glyphicon-plus-sign
-                = link_to edit_menu_path(menu) do
-                  %i.glyphicon.glyphicon.glyphicon-edit
-                = link_to menu_path(menu), method: :delete do
-                  %i.glyphicon.glyphicon.glyphicon-trash
-              - if menu.pages.any?
-                %ol
-                  - menu.pages.each do |child|
-                    %li
-                      = link_to child.title, child
-                      .pull-right
-                        = link_to edit_page_path(child) do
-                          %i.glyphicon.glyphicon.glyphicon-edit
-                        = link_to page_path(child), method: :delete do
-                          %i.glyphicon.glyphicon.glyphicon-trash
+        .dd
+          %ol.dd-list
+            = render @menus
   .col-sm-6
     .panel.panel-default
       .panel-heading
         %h3
-          Hidden Pages
+          Pages
       .panel-body
         %ol.unstyled-list
           - @orphan_pages.each do |page|

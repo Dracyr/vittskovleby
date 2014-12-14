@@ -4,7 +4,7 @@ class PagesController < ApplicationController
 
   def index
     @orphan_pages = @pages.orphans
-    @menus = Menu.all
+    @menus = Menu.orphans
   end
 
   def show

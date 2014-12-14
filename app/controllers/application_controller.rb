@@ -18,7 +18,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_navigation_menu
-    @nav_menus = Menu.all
+    @nav_menus = Menu.orphans
   end
 
   def layout_by_resource

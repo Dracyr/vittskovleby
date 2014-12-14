@@ -8,8 +8,10 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :menus, expect: [:index, :show]
   resources :images, expect: :show
+  resources :menus, expect: [:index, :show] do
+    post 'update_all', to: :update_all, on: :collection
+  end
 
   patch '/editable_fields', to: 'editable_fields#update'
 

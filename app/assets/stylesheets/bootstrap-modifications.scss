@@ -24,6 +24,117 @@
   }
 }
 
+.panel-navtabs {
+  margin-bottom: 0;
+  border-bottom: none;
+}
+
 .form-control:focus {
   box-shadow: none;
+}
+
+/* Support for right, left and below tabs http://www.bootply.com/74926 */
+.tabs-below > .nav-tabs,
+.tabs-right > .nav-tabs,
+.tabs-left > .nav-tabs {
+  border-bottom: 0;
+}
+
+.tab-content > .tab-pane,
+.pill-content > .pill-pane {
+  display: none;
+}
+
+.tab-content > .active,
+.pill-content > .active {
+  display: block;
+}
+
+.tabs-below > .nav-tabs {
+  border-top: 2px solid #e2e2e2;
+}
+
+.tabs-below > .nav-tabs > li {
+  margin-top: -2px;
+  margin-bottom: 0;
+}
+
+.tabs-below > .nav-tabs > li > a {
+}
+
+.tabs-below > .nav-tabs > li > a:hover,
+.tabs-below > .nav-tabs > li > a:focus {
+  border-top-color: #e2e2e2;
+  border-bottom-color: transparent;
+}
+
+.tabs-below > .nav-tabs > .active > a,
+.tabs-below > .nav-tabs > .active > a:hover,
+.tabs-below > .nav-tabs > .active > a:focus {
+  border-color: transparent #e2e2e2 #e2e2e2 #e2e2e2;
+}
+
+.tabs-left > .nav-tabs > li,
+.tabs-right > .nav-tabs > li {
+  float: none;
+}
+
+.tabs-left > .nav-tabs > li > a,
+.tabs-right > .nav-tabs > li > a {
+  min-width: 74px;
+  margin-right: 0;
+  margin-bottom: 3px;
+}
+
+.tabs-left > .nav-tabs {
+  float: left;
+  margin-right: 19px;
+  border-right: 1px solid #e2e2e2;
+}
+
+.tabs-left > .nav-tabs > li > a {
+  margin-right: -1px;
+}
+
+.tabs-left > .nav-tabs > li > a:hover,
+.tabs-left > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #e2e2e2ddd #eeeeee #eeeeee;
+}
+
+.tabs-left > .nav-tabs .active > a,
+.tabs-left > .nav-tabs .active > a:hover,
+.tabs-left > .nav-tabs .active > a:focus {
+  border-color: #e2e2e2 transparent #e2e2e2 #e2e2e2;
+  *border-right-color: #ffffff;
+}
+
+.tabs-right > .nav-tabs {
+  float: right;
+  margin-left: 19px;
+  border-left: 1px solid #e2e2e2;
+}
+
+.tabs-right > .nav-tabs > li > a {
+  margin-left: -1px;
+}
+
+.tabs-right > .nav-tabs > li > a:hover,
+.tabs-right > .nav-tabs > li > a:focus {
+  border-color: #eeeeee #eeeeee #eeeeee #e2e2e2ddd;
+}
+
+.tabs-right > .nav-tabs .active > a,
+.tabs-right > .nav-tabs .active > a:hover,
+.tabs-right > .nav-tabs .active > a:focus {
+  border-color: #e2e2e2 #e2e2e2 #e2e2e2 transparent;
+  *border-left-color: #ffffff;
+}
+
+/* TODO: Make not so important */
+.tabs-below .active > a {
+  background-color: #FFF !important;
+  border-left: 1px solid #efefef !important;
+  border-right: 1px solid #efefef !important;
+  border-bottom: 1px solid #e2e2e2 !important;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) !important;
 }
