@@ -9,17 +9,19 @@
 @import "font-awesome";
 @import "timeline";
 @import "bootstrap-dialog";
+@import "rails_bootstrap_forms";
 
 @import "bootstrap-modifications";
 @import "summernote-modifications";
 @import "images";
 @import "static-pages";
+@import "session";
 
 //Fix for routing error
 @font-face {
-    font-family: 'Glyphicons Halflings';
-    src: url('/assets/glyphicons-halflings-regular.eot');
-    src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  font-family: 'Glyphicons Halflings';
+  src: url('/assets/glyphicons-halflings-regular.eot');
+  src: url('/assets/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('/assets/glyphicons-halflings-regular.woff') format('woff'), url('/assets/glyphicons-halflings-regular.ttf') format('truetype'), url('/assets/glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 .top-container {
@@ -66,7 +68,6 @@
     margin-top: 6px;
     padding: 0px 5px;
     font-size: inherit;
-    //line-height: inherit;
     border-radius: 2px !important;
   }
 

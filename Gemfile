@@ -1,4 +1,6 @@
 source 'https://rubygems.org'
+# Add support for gemified bower packages
+source 'https://rails-assets.org'
 
 gem 'rails', '4.1.1'
 gem 'bcrypt', '~> 3.1.7'
@@ -21,8 +23,12 @@ gem "font-awesome-rails"
 gem 'acts_as_list'
 gem 'dragonfly', '~> 1.0.7'
 gem 'rails_bootstrap_navbar'
-gem 'gretel'
+gem 'gretel' # Bredcrumbs
 gem 'remotipart', '~> 1.2' #Ajax file uploads
+gem 'bootstrap_form'
+
+# Bower packages
+gem 'rails-assets-iCheck'
 
 group :development do
  	gem 'capistrano-rails'

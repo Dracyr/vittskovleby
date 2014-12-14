@@ -1,5 +1,6 @@
 GEM
   remote: https://rubygems.org/
+  remote: https://rails-assets.org/
   specs:
     actionmailer (4.1.1)
       actionpack (= 4.1.1)
@@ -44,6 +45,7 @@ GEM
       gem_config (~> 0.3)
     bootstrap-sass (3.2.0.2)
       sass (~> 3.2)
+    bootstrap_form (2.1.1)
     builder (3.2.2)
     callsite (0.0.11)
     cancancan (1.9.2)
@@ -195,6 +197,9 @@ GEM
       bundler (>= 1.3.0, < 2.0)
       railties (= 4.1.1)
       sprockets-rails (~> 2.0)
+    rails-assets-iCheck (1.0.2)
+      rails-assets-jquery (>= 1.7)
+    rails-assets-jquery (2.1.1)
     rails_bootstrap_navbar (2.0.1)
       bootstrap-navbar (~> 2.0)
       rails (>= 3.0.0)
@@ -291,6 +296,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
+  bootstrap_form
   cancancan (~> 1.9)
   capistrano-bundler (~> 1.1.2)
   capistrano-rails
@@ -318,6 +324,7 @@ DEPENDENCIES
   pry-rails
   rack-cache
   rails (= 4.1.1)
+  rails-assets-iCheck
   rails_bootstrap_navbar
   remotipart (~> 1.2)
   responders

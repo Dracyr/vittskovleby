@@ -1,0 +1,9 @@
+.session-container {
+  margin-top: 30px;
+  @media (min-width: $screen-sm-min) { margin-top: 150px; }
+  max-width: 550px;
+}
+
+.btn-forgot {
+  margin-right: 10px;
+}
