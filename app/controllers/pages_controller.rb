@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
-  load_resource find_by: :permalink
+  load_resource find_by: :permalink, except: :show
   authorize_resource
 
   def index
@@ -8,6 +8,10 @@ class PagesController < ApplicationController
   end
 
   def show
+    @page = Page.find_by_permalink(params[:id])
+    authorize! :read, @page
+    # Render the page, else try to render a static view
+    @page ? respond_with(@page) : render("static/#{params[:id]}", layout: 'static_layout')
   end
 
   def new
