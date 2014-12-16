@@ -130,6 +130,10 @@
   *border-left-color: #ffffff;
 }
 
+.nav > li > a:hover {
+  background-color: inherit;
+}
+
 /* TODO: Make not so important */
 .tabs-below .active > a {
   background-color: #FFF !important;

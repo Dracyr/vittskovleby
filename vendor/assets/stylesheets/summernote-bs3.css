@@ -293,14 +293,14 @@
   height: auto;
 }
 .note-editor .img-rounded {
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .note-editor .img-thumbnail {
   padding: 4px;
   line-height: 1.428571429;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -308,7 +308,7 @@
   height: auto;
 }
 .note-editor .img-circle {
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 .note-editor hr {
   margin-top: 20px;
@@ -545,10 +545,10 @@
   .note-editor .dl-horizontal dd:after {
     content: " ";
     /* 1 */
-  
+
     display: table;
     /* 2 */
-  
+
   }
   .note-editor .dl-horizontal dd:after {
     clear: both;
@@ -557,10 +557,10 @@
   .note-editor .dl-horizontal dd:after {
     content: " ";
     /* 1 */
-  
+
     display: table;
     /* 2 */
-  
+
   }
   .note-editor .dl-horizontal dd:after {
     clear: both;
@@ -636,7 +636,7 @@
   color: #c7254e;
   background-color: #f9f2f4;
   white-space: nowrap;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor pre {
   display: block;
@@ -649,7 +649,7 @@
   color: #333333;
   background-color: #f5f5f5;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor pre code {
   padding: 0;
@@ -657,7 +657,7 @@
   color: inherit;
   white-space: pre-wrap;
   background-color: transparent;
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .pre-scrollable {
   max-height: 340px;
@@ -721,69 +721,69 @@
 .note-editor .row:after {
   clear: both;
 }
-.note-editor .col-xs-1, 
-.note-editor .col-sm-1, 
-.note-editor .col-md-1, 
-.note-editor .col-lg-1, 
-.note-editor .col-xs-2, 
-.note-editor .col-sm-2, 
-.note-editor .col-md-2, 
-.note-editor .col-lg-2, 
-.note-editor .col-xs-3, 
-.note-editor .col-sm-3, 
-.note-editor .col-md-3, 
-.note-editor .col-lg-3, 
-.note-editor .col-xs-4, 
-.note-editor .col-sm-4, 
-.note-editor .col-md-4, 
-.note-editor .col-lg-4, 
-.note-editor .col-xs-5, 
-.note-editor .col-sm-5, 
-.note-editor .col-md-5, 
-.note-editor .col-lg-5, 
-.note-editor .col-xs-6, 
-.note-editor .col-sm-6, 
-.note-editor .col-md-6, 
-.note-editor .col-lg-6, 
-.note-editor .col-xs-7, 
-.note-editor .col-sm-7, 
-.note-editor .col-md-7, 
-.note-editor .col-lg-7, 
-.note-editor .col-xs-8, 
-.note-editor .col-sm-8, 
-.note-editor .col-md-8, 
-.note-editor .col-lg-8, 
-.note-editor .col-xs-9, 
-.note-editor .col-sm-9, 
-.note-editor .col-md-9, 
-.note-editor .col-lg-9, 
-.note-editor .col-xs-10, 
-.note-editor .col-sm-10, 
-.note-editor .col-md-10, 
-.note-editor .col-lg-10, 
-.note-editor .col-xs-11, 
-.note-editor .col-sm-11, 
-.note-editor .col-md-11, 
-.note-editor .col-lg-11, 
-.note-editor .col-xs-12, 
-.note-editor .col-sm-12, 
-.note-editor .col-md-12, 
+.note-editor .col-xs-1,
+.note-editor .col-sm-1,
+.note-editor .col-md-1,
+.note-editor .col-lg-1,
+.note-editor .col-xs-2,
+.note-editor .col-sm-2,
+.note-editor .col-md-2,
+.note-editor .col-lg-2,
+.note-editor .col-xs-3,
+.note-editor .col-sm-3,
+.note-editor .col-md-3,
+.note-editor .col-lg-3,
+.note-editor .col-xs-4,
+.note-editor .col-sm-4,
+.note-editor .col-md-4,
+.note-editor .col-lg-4,
+.note-editor .col-xs-5,
+.note-editor .col-sm-5,
+.note-editor .col-md-5,
+.note-editor .col-lg-5,
+.note-editor .col-xs-6,
+.note-editor .col-sm-6,
+.note-editor .col-md-6,
+.note-editor .col-lg-6,
+.note-editor .col-xs-7,
+.note-editor .col-sm-7,
+.note-editor .col-md-7,
+.note-editor .col-lg-7,
+.note-editor .col-xs-8,
+.note-editor .col-sm-8,
+.note-editor .col-md-8,
+.note-editor .col-lg-8,
+.note-editor .col-xs-9,
+.note-editor .col-sm-9,
+.note-editor .col-md-9,
+.note-editor .col-lg-9,
+.note-editor .col-xs-10,
+.note-editor .col-sm-10,
+.note-editor .col-md-10,
+.note-editor .col-lg-10,
+.note-editor .col-xs-11,
+.note-editor .col-sm-11,
+.note-editor .col-md-11,
+.note-editor .col-lg-11,
+.note-editor .col-xs-12,
+.note-editor .col-sm-12,
+.note-editor .col-md-12,
 .note-editor .col-lg-12 {
   position: relative;
   min-height: 1px;
   padding-left: 15px;
   padding-right: 15px;
 }
-.note-editor .col-xs-1, 
-.note-editor .col-xs-2, 
-.note-editor .col-xs-3, 
-.note-editor .col-xs-4, 
-.note-editor .col-xs-5, 
-.note-editor .col-xs-6, 
-.note-editor .col-xs-7, 
-.note-editor .col-xs-8, 
-.note-editor .col-xs-9, 
-.note-editor .col-xs-10, 
+.note-editor .col-xs-1,
+.note-editor .col-xs-2,
+.note-editor .col-xs-3,
+.note-editor .col-xs-4,
+.note-editor .col-xs-5,
+.note-editor .col-xs-6,
+.note-editor .col-xs-7,
+.note-editor .col-xs-8,
+.note-editor .col-xs-9,
+.note-editor .col-xs-10,
 .note-editor .col-xs-11 {
   float: left;
 }
@@ -935,16 +935,16 @@
   .note-editor .container {
     width: 750px;
   }
-  .note-editor .col-sm-1, 
-  .note-editor .col-sm-2, 
-  .note-editor .col-sm-3, 
-  .note-editor .col-sm-4, 
-  .note-editor .col-sm-5, 
-  .note-editor .col-sm-6, 
-  .note-editor .col-sm-7, 
-  .note-editor .col-sm-8, 
-  .note-editor .col-sm-9, 
-  .note-editor .col-sm-10, 
+  .note-editor .col-sm-1,
+  .note-editor .col-sm-2,
+  .note-editor .col-sm-3,
+  .note-editor .col-sm-4,
+  .note-editor .col-sm-5,
+  .note-editor .col-sm-6,
+  .note-editor .col-sm-7,
+  .note-editor .col-sm-8,
+  .note-editor .col-sm-9,
+  .note-editor .col-sm-10,
   .note-editor .col-sm-11 {
     float: left;
   }
@@ -1097,16 +1097,16 @@
   .note-editor .container {
     width: 970px;
   }
-  .note-editor .col-md-1, 
-  .note-editor .col-md-2, 
-  .note-editor .col-md-3, 
-  .note-editor .col-md-4, 
-  .note-editor .col-md-5, 
-  .note-editor .col-md-6, 
-  .note-editor .col-md-7, 
-  .note-editor .col-md-8, 
-  .note-editor .col-md-9, 
-  .note-editor .col-md-10, 
+  .note-editor .col-md-1,
+  .note-editor .col-md-2,
+  .note-editor .col-md-3,
+  .note-editor .col-md-4,
+  .note-editor .col-md-5,
+  .note-editor .col-md-6,
+  .note-editor .col-md-7,
+  .note-editor .col-md-8,
+  .note-editor .col-md-9,
+  .note-editor .col-md-10,
   .note-editor .col-md-11 {
     float: left;
   }
@@ -1259,16 +1259,16 @@
   .note-editor .container {
     width: 1170px;
   }
-  .note-editor .col-lg-1, 
-  .note-editor .col-lg-2, 
-  .note-editor .col-lg-3, 
-  .note-editor .col-lg-4, 
-  .note-editor .col-lg-5, 
-  .note-editor .col-lg-6, 
-  .note-editor .col-lg-7, 
-  .note-editor .col-lg-8, 
-  .note-editor .col-lg-9, 
-  .note-editor .col-lg-10, 
+  .note-editor .col-lg-1,
+  .note-editor .col-lg-2,
+  .note-editor .col-lg-3,
+  .note-editor .col-lg-4,
+  .note-editor .col-lg-5,
+  .note-editor .col-lg-6,
+  .note-editor .col-lg-7,
+  .note-editor .col-lg-8,
+  .note-editor .col-lg-9,
+  .note-editor .col-lg-10,
   .note-editor .col-lg-11 {
     float: left;
   }
@@ -1713,7 +1713,7 @@
   background-color: #ffffff;
   background-image: none;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
   -webkit-transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
@@ -1797,7 +1797,7 @@ fieldset[disabled] .note-editor .checkbox-inline {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 select.note-editor .input-sm {
   height: 30px;
@@ -1811,7 +1811,7 @@ textarea.note-editor .input-sm {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 select.note-editor .input-lg {
   height: 45px;
@@ -1966,7 +1966,7 @@ textarea.note-editor .input-lg {
   padding: 6px 12px;
   font-size: 14px;
   line-height: 1.428571429;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-user-select: none;
   -moz-user-select: none;
   -ms-user-select: none;
@@ -2226,7 +2226,7 @@ fieldset[disabled] .note-editor .btn-info.active {
   color: #428bca;
   font-weight: normal;
   cursor: pointer;
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .btn-link,
 .note-editor .btn-link:active,
@@ -2259,14 +2259,14 @@ fieldset[disabled] .note-editor .btn-link:focus {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .note-editor .btn-sm,
 .note-editor .btn-xs {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 .note-editor .btn-xs {
   padding: 1px 5px;
@@ -2956,7 +2956,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   background-color: #ffffff;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.175);
   background-clip: padding-box;
@@ -3135,7 +3135,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   margin-left: 5px;
 }
 .note-editor .btn-group > .btn:not(:first-child):not(:last-child):not(.dropdown-toggle) {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .btn-group > .btn:first-child {
   margin-left: 0;
@@ -3153,7 +3153,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   float: left;
 }
 .note-editor .btn-group > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .btn-group > .btn-group:first-child > .btn:last-child,
 .note-editor .btn-group > .btn-group:first-child > .dropdown-toggle {
@@ -3172,20 +3172,20 @@ fieldset[disabled] .note-editor .btn-link:focus {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /* border-radius: 3px; */
   padding: 1px 5px;
 }
 .note-editor .btn-group-sm > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 .note-editor .btn-group-lg > .btn {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .note-editor .btn-group > .btn + .dropdown-toggle {
   padding-left: 5px;
@@ -3251,7 +3251,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   margin-left: 0;
 }
 .note-editor .btn-group-vertical > .btn:not(:first-child):not(:last-child) {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .btn-group-vertical > .btn:first-child:not(:last-child) {
   border-top-right-radius: 4px;
@@ -3264,7 +3264,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   border-top-left-radius: 0;
 }
 .note-editor .btn-group-vertical > .btn-group:not(:first-child):not(:last-child) > .btn {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .btn-group-vertical > .btn-group:first-child > .btn:last-child,
 .note-editor .btn-group-vertical > .btn-group:first-child > .dropdown-toggle {
@@ -3311,7 +3311,7 @@ fieldset[disabled] .note-editor .btn-link:focus {
   padding: 10px 16px;
   font-size: 18px;
   line-height: 1.33;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 select.note-editor .input-group-lg > .form-control,
 select.note-editor .input-group-lg > .input-group-addon,
@@ -3331,7 +3331,7 @@ textarea.note-editor .input-group-lg > .input-group-btn > .btn {
   padding: 5px 10px;
   font-size: 12px;
   line-height: 1.5;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 select.note-editor .input-group-sm > .form-control,
 select.note-editor .input-group-sm > .input-group-addon,
@@ -3352,7 +3352,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 .note-editor .input-group-addon:not(:first-child):not(:last-child),
 .note-editor .input-group-btn:not(:first-child):not(:last-child),
 .note-editor .input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
+  /* border-radius: 0; */
 }
 .note-editor .input-group-addon,
 .note-editor .input-group-btn {
@@ -3369,17 +3369,17 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   text-align: center;
   background-color: #eeeeee;
   border: 1px solid #cccccc;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .input-group-addon.input-sm {
   padding: 5px 10px;
   font-size: 12px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 .note-editor .input-group-addon.input-lg {
   padding: 10px 16px;
   font-size: 18px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .note-editor .input-group-addon input[type="radio"],
 .note-editor .input-group-addon input[type="checkbox"] {
@@ -3512,7 +3512,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   margin-right: 2px;
   line-height: 1.428571429;
   border: 1px solid transparent;
-  border-radius: 4px 4px 0 0;
+  /* border-radius: 4px 4px 0 0; */
 }
 .note-editor .nav-tabs > li > a:hover {
   border-color: #eeeeee #eeeeee #dddddd;
@@ -3548,7 +3548,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 .note-editor .nav-tabs.nav-justified > li > a {
   margin-right: 0;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .nav-tabs.nav-justified > .active > a,
 .note-editor .nav-tabs.nav-justified > .active > a:hover,
@@ -3558,7 +3558,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .note-editor .nav-tabs.nav-justified > li > a {
     border-bottom: 1px solid #dddddd;
-    border-radius: 4px 4px 0 0;
+    /* border-radius: 4px 4px 0 0; */
   }
   .note-editor .nav-tabs.nav-justified > .active > a,
   .note-editor .nav-tabs.nav-justified > .active > a:hover,
@@ -3570,7 +3570,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   float: left;
 }
 .note-editor .nav-pills > li > a {
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .nav-pills > li + li {
   margin-left: 2px;
@@ -3618,7 +3618,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 .note-editor .nav-tabs-justified > li > a {
   margin-right: 0;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .nav-tabs-justified > .active > a,
 .note-editor .nav-tabs-justified > .active > a:hover,
@@ -3628,7 +3628,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .note-editor .nav-tabs-justified > li > a {
     border-bottom: 1px solid #dddddd;
-    border-radius: 4px 4px 0 0;
+    /* border-radius: 4px 4px 0 0; */
   }
   .note-editor .nav-tabs-justified > .active > a,
   .note-editor .nav-tabs-justified > .active > a:hover,
@@ -3688,7 +3688,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .note-editor .navbar {
-    border-radius: 4px;
+    /* border-radius: 4px; */
   }
 }
 .note-editor .navbar-header:before,
@@ -3798,7 +3798,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 @media (min-width: 768px) {
   .note-editor .navbar-static-top {
-    border-radius: 0;
+    /* border-radius: 0; */
   }
 }
 .note-editor .navbar-fixed-top,
@@ -3811,7 +3811,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 @media (min-width: 768px) {
   .note-editor .navbar-fixed-top,
   .note-editor .navbar-fixed-bottom {
-    border-radius: 0;
+    /* border-radius: 0; */
   }
 }
 .note-editor .navbar-fixed-top {
@@ -3846,13 +3846,13 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   margin-bottom: 8px;
   background-color: transparent;
   border: 1px solid transparent;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .navbar-toggle .icon-bar {
   display: block;
   width: 22px;
   height: 2px;
-  border-radius: 1px;
+  /* border-radius: 1px; */
 }
 .note-editor .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 4px;
@@ -4195,7 +4195,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   margin-bottom: 20px;
   list-style: none;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .breadcrumb > li {
   display: inline-block;
@@ -4212,7 +4212,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   display: inline-block;
   padding-left: 0;
   margin: 20px 0;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .pagination > li {
   display: inline;
@@ -4337,7 +4337,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   padding: 5px 14px;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 15px;
+  /* border-radius: 15px; */
 }
 .note-editor .pager li > a:hover,
 .note-editor .pager li > a:focus {
@@ -4370,7 +4370,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   text-align: center;
   white-space: nowrap;
   vertical-align: baseline;
-  border-radius: .25em;
+  /* border-radius: .25em; */
 }
 .note-editor .label[href]:hover,
 .note-editor .label[href]:focus {
@@ -4435,7 +4435,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   white-space: nowrap;
   text-align: center;
   background-color: #999999;
-  border-radius: 10px;
+  /* border-radius: 10px; */
 }
 .note-editor .badge:empty {
   display: none;
@@ -4475,7 +4475,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   line-height: 1.4;
 }
 .container .note-editor .jumbotron {
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 @media screen and (min-width: 768px) {
   .note-editor .jumbotron {
@@ -4495,7 +4495,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   line-height: 1.428571429;
   background-color: #ffffff;
   border: 1px solid #dddddd;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
   display: inline-block;
@@ -4526,7 +4526,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   padding: 15px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .note-editor .alert h4 {
   margin-top: 0;
@@ -4632,7 +4632,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   height: 20px;
   margin-bottom: 20px;
   background-color: #f5f5f5;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
   box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1);
 }
@@ -4796,7 +4796,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   margin-bottom: 20px;
   background-color: #ffffff;
   border: 1px solid transparent;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -4920,7 +4920,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 .note-editor .panel-group .panel {
   margin-bottom: 0;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   overflow: hidden;
 }
 .note-editor .panel-group .panel + .panel {
@@ -5028,7 +5028,7 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
   margin-bottom: 20px;
   background-color: #f5f5f5;
   border: 1px solid #e3e3e3;
-  border-radius: 4px;
+  /* border-radius: 4px; */
   -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.05);
 }
@@ -5038,11 +5038,11 @@ textarea.note-editor .input-group-sm > .input-group-btn > .btn {
 }
 .note-editor .well-lg {
   padding: 24px;
-  border-radius: 6px;
+  /* border-radius: 6px; */
 }
 .note-editor .well-sm {
   padding: 9px;
-  border-radius: 3px;
+  /* border-radius: 3px; */
 }
 .note-editor .close {
   float: right;
@@ -5109,7 +5109,7 @@ button.note-editor .close {
   background-color: #ffffff;
   border: 1px solid #999999;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   box-shadow: 0 3px 9px rgba(0, 0, 0, 0.5);
   background-clip: padding-box;
@@ -5236,7 +5236,7 @@ button.note-editor .close {
   text-align: center;
   text-decoration: none;
   background-color: #000000;
-  border-radius: 4px;
+  /* border-radius: 4px; */
 }
 .tooltip-arrow {
   position: absolute;
@@ -5310,7 +5310,7 @@ button.note-editor .close {
   background-clip: padding-box;
   border: 1px solid #cccccc;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  border-radius: 6px;
+  /* border-radius: 6px; */
   -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
   white-space: normal;
@@ -5335,7 +5335,7 @@ button.note-editor .close {
   line-height: 18px;
   background-color: #f7f7f7;
   border-bottom: 1px solid #ebebeb;
-  border-radius: 5px 5px 0 0;
+  /* border-radius: 5px 5px 0 0; */
 }
 .popover-content {
   padding: 9px 14px;
@@ -5554,7 +5554,7 @@ button.note-editor .close {
   margin: 1px;
   text-indent: -999px;
   border: 1px solid #ffffff;
-  border-radius: 10px;
+  /* border-radius: 10px; */
   cursor: pointer;
 }
 .carousel-indicators .active {

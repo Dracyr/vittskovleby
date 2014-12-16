@@ -1,7 +1,7 @@
 $(document).on "page:change", ->
   $('#edit-content').click edit_page_content
 
-  $(".img").click (event) ->
+  $(".img-select").click (event) ->
     clicked_image = event.currentTarget
     $('#img-selected').attr('id', '')
     $(clicked_image).attr('id', "img-selected")

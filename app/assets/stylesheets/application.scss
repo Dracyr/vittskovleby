@@ -6,7 +6,6 @@
 @import "codemirror";
 @import "codemirror/themes/solarized";
 @import "font-awesome";
-@import "timeline";
 @import "bootstrap-dialog";
 @import "rails_bootstrap_forms";
 @import "icheck/square/blue";
@@ -69,7 +68,6 @@
     margin-top: 6px;
     padding: 0px 5px;
     font-size: inherit;
-    border-radius: 2px !important;
   }
 
   .btn-primary {

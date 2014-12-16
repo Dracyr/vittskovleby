@@ -10,7 +10,7 @@
                 - menu.children.each do |child|
                   = navbar_item child.title, child.link
             - else
-              = navbar_item menu.title, "/#{menu.link}"
+              = navbar_item menu.title, menu.link
         = navbar_group align: 'right' do
           - if current_user
             %li= link_to "Sign Out", '/sign_out', method: :delete
