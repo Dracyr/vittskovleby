@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
 
-  root 'pages#show', id: 'home'
+  root 'static#home'
   devise_for :users
   devise_scope :user do
     get "sign_in", to: "devise/sessions#new"
@@ -17,7 +17,7 @@ Rails.application.routes.draw do
 
   get 'pages',  to: 'pages#index'
   get ':id',    to: 'pages#show', as: :page
-  patch  ':id', to: 'pages#update'
+  patch  ':id',  to: 'pages#update'
   delete ':id', to: 'pages#destroy'
   resources :pages, except: [:show, :update, :delete, :index]
 end
