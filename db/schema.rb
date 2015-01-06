@@ -11,25 +11,25 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141214155951) do
+ActiveRecord::Schema.define(version: 20150106123126) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "editable_fields", force: true do |t|
+  create_table "editable_fields", force: :cascade do |t|
     t.string   "title",      default: "", null: false
     t.text     "content",    default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "images", force: true do |t|
+  create_table "images", force: :cascade do |t|
     t.string "title",     default: "", null: false
     t.string "file_uid",               null: false
     t.string "file_name",              null: false
   end
 
-  create_table "menus", force: true do |t|
+  create_table "menus", force: :cascade do |t|
     t.integer  "parent_id"
     t.integer  "page_id"
     t.integer  "menu_type",  null: false
@@ -40,26 +40,29 @@ ActiveRecord::Schema.define(version: 20141214155951) do
     t.datetime "updated_at"
   end
 
-  create_table "pages", force: true do |t|
-    t.string   "title",      null: false
-    t.text     "content",    null: false
+  add_index "menus", ["page_id"], name: "index_menus_on_page_id", using: :btree
+  add_index "menus", ["parent_id"], name: "index_menus_on_parent_id", using: :btree
+
+  create_table "pages", force: :cascade do |t|
+    t.string   "title",      limit: 255, null: false
+    t.text     "content",                null: false
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "permalink",  null: false
+    t.string   "permalink",              null: false
     t.integer  "position"
     t.integer  "menu_id"
   end
 
   add_index "pages", ["menu_id"], name: "index_pages_on_menu_id", using: :btree
 
-  create_table "posts", force: true do |t|
+  create_table "posts", force: :cascade do |t|
     t.string   "title",      null: false
     t.text     "content",    null: false
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
