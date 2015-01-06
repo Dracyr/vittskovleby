@@ -6,8 +6,6 @@ class EditableFieldsController < ApplicationController
     editable_fields = JSON.parse(params[:editable_fields])
     EditableField.update_from_hash(editable_fields)
 
-    respond_to do |format|
-      format.json { head :ok }
-    end
+    head :ok
   end
 end
