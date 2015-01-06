@@ -4,7 +4,7 @@
       = navbar_header brand: 'PVPersson', brand_link: '/'
       = navbar_collapse do
         = navbar_group class: 'foo', id: 'menu' do
-          - menus.each do |menu|
+          - @nav_menus.each do |menu|
             - if menu.children.any?
               = navbar_dropdown menu.title do
                 - menu.children.each do |child|

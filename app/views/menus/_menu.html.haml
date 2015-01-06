@@ -5,12 +5,17 @@
     - else
       = link_to menu.title, menu.link
     .pull-right
-      = link_to new_menu_path(parent_id: menu.id) do
-        %i.glyphicon.glyphicon.glyphicon-plus-sign
-      = link_to edit_menu_path(menu) do
-        %i.glyphicon.glyphicon.glyphicon-edit
-      = link_to menu_path(menu), method: :delete do
-        %i.glyphicon.glyphicon.glyphicon-trash
+      - if menu.menu?
+        = link_to new_menu_path(parent_id: menu.id) do
+          %i.glyphicon.glyphicon.glyphicon-plus-sign
+      - if menu.menu? || menu.link?
+        = link_to edit_menu_path(menu) do
+          %i.glyphicon.glyphicon.glyphicon-edit
+        = link_to menu_path(menu), method: :delete do
+          %i.glyphicon.glyphicon.glyphicon-trash
+      - else
+        = link_to menu_path(menu), method: :delete do
+          %i.glyphicon.glyphicon.glyphicon-trash
   - if menu.children.any?
     %ol.dd-list
       - menu.children.each do |child|
@@ -18,5 +23,8 @@
           .dd-handle
             = link_to child.title, child.link
             .pull-right
+              - unless child.page?
+                = link_to edit_menu_path(child) do
+                  %i.glyphicon.glyphicon.glyphicon-edit
               = link_to menu_path(child), method: :delete do
                 %i.glyphicon.glyphicon.glyphicon-trash

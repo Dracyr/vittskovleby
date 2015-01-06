@@ -6,11 +6,11 @@
       .modal-body
         .tab-content
           - menu = Menu.new
-            #menu-tab.tab-pane
-              = bootstrap_form_for menu do |f|
-                = f.text_field :title
-                = f.hidden_field :menu_type, value: 'menu'
-                = f.submit "Create menu", class: "btn btn-primary pull-right"
+          #menu-tab.tab-pane
+            = bootstrap_form_for menu do |f|
+              = f.text_field :title
+              = f.hidden_field :menu_type, value: 'menu'
+              = f.submit "Create menu", class: "btn btn-primary pull-right"
           #page-tab.tab-pane.active
             = bootstrap_form_for menu do |f|
               = f.collection_select :page_id, Page.orphans, :id, :title

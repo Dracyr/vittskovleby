@@ -6,7 +6,7 @@
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = render 'layouts/navbar', menus: @nav_menus
+    = render 'layouts/navbar'
     .container.top-container
       - flash.each do |name, msg|
         %div{class: flash_class(name)}
