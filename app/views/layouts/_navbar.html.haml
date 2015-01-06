@@ -30,6 +30,7 @@
           = yield :navbar_tools
           = navbar_group align: 'right' do
             - if can? :manage, :all
+              = navbar_item "Users", users_path
               = navbar_item "Pages", pages_path
               = navbar_item "Posts", posts_path
               = navbar_item "Images", images_path

@@ -15,6 +15,13 @@
       margin-top: 0px;
     }
   }
+
+  /* TODO: Check if this can be done better  */
+  .panel-body > .form-horizontal .form-group {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+
   &.panel-primary, &.panel-info, &.panel-success,
   &.panel-warning, &.panel-danger {
     .panel-heading {
@@ -22,11 +29,6 @@
       padding: 20px 0px 0px 20px;
     }
   }
-}
-
-.panel-navtabs {
-  margin-bottom: 0;
-  border-bottom: none;
 }
 
 .form-control:focus {
@@ -141,6 +143,11 @@
   border-right: 1px solid #efefef !important;
   border-bottom: 1px solid #e2e2e2 !important;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.04) !important;
+}
+
+.panel-navtabs {
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .modal-navtabs {

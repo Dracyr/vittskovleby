@@ -35,42 +35,4 @@
                 = link_to page_path(page), method: :delete do
                   %i.glyphicon.glyphicon.glyphicon-trash
 
-#meny_modal.modal.fade.modal-navtabs
-  .modal-dialog.modal-lg
-    .modal-content
-      .modal-header
-        %h2 Create Menu
-      .modal-body
-        .tab-content
-          - @menu = Menu.new
-          - if @parent_id.blank?
-            #menu-tab.tab-pane
-              = bootstrap_form_for @menu do |f|
-                = f.text_field :title
-                = f.hidden_field :menu_type, value: 'menu'
-                = f.submit "Create menu", class: "btn btn-primary pull-right"
-          #page-tab.tab-pane.active
-            = bootstrap_form_for @menu do |f|
-              = f.collection_select :page_id, Page.orphans, :id, :title
-              = f.hidden_field :parent_id, value: @parent_id
-              = f.hidden_field :menu_type, value: 'page'
-              = f.submit "Create menu", class: "btn btn-primary pull-right"
-          #link-tab.tab-pane
-            = bootstrap_form_for @menu do |f|
-              = f.text_field :title
-              = f.text_field :link
-              = f.hidden_field :parent_id, value: @parent_id
-              = f.hidden_field :menu_type, value: 'link'
-              = f.submit "Create menu", class: "btn btn-primary pull-right"
-    .tabs-below
-      %ul.nav.nav-tabs
-        - if @parent_id.blank?
-          %li
-            %a{href: '#menu-tab', data: {toggle: 'tab'}}
-              Create Menu
-        %li.active
-          %a{href: '#page-tab', data: {toggle: 'tab'}}
-            Select Page
-        %li.link-tab
-          %a{href: '#link-tab', data: {toggle: 'tab'}}
-            Select Link
+= render 'menus/new_menu_modal'

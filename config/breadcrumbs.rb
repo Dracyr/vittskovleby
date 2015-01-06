@@ -6,6 +6,10 @@ crumb :pages do
   link "Pages", pages_path
 end
 
+crumb :menus do
+  link "Menus", pages_path
+end
+
 crumb :page do |page|
   link page.title, pages_path(page)
   parent :pages
@@ -23,12 +27,12 @@ end
 
 crumb :new_menu do |menu|
   link "New menu"
-  parent :pages
+  parent :menus
 end
 
 crumb :edit_menu do |menu|
-  link "Edit menu #{menu.title}"
-  parent :pages
+  link "Edit #{menu.title}"
+  parent :menus
 end
 
 crumb :posts do
