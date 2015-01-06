@@ -25,6 +25,7 @@ $(document).on "page:change", ->
   $('#save-menu-order').click post_menu_order
   $('.dd').nestable
     maxDepth: 2
+  menu_modal_animate_height()
 
 post_menu_order = ->
   data = $('.dd').nestable 'serialize'
@@ -37,3 +38,15 @@ post_menu_order = ->
       return false
     error: ->
       return false
+
+menu_modal_animate_height = ->
+  was_link_tab = false
+  $('a[data-toggle="tab"').on "shown.bs.tab", ->
+    console.log $(".link-tab").hasClass("active")
+    if $(".link-tab").hasClass("active") && !was_link_tab
+      new_height = 317
+      was_link_tab = true
+    else if was_link_tab
+      new_height = 243
+      was_link_tab = false
+    $(".modal-content").height(new_height)
