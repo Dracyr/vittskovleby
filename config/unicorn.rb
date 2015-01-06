@@ -14,6 +14,6 @@ timeout 6000
 # Needed to establish db connection on heroku
 after_fork do |server, worker|
   if defined?(ActiveRecord::Base)
-    ActiveRecord::Base.establish_connection 
+    ActiveRecord::Base.establish_connection
   end
 end

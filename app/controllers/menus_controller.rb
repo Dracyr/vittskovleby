@@ -19,10 +19,8 @@ class MenusController < ApplicationController
   end
 
   def update_all
-    NavigationOrderer.new(params[:menu_data]).update
-    respond_to do |format|
-      format.js { render js: "window.location.reload();" }
-    end
+    Menu.update_order!(JSON.parse(params[:menu_data]))
+    render js: 'location.reload();'
   end
 
   def destroy

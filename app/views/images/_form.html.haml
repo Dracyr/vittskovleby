@@ -3,7 +3,7 @@
     %h3
       Image
   .panel-body
-    = simple_form_for @image, html: { class: 'form-horizontal' } do |f|
+    = simple_form_for image, html: { class: 'form-horizontal' } do |f|
       = f.input :title
       = f.input :file, as: :file
 

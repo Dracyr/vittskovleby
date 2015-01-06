@@ -14,7 +14,7 @@ class ImagesController < ApplicationController
 
       format.js do
         if @image.save
-          render action: 'upload_success'
+          render 'upload_success'
         else
           render json: @image.errors, status: :unprocessable_entity
         end

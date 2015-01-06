@@ -10,8 +10,8 @@ Rails.application.routes.draw do
   end
 
   resources :posts
-  resources :images, expect: :show
-  resources :menus, expect: [:index, :show] do
+  resources :images, except: :show
+  resources :menus, except: [:index, :show] do
     post 'update_all', to: :update_all, on: :collection
   end
 
