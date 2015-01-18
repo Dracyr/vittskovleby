@@ -6,7 +6,7 @@
  * Copyright 2013-2014 Alan Hong. and other contributors
  * summernote may be freely distributed under the MIT license./
  *
- * Date: 2014-12-14T21:56Z
+ * Date: 2015-01-18T10:21Z
  */
 (function (factory) {
   /* global define */
@@ -1997,7 +1997,6 @@
       onkeydown: null,          // keydown
       onImageUpload: null,      // imageUpload
       onImageUploadError: null, // imageUploadError
-      showImageDialog: null,
       onToolbarClick: null,
       onsubmit: null,
 
@@ -2172,8 +2171,7 @@
           textFormatting: 'Text formatting',
           action: 'Action',
           paragraphFormatting: 'Paragraph formatting',
-          documentStyle: 'Document Style',
-          extraKeys: 'Extra keys'
+          documentStyle: 'Document Style'
         },
         history: {
           undo: 'Undo',
@@ -3493,7 +3491,7 @@
           // Cloning imageInput to clear element.
           $imageInput.replaceWith($imageInput.clone()
             .on('change', function () {
-              deferred.resolve(this.files || this.value);
+              deferred.resolve(this.files);
               $imageDialog.modal('hide');
             })
             .val('')
@@ -3727,17 +3725,10 @@
        */
       showImageDialog: function (layoutInfo) {
         var $dialog = layoutInfo.dialog(),
-            $editable = layoutInfo.editable(),
-            callbacks = $editable.data('callbacks');
-
-        if (callbacks.showImageDialog) {
-          image_dialog = callbacks.showImageDialog
-        } else {
-          image_dialog = dialog.showImageDialog
-        }
+            $editable = layoutInfo.editable();
 
         editor.saveRange($editable);
-        image_dialog($editable, $dialog).then(function (data) {
+        dialog.showImageDialog($editable, $dialog).then(function (data) {
           editor.restoreRange($editable);
 
           if (typeof data === 'string') {
@@ -4295,7 +4286,6 @@
         onAutoSave: options.onAutoSave,
         onImageUpload: options.onImageUpload,
         onImageUploadError: options.onImageUploadError,
-        showImageDialog: options.showImageDialog,
         onFileUpload: options.onFileUpload,
         onFileUploadError: options.onFileUpload
       });
@@ -4787,6 +4777,7 @@
         { kbd: '⌘ + B', text: lang.font.bold },
         { kbd: '⌘ + I', text: lang.font.italic },
         { kbd: '⌘ + U', text: lang.font.underline },
+        { kbd: '⌘ + ⇧ + S', text: lang.font.sdivikethrough },
         { kbd: '⌘ + \\', text: lang.font.clear }
       ];
 
@@ -4798,7 +4789,7 @@
         { kbd: '⌘ + Z', text: lang.history.undo },
         { kbd: '⌘ + ⇧ + Z', text: lang.history.redo },
         { kbd: '⌘ + ]', text: lang.paragraph.indent },
-        { kbd: '⌘ + [', text: lang.paragraph.outdent },
+        { kbd: '⌘ + [', text: lang.paragraph.oudivent },
         { kbd: '⌘ + ENTER', text: lang.hr.insert }
       ];
 
@@ -4879,7 +4870,7 @@
 
         var body = '<div class="form-group row-fluid note-group-select-from-files">' +
                      '<label>' + lang.image.selectFromFiles + '</label>' +
-                     '<input class="note-image-input" type="file" name="files" accept="image/*" multiple="multiple" />' +
+                     '<input class="note-image-input" type="file" name="files" accept="image/*" />' +
                      imageLimitation +
                    '</div>' +
                    '<div class="form-group row-fluid">' +

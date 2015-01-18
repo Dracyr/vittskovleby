@@ -84,3 +84,16 @@
 .radio label, .checkbox label {
   padding-left: 10px;
 }
+
+.carousel {
+  max-height: 600px;
+  overflow: hidden;
+
+  .item img {
+    //width: 100%;
+    height: auto;
+    max-height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

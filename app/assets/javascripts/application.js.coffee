@@ -42,7 +42,6 @@ post_menu_order = ->
 menu_modal_animate_height = ->
   was_link_tab = false
   $('a[data-toggle="tab"').on "shown.bs.tab", ->
-    console.log $(".link-tab").hasClass("active")
     if $(".link-tab").hasClass("active") && !was_link_tab
       new_height = 317
       was_link_tab = true

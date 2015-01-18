@@ -3,8 +3,7 @@ $(document).on "page:change", ->
 
   $(".img-select").click (event) ->
     clicked_image = event.currentTarget
-    $('#img-selected').attr('id', '')
-    $(clicked_image).attr('id', "img-selected")
+    $(clicked_image).toggleClass('img-selected')
 
   $('.summernote_editor').summernote
     height: 400
@@ -17,13 +16,11 @@ $(document).on "page:change", ->
       ['format', [ 'bold', 'italic', 'underline', 'strikethrough', 'clear']],
       ['layout', ['ul', 'ol']],
       ['para', ['ul', 'ol', 'paragraph']],
-      ['insert', ['link', 'picture', 'table', 'hr']],
+      ['insert', ['link', 'image_library', 'table', 'hr', 'form']],
       ['controls', ['undo', 'redo']],
       ['misc', ['fullscreen', 'codeview']],
       ['help', ['help']],
     ]
-    showImageDialog: imageDialog
-
 
 finished_editing = ->
   # Destroy summernote

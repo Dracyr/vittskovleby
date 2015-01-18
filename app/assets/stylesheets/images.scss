@@ -12,7 +12,7 @@
     }
     .img .links { margin-top: 10px; }
     .img:hover .links { margin-top: 26px; }
-    #img-selected .links { margin-top: 26px; }
+    .img-selected .links { margin-top: 26px; }
   }
 
   .head {
@@ -27,7 +27,7 @@
       .overlay  { opacity: 0.8; }
       .links { margin-top: 40%; }
     }
-    &#img-selected {
+    &.img-selected {
       .overlay  { opacity: 0.8; }
     }
   }
