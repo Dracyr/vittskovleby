@@ -1,9 +1,7 @@
 $(document).on "page:change", ->
   $('#edit-content').click edit_page_content
-
   $(".img-select").click (event) ->
-    clicked_image = event.currentTarget
-    $(clicked_image).toggleClass('img-selected')
+    $(event.currentTarget).toggleClass('img-selected')
 
   $('.summernote_editor').summernote
     height: 400
