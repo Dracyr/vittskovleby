@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 source 'https://rails-assets.org'
 
+ruby '2.2.0'
+
 gem 'rails', '4.2.0'
 gem 'bcrypt', '~> 3.1.7'
 gem 'pg'
@@ -55,4 +57,5 @@ gem 'rspec-rails', '~> 3.0.0', :group => [:development, :test]
 group :production do
 	gem 'unicorn'
   gem 'rack-cache', :require => 'rack/cache'
+  gem 'rails_12factor' # Heroku
 end
