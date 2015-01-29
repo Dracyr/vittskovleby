@@ -1,20 +1,42 @@
 - content_for :navbar_tools do
   = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default"
 
-.container.top-container
-  .panel.panel-primary
-    .greetings-text
-      %h1 Hejsan :)
-      %p Här hade det kunnat stå en massa häftiga saker, men det gör det inte!
-      / Snart kanske det gör det!
-.container
-  .panel.panel-default
+.cover-wrapper
+.event-wrapper
+  .container
     .row
       .col-lg-4
-        = editable_field :first_thing
-
+        =# editable_field :first_thing
+        %h3
+          Bymöte med trams
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
       .col-lg-4
-        = editable_field :second_thing
-
+        =# editable_field :second_thing
+        %h3
+          Bymöte med trams
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
       .col-lg-4
-        = editable_field :third_thing
+        =# editable_field :third_thing
+        %h3
+          Bymöte med trams
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+.info-wrapper
+  .container
+    .row
+      .col-md-6
+        %h2
+          Widthshöefle
+        %p
+          I Vittskövle ligger Vittskövle kyrka och strax utanför byn ligger Vittskövle slott.
+        %p
+          Vittskövle har förskola och grundskola till årskurs fem. I Vittskövle finns även en antik- och kuriosabutik, ett café.
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos labore, tempora sequi, quasi assumenda maxime consequatur nulla ipsa vitae reiciendis suscipit, eligendi unde ipsum distinctio laudantium similique placeat eius. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis magni necessitatibus, at perferendis tempore ducimus! Error maxime placeat dolores similique, tenetur natus, id perspiciatis commodi laboriosam, sunt odio doloribus quia!
+        %p
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab magnam omnis esse dolor, nulla quas, commodi quam tempora aspernatur earum soluta nam, eligendi fugiat! Cumque alias, animi repudiandae vitae. Dolorem.
+      .col-md-6
+        .img-slott
+          = image_tag 'slott.jpg'
