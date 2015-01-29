@@ -20,7 +20,7 @@ gem 'devise'
 gem 'cancancan', '~> 1.9'
 gem 'dotenv-rails'
 gem 'codemirror-rails'
-gem "font-awesome-rails"
+gem 'font-awesome-sass', '~> 4.2.0'
 gem 'acts_as_list'
 gem 'dragonfly', '~> 1.0.7'
 gem 'rails_bootstrap_navbar'
