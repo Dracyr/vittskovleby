@@ -28,6 +28,7 @@ gem 'gretel' # Bredcrumbs
 gem 'remotipart', '~> 1.2' #Ajax file uploads
 gem 'bootstrap_form'
 gem 'icheck-rails'
+gem 'newrelic_rpm'
 
 group :development do
  	gem 'capistrano-rails'
