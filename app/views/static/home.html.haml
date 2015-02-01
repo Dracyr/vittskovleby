@@ -1,42 +1,38 @@
 - content_for :navbar_tools do
   = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default"
 
+#navbar-wrapper
+  = render 'layouts/navbar'
 .cover-wrapper
+  .cover-text
+    %p
+      Vittskövle
 .event-wrapper
   .container
     .row
       .col-lg-4
         =# editable_field :first_thing
-        %h3
+        %h2
           Bymöte med trams
         %p
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
       .col-lg-4
         =# editable_field :second_thing
-        %h3
+        %h2
           Bymöte med trams
         %p
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
       .col-lg-4
         =# editable_field :third_thing
-        %h3
+        %h2
           Bymöte med trams
         %p
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
 .info-wrapper
-  .container
+  .container-fluid
     .row
-      .col-md-6
-        %h2
-          Widthshöefle
-        %p
-          I Vittskövle ligger Vittskövle kyrka och strax utanför byn ligger Vittskövle slott.
-        %p
-          Vittskövle har förskola och grundskola till årskurs fem. I Vittskövle finns även en antik- och kuriosabutik, ett café.
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem quos labore, tempora sequi, quasi assumenda maxime consequatur nulla ipsa vitae reiciendis suscipit, eligendi unde ipsum distinctio laudantium similique placeat eius. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis magni necessitatibus, at perferendis tempore ducimus! Error maxime placeat dolores similique, tenetur natus, id perspiciatis commodi laboriosam, sunt odio doloribus quia!
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab magnam omnis esse dolor, nulla quas, commodi quam tempora aspernatur earum soluta nam, eligendi fugiat! Cumque alias, animi repudiandae vitae. Dolorem.
-      .col-md-6
+      .col-md-6.no-padding
         .img-slott
-          = image_tag 'slott.jpg'
+      .col-md-6.no-padding
+        .info-text
+          = editable_field :info_text

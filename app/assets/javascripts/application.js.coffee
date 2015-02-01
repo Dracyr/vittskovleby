@@ -26,6 +26,12 @@ $(document).on "page:change", ->
   $('.dd').nestable
     maxDepth: 2
   menu_modal_animate_height()
+  $('#navbar-wrapper').affix offset:
+    top: ->
+      $('.cover-wrapper').outerHeight(true) - 50
+    bottom: 0
+  # Remove class on frontpage
+  $('#navbar-wrapper').find('.navbar-fixed-top').removeClass('navbar-fixed-top')
 
 post_menu_order = ->
   data = $('.dd').nestable 'serialize'
@@ -49,3 +55,4 @@ menu_modal_animate_height = ->
       new_height = 243
       was_link_tab = false
     $(".modal-content").height(new_height)
+

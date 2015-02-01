@@ -1,8 +1,9 @@
 %nav.navbar.navbar-fixed-top{role: 'navigation'}
   .default-nav.navbar-default
     .container
+      = navbar_header brand: 'Hem', brand_link: '/'
       = navbar_collapse do
-        = navbar_group class: 'foo', id: 'menu' do
+        = navbar_group align: :right, class: 'foo', id: 'menu' do
           - @nav_menus.each do |menu|
             - if menu.children.any?
               = navbar_dropdown menu.title do
@@ -10,7 +11,6 @@
                   = navbar_item child.title, child.link
             - else
               = navbar_item menu.title, menu.link
-        = navbar_group align: 'right' do
           - if current_user
             %li= link_to "Sign Out", '/sign_out', method: :delete
           - else

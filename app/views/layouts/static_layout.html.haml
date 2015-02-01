@@ -1,13 +1,9 @@
 !!!
 %html
   %head
-    %title PVPersson
+    %title Vittskövleby
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
-  %body.greetings
-    - flash.each do |name, msg|
-      %div{class: flash_class(name)}
-        = msg
-    = render 'layouts/navbar'
+  %body
     = yield
