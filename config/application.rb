@@ -16,6 +16,7 @@ module Pvpersson
     config.assets.paths   += %W("#{Rails.root}/vendor/assets/fonts")
     # iCheck checkboxes
     config.assets.precompile += %w( icheck/square/* )
+    config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
