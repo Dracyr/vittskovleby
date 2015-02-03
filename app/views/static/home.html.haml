@@ -11,23 +11,41 @@
   .container
     .row
       .col-lg-4
-        =# editable_field :first_thing
-        %h2
-          Bymöte med trams
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+        .event-text
+          %h2
+            Bymöte med trams
+            %br/
+            %small.event-date
+              24/7
+          %hr/
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+          .pull-right
+            %a Läs mer
       .col-lg-4
-        =# editable_field :second_thing
-        %h2
-          Bymöte med trams
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+        .event-text
+          %h2
+            Bymöte med trams
+            %br/
+            %small.event-date
+              24/7
+          %hr/
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+          .pull-right
+            %a Läs mer
       .col-lg-4
-        =# editable_field :third_thing
-        %h2
-          Bymöte med trams
-        %p
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+        .event-text
+          %h2
+            Bymöte med trams
+            %br/
+            %small.event-date
+              24/7
+          %hr/
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tempore dignissimos at omnis ipsum molestiae, sequi aliquid earum. Repellat earum accusamus, quibusdam consequuntur esse ab, modi, laboriosam officia sit nemo placeat.
+          .pull-right
+            %a Läs mer
 .info-wrapper
   .container-fluid
     .row
@@ -36,3 +54,31 @@
       .col-md-6.no-padding
         .info-text
           = editable_field :info_text
+.sections-wrapper
+  .container
+    .standing-images.hidden-xs.hidden-sm.row
+      .col-md-4
+        = image_tag 'http://placehold.it/350x450'
+        .image-text
+          .image-title
+            Historia
+          .image-caption
+            Byn
+      .col-md-4
+        = image_tag 'http://placehold.it/350x450'
+        .image-text
+          .image-title
+            Byalaget
+          .image-caption
+            Personerna
+      .col-md-4
+        = image_tag 'http://placehold.it/350x450'
+        .image-text
+          .image-title
+            Företagen
+          .image-caption
+            Trams
+.footer-wrapper
+  .container
+
+

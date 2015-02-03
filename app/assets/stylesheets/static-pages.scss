@@ -1,78 +1,110 @@
-.cover-wrapper {
-  background-image: image-url("forest.jpg");
-  background-attachment: fixed;
-
-  width: 100%;
-  height: 475px;
-}
-
-.info-wrapper {
-  background: #00B16A;
-  h1, p, a {
-    color: white;
-  }
-  p {
-    font-size: 16px;
-  }
-}
-
-.img-slott {
-  min-height: 425px;
-  background: image-url('slott.jpg') no-repeat center center;
-  background-size: cover;
-}
-
-.info-text {
-  padding: 9% 80px 0 80px;
-  max-height: 425px;
-  overflow: hidden;
-}
-
-.event-wrapper {
-  padding: 40px 0 40px 0;
-}
-
+$dark-black-green: #242C27;
 #navbar-wrapper {
   z-index: 1;
   width: 100%;
   height: 50px;
-  transition: background 0.4s ease-in;
-  background: rgba(0, 0, 0, 0.3);
-  .navbar {
-    border: none;
-  }
-  .default-nav {
-    transition: background 0.4s ease-in;
-    background: rgba(0, 0, 0, 0);
-  }
-  .navbar-collapse.in, .navbar-collapse.collapsing  {
-    background-color: rgba(29, 160, 84, 1);
-  }
-}
-
-#navbar-wrapper.affix-top {
-  position: absolute;
-  top: 425px;
-  .default-nav {
-    background: rgba(0, 0, 0, 0);
-  }
-}
-
-#navbar-wrapper.affix {
   position: fixed;
-  .default-nav {
-    background-color: rgba(29, 160, 84, 1);
+
+  .navbar { border: none; }
+
+  @media (min-width: $grid-float-breakpoint) {
+    .default-nav {
+      transition: background 0.4s ease-in;
+      background: rgba(0, 0, 0, 0);
+    }
+
+    &.affix-top .default-nav {
+      background: rgba(0, 0, 0, 0);
+    }
+
+    &.affix .default-nav {
+      background-color: $dark-black-green;;
+    }
   }
-  background-color: rgba(29, 160, 84, 1);
+}
+
+.cover-wrapper {
+  width: 100%;
+  height: 600px;
+
+  background-image: image-url("alle.jpg");
+  background-size: cover;
+  background-position: center;
 }
 
 @import url(//fonts.googleapis.com/css?family=Allura);
 .cover-text {
   font-family: 'Allura', cursive;
   font-size: 130px;
-  padding-top: 130px;
+  padding-top: 210px;
   color: white;
   width: 410px;
   margin-left: auto;
   margin-right: auto;
+}
+
+.event-wrapper {
+  padding: 80px 0 80px 0;
+  background: white;
+}
+
+.event-text {
+  padding: 0 20px 0 20px;
+}
+
+.event-date {
+  font-size: 25px;
+}
+
+.info-wrapper {
+  background: $brand-primary;
+  h1, h2, h3, h4, h5, h6, p, a { color: white; }
+  p { font-size: 16px; }
+}
+
+$info-text-height: 425px;
+.img-slott {
+  min-height: $info-text-height;
+  background: image-url('slott.jpg') no-repeat center center;
+  background-size: cover;
+}
+
+.info-text {
+  padding: 9% 80px 0 80px;
+  max-height: $info-text-height;
+  overflow: hidden;
+}
+
+.sections-wrapper {
+  background: white;
+  padding: 120px 0 120px 0;
+  img { margin-bottom: 50px; }
+}
+
+.image-text {
+  position: absolute;
+  width: 350px;
+  top: 300px;
+
+  text-align: center;
+  font-size: 35px;
+  .image-title {
+    width: 175px;
+    margin: auto;
+  }
+
+  .image-caption {
+    font-style: italic;
+    font-size: 30px;
+    font-weight: lighter;
+    width: 175px;
+    margin: auto;
+    border-top: 1px solid rgb(166, 160, 160);
+  }
+}
+
+.footer-wrapper {
+  padding: 80px 0 80px 0;
+  height: 300px;
+  background: $dark-black-green;
 }

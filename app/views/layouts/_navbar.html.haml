@@ -11,10 +11,10 @@
                   = navbar_item child.title, child.link
             - else
               = navbar_item menu.title, menu.link
-          - if current_user
+          - if false || current_user
             %li= link_to "Sign Out", '/sign_out', method: :delete
           - else
-            = navbar_item "Sign In", '/sign_in'
+            =# navbar_item "Sign In", '/sign_in'
   - if current_user.try(:admin?)
     .admin-nav
       .container.navbar-inverse
