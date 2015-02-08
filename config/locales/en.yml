@@ -12,3 +12,7 @@ en:
         update: Save menu
   errors:
     permalink_reserved: cannot be a reserved name
+  layouts:
+    navbar:
+      sign_in: Sign in
+      sign_out: Sign out

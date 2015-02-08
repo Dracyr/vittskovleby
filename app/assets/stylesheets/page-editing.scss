@@ -1,0 +1,39 @@
+#quick-edit {
+  position: relative;
+  top: 20px;
+  padding-right: 30px;
+  float: right;
+  .btn-edit {
+    opacity:0;
+    visibility: hidden;
+  }
+  .btn {
+    transition: background-color 0.3s ease-out;
+  }
+}
+
+.page-content:hover #quick-edit .btn-edit {
+  opacity:1;
+  visibility:visible;
+}
+
+.editable:hover #quick-edit .btn-edit {
+  opacity:1;
+  visibility:visible;
+}
+
+[data-editable].note-air-editor {
+  display: initial;
+}
+
+@keyframes edit-flash {
+  50% { outline-color: $dark-black-green; }
+}
+
+.note-air-editor {
+  animation-name: edit-flash;
+  animation-duration: 1s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  outline: 2px dashed transparent;
+}

@@ -49,7 +49,10 @@
       .col-md-6.no-padding
         .img-slott
       .col-md-6.no-padding
-        .info-text
+        .info-text.editable
+          - if can? :edit, Page
+            #quick-edit
+              = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-edit btn-default"
           = editable_field :info_text
 .sections-wrapper
   .container

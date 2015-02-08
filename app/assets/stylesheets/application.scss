@@ -32,20 +32,4 @@ $bright-green: #87D37C;
 @import "static-pages";
 @import "session";
 @import "misc";
-
-#quick-edit {
-  position: relative;
-  top: 25px;
-  padding-right: 60px;
-  float: right;
-  .btn-edit {
-    opacity:0;
-    visibility: hidden;
-    transition: visibility 0.3s ease-out, opacity 0.3s ease-out;
-  }
-}
-
-.page-content:hover #quick-edit .btn-edit {
-  opacity:1;
-  visibility:visible;
-}
+@import "page-editing";

@@ -12,3 +12,7 @@ sv:
         update: Spara meny
   errors:
     permalink_reserved: kan inte vara ett reserverat namn
+  layouts:
+    navbar:
+      sign_in: Logga in
+      sign_out: Logga ut
