@@ -1,7 +1,7 @@
 %nav.navbar.navbar-fixed-top{role: 'navigation'}
   .default-nav.navbar-default
     .container
-      = navbar_header brand: 'Hem', brand_link: '/'
+      = navbar_header brand: "#{i(:home)} Hem", brand_link: '/'
       = navbar_collapse do
         = navbar_group align: :right, class: 'foo', id: 'menu' do
           - @nav_menus.each do |menu|
