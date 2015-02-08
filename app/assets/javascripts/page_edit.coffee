@@ -35,7 +35,7 @@ finished_editing = ->
 
   # Change buttons
   $('#save-content, #edit-content').html('Quick-Edit')
-  $('#save-content').removeClass('btn-success').addClass('btn-default')
+  $('#save-content').removeClass('btn-success').addClass('btn-edit')
   $('#save-content').attr('id', 'edit-content')
   $('#edit-content').off().click edit_page_content
 
@@ -73,7 +73,7 @@ edit_page_content = ->
     airMode: true
   # Change buttons
   $('#save-content, #edit-content').html('Save changes')
-  $('#edit-content').removeClass('btn-default').addClass('btn-success')
+  $('#edit-content').removeClass('btn-edit').addClass('btn-success')
   $('#edit-content').attr('id', 'save-content')
   $('#save-content').off().click finished_editing
 

@@ -1,14 +1,12 @@
 - if can? :edit, @post
   - content_for :navbar_tools do
-    = link_to "Edit post", edit_post_path(@post), class: "btn btn-xs btn-default"
+    = link_to t('.edit-post'), edit_post_path(@post), class: "btn btn-xs btn-default"
     = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default", data: {post: @post.id}
 
-- breadcrumb :post, @post
+  - breadcrumb :post, @post
 
 .page-content
-  .panel.panel-default
-    .panel-heading
-      %h1= @post.title
-    .panel-body
-      .editable-content
-        = raw @post.content
+  .heading
+    %h1= @post.title
+  .editable-content
+    = raw @post.content

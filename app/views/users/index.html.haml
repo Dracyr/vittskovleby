@@ -1,25 +1,25 @@
 .panel.panel-default
   .panel-heading
     %h3
-      Users
+      = t('.users')
       .pull-right
         = link_to new_user_path do
           %i.glyphicon.glyphicon-plus
   .panel-body
     %table.table.table-hover
       %thead
-        %th Email
-        %th Role
-        %th Tools
+        %th= t(:email)
+        %th= t(:role)
+        %th= t(:tools)
       %tbody
         - @users.each do |user|
           %tr
             %td
-              = link_to user.email, user
+              = user.email
             %td
               = user.role.titleize
             %td
               = link_to edit_user_path(user) do
-                %i.glyphicon.glyphicon.glyphicon-edit
+                /%i.glyphicon.glyphicon.glyphicon-edit
               = link_to user_path(user), method: :delete do
                 %i.glyphicon.glyphicon.glyphicon-trash

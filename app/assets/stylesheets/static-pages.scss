@@ -1,4 +1,3 @@
-$dark-black-green: #242C27;
 #navbar-wrapper {
   z-index: 1;
   width: 100%;
@@ -18,7 +17,7 @@ $dark-black-green: #242C27;
     }
 
     &.affix .default-nav {
-      background-color: $dark-black-green;;
+      background-color: $bright-green;
     }
   }
 }
@@ -77,7 +76,7 @@ $info-text-height: 425px;
 
 .sections-wrapper {
   background: white;
-  padding: 120px 0 120px 0;
+  padding: 120px 0 100px 0;
   img { margin-bottom: 50px; }
 }
 
@@ -97,7 +96,7 @@ $info-text-height: 425px;
     font-style: italic;
     font-size: 30px;
     font-weight: lighter;
-    width: 175px;
+    width: 195px;
     margin: auto;
     border-top: 1px solid rgb(166, 160, 160);
   }
@@ -105,6 +104,6 @@ $info-text-height: 425px;
 
 .footer-wrapper {
   padding: 80px 0 80px 0;
-  height: 300px;
-  background: $dark-black-green;
+  height: 200px;
+  background: $bright-green;
 }

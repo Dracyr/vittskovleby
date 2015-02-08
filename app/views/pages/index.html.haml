@@ -1,38 +1,33 @@
-- content_for :navbar_tools do
-  - if @menus.any?
-    = link_to "Save menu placement", '#', id: 'save-menu-order', class: "btn btn-xs btn-primary"
-- breadcrumb :pages
-
 .row
   .col-lg-6
-    .panel.panel-default
-      .panel-heading
-        %h3
-          Menus
-          .pull-right
-            = link_to "#", data: {toggle: "modal", target: "#meny_modal"} do
-              %i.glyphicon.glyphicon-plus
-      .panel-body
-        .dd
-          %ol.dd-list
-            = render @menus
+    .heading
+      %h3
+        Menus
+        .pull-right
+          = link_to '#', id: 'save-menu-order' do
+            %i.glyphicon.glyphicon-floppy-disk
+          = link_to "#", data: {toggle: "modal", target: "#meny_modal"} do
+            %i.glyphicon.glyphicon-plus
+    %hr/
+    .dd
+      %ol.dd-list
+        = render @menus
   .col-lg-6
-    .panel.panel-default
-      .panel-heading
-        %h3
-          Pages
+    .heading
+      %h3
+        Pages
+        .pull-right
+          = link_to new_page_path do
+            %i.glyphicon.glyphicon-plus
+    %hr/
+    %ol.unstyled-list
+      - @orphan_pages.each do |page|
+        %li
+          = link_to page.title, page
           .pull-right
-            = link_to new_page_path do
-              %i.glyphicon.glyphicon-plus
-      .panel-body
-        %ol.unstyled-list
-          - @orphan_pages.each do |page|
-            %li
-              = link_to page.title, page
-              .pull-right
-                = link_to edit_page_path(page) do
-                  %i.glyphicon.glyphicon.glyphicon-edit
-                = link_to page_path(page), method: :delete do
-                  %i.glyphicon.glyphicon.glyphicon-trash
+            = link_to edit_page_path(page) do
+              %i.glyphicon.glyphicon.glyphicon-edit
+            = link_to page_path(page), method: :delete do
+              %i.glyphicon.glyphicon.glyphicon-trash
 
 = render 'menus/new_menu_modal'

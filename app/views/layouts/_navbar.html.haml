@@ -11,25 +11,16 @@
                   = navbar_item child.title, child.link
             - else
               = navbar_item menu.title, menu.link
-          - if false || current_user
-            %li= link_to "Sign Out", '/sign_out', method: :delete
-          - else
-            =# navbar_item "Sign In", '/sign_in'
-  - if current_user.try(:admin?)
-    .admin-nav
-      .container.navbar-inverse
-        .navbar-header
-          %button.navbar-toggle{"data-target" => "#navbar-collapsable-admin", "data-toggle" => "collapse", :type => "button"}
-            %span.sr-only Toggle navigation
-            %span.icon-bar
-            %span.icon-bar
-            %span.icon-bar
-          .navbar-brand Admin
-        #navbar-collapsable-admin.collapse.navbar-collapse
-          = yield :navbar_tools
-          = navbar_group align: 'right' do
-            - if can? :manage, :all
+          - if current_user.try(:admin?)
+            = navbar_dropdown t(:admin) do
+              - if content_for(:navbar_tools)
+                =  yield :navbar_tools
+                = navbar_dropdown_divider
               = navbar_item "Users", users_path
               = navbar_item "Pages", pages_path
-              = navbar_item "Posts", posts_path
               = navbar_item "Images", images_path
+              =# navbar_item "Posts", posts_path
+          - if current_user
+            %li= link_to t(:sign_out), '/sign_out', method: :delete
+          - else
+            = navbar_item t(:sign_in), '/sign_in'

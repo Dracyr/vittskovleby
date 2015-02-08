@@ -1,14 +1,15 @@
 - if can? :edit, @page
   - content_for :navbar_tools do
-    = link_to "Edit page", edit_page_path(@page), class: "btn btn-xs btn-default"
-    = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-xs btn-default", data: {page: @page.permalink}
+    = navbar_item t('.edit_page'), users_path
 
-- breadcrumb :page, @page
+  - breadcrumb :page, @page
 
-.page-content
-  .panel.panel-default
-    .panel-heading
-      %h1= @page.title
-    .panel-body
-      .editable-content
-        = @page.content.html_safe
+.page-content.col-lg-10.col-lg-offset-1
+  - if can? :edit, @page
+    #quick-edit
+      = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-edit btn-default", data: {page: @page.permalink}
+  .panel-heading
+    %h1= @page.title
+  %hr/
+  .editable-content
+    = @page.content.html_safe

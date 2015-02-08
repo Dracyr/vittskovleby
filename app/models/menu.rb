@@ -3,6 +3,10 @@ class Menu < ActiveRecord::Base
   belongs_to :parent, class_name: 'Menu'
   acts_as_list scope: :parent
 
+  validate :has_title_or_page
+  validate :has_page_if_page
+  validate :has_prefix_if_link
+
   belongs_to :page
 
   default_scope -> { order("position ASC") }
@@ -23,6 +27,24 @@ class Menu < ActiveRecord::Base
   end
 
   private
+
+  def has_page_if_page
+    if menu_type == 'page' && page_id.blank?
+      errors.add(:base, I18n.t('errors.messages.should_have_page'))
+    end
+  end
+
+  def has_title_or_page
+    if menu_type != 'page' && self[:title].blank?
+      errors.add(:base, I18n.t('errors.messages.should_have_page_or_title'))
+    end
+  end
+
+  def has_prefix_if_link
+    if menu_type == 'link' && !link.include?('http')
+      errors.add(:link, I18n.t('errors.messages.should_have_prefix'))
+    end
+  end
 
   def self.update_order(menus, parent_id = nil)
     menus.each_with_index do |child_element, index|

@@ -9,6 +9,9 @@
   src: font-url('Raleway-ExtraLight.ttf');
 }
 
+$dark-black-green: #242C27;
+$bright-green: #87D37C;
+
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-variables";
@@ -30,3 +33,19 @@
 @import "session";
 @import "misc";
 
+#quick-edit {
+  position: relative;
+  top: 25px;
+  padding-right: 60px;
+  float: right;
+  .btn-edit {
+    opacity:0;
+    visibility: hidden;
+    transition: visibility 0.3s ease-out, opacity 0.3s ease-out;
+  }
+}
+
+.page-content:hover #quick-edit .btn-edit {
+  opacity:1;
+  visibility:visible;
+}
