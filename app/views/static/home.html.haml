@@ -7,6 +7,10 @@
 .event-wrapper
   .container
     .row
+      .col-xs-12
+        %h3
+          Händer i vittskövle
+    .row
       .col-lg-4
         .event-text
           %h2
@@ -56,23 +60,23 @@
           = editable_field :info_text
 .sections-wrapper
   .container
-    .standing-images.hidden-xs.hidden-sm.row
-      .col-md-4
-        = image_tag 'http://placehold.it/350x450'
+    .standing-images.row
+      .col-md-4.col-sm-6
+        = image_tag 'http://placehold.it/350x450', class: 'img-responsive'
         .image-text
           .image-title
             Historia
           .image-caption
             Byn
-      .col-md-4
-        = image_tag 'http://placehold.it/350x450'
+      .col-md-4.col-sm-6
+        = image_tag 'http://placehold.it/350x450', class: 'img-responsive'
         .image-text
           .image-title
             Byalaget
           .image-caption
             Medlemmarna
-      .col-md-4
-        = image_tag 'http://placehold.it/350x450'
+      .col-md-4.col-sm-6
+        = image_tag 'http://placehold.it/350x450', class: 'img-responsive'
         .image-text
           .image-title
             Företagen
