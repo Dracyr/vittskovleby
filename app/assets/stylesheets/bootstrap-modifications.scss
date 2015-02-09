@@ -180,3 +180,15 @@
   color: #FFF;
   border-color: #5C5C5C;
 }
+
+.navbar-default .navbar-toggle {
+  border-color: transparent;
+}
+
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: white;
+}
+
+.navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
+  background-color: #70cb63;
+}
