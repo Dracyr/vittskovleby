@@ -33,13 +33,14 @@
 
 @import url(//fonts.googleapis.com/css?family=Allura);
 .cover-text {
-  font-family: 'Allura', cursive;
-  font-size: 130px;
   padding-top: 210px;
+  font-family: 'Allura', cursive;
+  font-size: 100px;
+  @media (min-height: $screen-sm) {
+    font-size: 130px;
+  }
   color: white;
-  width: 410px;
-  margin-left: auto;
-  margin-right: auto;
+  text-align: center;
 }
 
 .event-wrapper {
@@ -58,20 +59,27 @@
 .info-wrapper {
   background: $brand-primary;
   h1, h2, h3, h4, h5, h6, p, a { color: white; }
-  p { font-size: 16px; }
+  p { font-size: 1.2em; }
 }
 
-$info-text-height: 425px;
 .img-slott {
-  min-height: $info-text-height;
   background: image-url('slott.jpg') no-repeat center center;
   background-size: cover;
+  min-height: 425px;
 }
 
 .info-text {
-  padding: 9% 80px 0 80px;
-  max-height: $info-text-height;
+  margin-right: auto;
+  margin-left: auto;
+  padding: 30px 15px 50px 15px;
   overflow: hidden;
+}
+
+@media (min-width: $grid-float-breakpoint) {
+  .info-text {
+    padding: 9% 80px 0 80px;
+    height: 425px;
+  }
 }
 
 .sections-wrapper {
@@ -82,6 +90,10 @@ $info-text-height: 425px;
 .standing-images {
   img {
     margin: 0 auto;
+  }
+  &> div {
+    max-width: 350px;
+    margin: auto;
   }
 }
 
@@ -101,7 +113,7 @@ $info-text-height: 425px;
     font-style: italic;
     font-size: 30px;
     font-weight: lighter;
-    width: 195px;
+    width: 75%;
     margin: auto;
     border-top: 1px solid rgb(166, 160, 160);
   }
