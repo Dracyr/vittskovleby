@@ -35,9 +35,9 @@
 .cover-text {
   padding-top: 210px;
   font-family: 'Allura', cursive;
-  font-size: 100px;
-  @media (min-height: $screen-sm) {
-    font-size: 130px;
+  font-size: 130px;
+  @media (max-height: $screen-sm-max) {
+    font-size: 100px;
   }
   color: white;
   text-align: center;
