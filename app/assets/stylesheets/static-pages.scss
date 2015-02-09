@@ -91,9 +91,11 @@
   img {
     margin: 0 auto;
   }
-  &> div {
-    max-width: 350px;
-    margin: auto;
+  @media (max-width: $grid-float-breakpoint) {
+    &> div {
+      max-width: 350px;
+      margin: auto;
+    }
   }
 }
 
