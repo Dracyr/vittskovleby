@@ -16,3 +16,6 @@ sv:
     navbar:
       sign_in: Logga in
       sign_out: Logga ut
+  time:
+    formats:
+      date_slash_month: "%d/%w"

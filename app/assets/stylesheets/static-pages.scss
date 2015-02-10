@@ -16,6 +16,12 @@
       background: rgba(0, 0, 0, 0);
     }
 
+    &.affix-top .navbar-default .navbar-nav>.open>a,
+    &.affix-top .navbar-default .navbar-nav>.open>a:hover,
+    &.affix-top .navbar-default .navbar-nav>.open>a:focus {
+      background-color: rgba(100, 100, 100, 0.30);
+    }
+
     &.affix .default-nav {
       background-color: $bright-green;
     }
@@ -44,7 +50,7 @@
 }
 
 .event-wrapper {
-  padding: 50px 0 80px 0;
+  padding: 20px 0 80px 0;
   min-height: 333px;
 }
 
@@ -83,7 +89,7 @@
 }
 
 .sections-wrapper {
-  padding: 120px 0 100px 0;
+  padding: 120px 0 30px 0;
   img { margin-bottom: 50px; }
 }
 
