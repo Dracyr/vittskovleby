@@ -4,9 +4,9 @@ sv:
       page:
         create: Skapa sida
         update: Spara sida
-      post:
-        create: Skapa inlägg
-        update: Spara inlägg
+      event:
+        create: Skapa event
+        update: Spara event
       menu:
         create: Skapa meny
         update: Spara meny

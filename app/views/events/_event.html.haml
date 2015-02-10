@@ -1,0 +1,14 @@
+.col-lg-4
+  .event-text
+    %h2
+      = event.title
+      %br/
+      %small.event-date
+        = l event.date, format: :date_slash_month if event.date
+        - unless event.date
+          %br/
+    %hr/
+    %p
+      = truncate(event.content.html_safe, length: 240, separator: ' ')
+    .pull-right
+      = link_to t('.read_more'), event

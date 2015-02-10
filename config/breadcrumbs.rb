@@ -35,23 +35,23 @@ crumb :edit_menu do |menu|
   parent :menus
 end
 
-crumb :posts do
-  link "Posts", posts_path
+crumb :events do
+  link "Events", events_path
 end
 
-crumb :post do |post|
-  link post.title, posts_path(post)
-  parent :posts
+crumb :event do |event|
+  link event.title, events_path(event)
+  parent :events
 end
 
-crumb :new_post do |post|
-  link "New post"
-  parent :posts
+crumb :new_event do |event|
+  link "New event"
+  parent :events
 end
 
-crumb :edit_post do |post|
-  link "Edit #{post.title}"
-  parent :post, post
+crumb :edit_event do |event|
+  link "Edit #{event.title}"
+  parent :event, event
 end
 
 crumb :images do

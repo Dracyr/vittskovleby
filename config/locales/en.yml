@@ -4,9 +4,9 @@ en:
       page:
         create: Create page
         update: Save page
-      post:
-        create: Create post
-        update: Save post
+      event:
+        create: Create event
+        update: Save event
       menu:
         create: Create menu
         update: Save menu

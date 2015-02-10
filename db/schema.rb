@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150210194245) do
+ActiveRecord::Schema.define(version: 20150210200122) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -21,6 +21,14 @@ ActiveRecord::Schema.define(version: 20150210194245) do
     t.text     "content",    default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
+  end
+
+  create_table "events", force: :cascade do |t|
+    t.string   "title",      null: false
+    t.text     "content",    null: false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.datetime "date"
   end
 
   create_table "images", force: :cascade do |t|
@@ -54,14 +62,6 @@ ActiveRecord::Schema.define(version: 20150210194245) do
   end
 
   add_index "pages", ["menu_id"], name: "index_pages_on_menu_id", using: :btree
-
-  create_table "posts", force: :cascade do |t|
-    t.string   "title",      null: false
-    t.text     "content",    null: false
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.datetime "date"
-  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

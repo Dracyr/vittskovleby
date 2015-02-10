@@ -9,7 +9,7 @@ Rails.application.routes.draw do
     delete "sign_out", to: "devise/sessions#destroy"
   end
 
-  resources :posts
+  resources :events
   resources :images, except: :show
   resources :menus, except: [:index, :show] do
     post 'update_all', to: :update_all, on: :collection

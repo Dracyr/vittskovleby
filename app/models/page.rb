@@ -3,7 +3,7 @@ class Page < ActiveRecord::Base
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true
   validates :permalink, presence: true, uniqueness: true,
-                    exclusion: { in: %w(users posts pages images editable_fields) }
+                    exclusion: { in: %w(users events pages images editable_fields) }
 
   before_validation :set_permalink
 
