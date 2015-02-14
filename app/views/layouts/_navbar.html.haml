@@ -8,9 +8,9 @@
             - if menu.children.any?
               = navbar_dropdown menu.title do
                 - menu.children.each do |child|
-                  = navbar_item child.title, child.link
+                  = navbar_item child.title, "/#{child.link}"
             - else
-              = navbar_item menu.title, menu.link
+              = navbar_item menu.title, "/#{menu.link}"
           - if current_user.try(:admin?)
             = navbar_dropdown t(:admin) do
               - if content_for(:navbar_tools)

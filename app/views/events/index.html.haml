@@ -4,12 +4,19 @@
 
   - breadcrumb :events
 
-- @events.each do |event|
-  .panel.panel-default
-    .panel-heading
+.col-md-6.col-md-offset-3
+  .heading
+    %h2 Events
+    %hr/
+  %ul.unstyled-list
+    - @events.each do |event|
       %h3
-        = event.title
-    .panel-body
-      = raw event.content
-      .pull-right
-        = link_to t('.read_more'), event
+        = link_to event.title, event
+        %small
+          = event.date.strftime("%Y-%m-%d")
+          - if can? :edit, event
+            .pull-right
+              = link_to edit_event_path(event) do
+                = i(:edit)
+              = link_to event, method: :delete, data: {confirm: t('.delete_event')} do
+                = i(:trash)

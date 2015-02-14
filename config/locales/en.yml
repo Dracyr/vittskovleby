@@ -12,10 +12,17 @@ en:
         update: Save menu
   errors:
     permalink_reserved: cannot be a reserved name
+  time:
+    formats:
+      date_slash_month: "%d/%w"
+
   layouts:
     navbar:
       sign_in: Sign in
       sign_out: Sign out
-  time:
-    formats:
-      date_slash_month: "%d/%w"
+
+  events:
+    event:
+      read_more: Read more
+    index:
+      delete_event: Are you sure you want to remove this event?

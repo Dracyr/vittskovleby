@@ -14,6 +14,7 @@ module Pvpersson
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
     config.assets.paths   += %W("#{Rails.root}/vendor/assets/fonts")
+    config.assets.paths   += %W("#{Rails.root}/app/assets/fonts")
     # iCheck checkboxes
     config.assets.precompile += %w( icheck/square/* )
     config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )

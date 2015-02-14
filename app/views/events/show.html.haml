@@ -5,8 +5,12 @@
 
   - breadcrumb :event, @event
 
-.page-content
-  .heading
-    %h1= @event.title
-  .editable-content
-    = raw @event.content
+.row
+  .col-md-6.col-md-offset-3
+    .heading
+      %h1
+        = @event.title
+        %small
+          = @event.date.strftime("%Y-%m-%d")
+    .editable-content
+      = raw @event.content

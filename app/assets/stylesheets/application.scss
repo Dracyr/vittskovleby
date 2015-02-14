@@ -1,7 +1,7 @@
 @font-face {
   font-family: 'Glyphicons Halflings';
   src: font-url('glyphicons-halflings-regular.eot');
-  src: font-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('glyphicons-halflings-regular.woff') format('woff'), url('glyphicons-halflings-regular.ttf') format('truetype'), url('glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
+  src: font-url('glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), font-url('glyphicons-halflings-regular.woff') format('woff'), url('glyphicons-halflings-regular.ttf') format('truetype'), font-url('glyphicons-halflings-regular.svg#glyphicons-halflingsregular') format('svg');
 }
 
 @font-face {
@@ -9,12 +9,23 @@
   src: font-url('Raleway-ExtraLight.ttf');
 }
 
+// When true, asset path helpers are used, otherwise the regular CSS `url()` is used.
+// When there no function is defined, `fn('')` is parsed as string that equals the right hand side
+// NB: in Sass 3.3 there is a native function: function-exists(twbs-font-path)
+//$bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
+
+$icon-font-path: "";
+//$icon-font-name: "ns-halflings-regular";
+
 $dark-black-green: #242C27;
 $bright-green: #87D37C;
+
+
 
 @import "font-awesome-sprockets";
 @import "font-awesome";
 @import "bootstrap-variables";
+$bootstrap-sass-asset-helper: "assets" !default;
 @import "bootstrap-sprockets";
 @import "bootstrap";
 @import "summernote";
@@ -33,3 +44,7 @@ $bright-green: #87D37C;
 @import "session";
 @import "misc";
 @import "page-editing";
+
+.session-container:before {
+  content: $icon-font-path;
+}

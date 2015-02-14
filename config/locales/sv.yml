@@ -19,3 +19,6 @@ sv:
   time:
     formats:
       date_slash_month: "%d/%w"
+  events:
+    index:
+      delete_event: Är du säker på att du vill ta bort eventet?
