@@ -3,6 +3,7 @@ ENV["RAILS_ENV"] = 'test'
 require File.expand_path("../../config/environment", __FILE__)
 require 'rspec/rails'
 require 'capybara/rails'
+require 'devise'
 Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 
 RSpec.configure do |config|
@@ -10,6 +11,9 @@ RSpec.configure do |config|
   config.include Formulaic::Dsl, type: :feature
   # Include FactoryGirl
   config.include FactoryGirl::Syntax::Methods
+
+  config.include Devise::TestHelpers, :type => :controller
+  config.extend SignInHelper#, :type => :controller
 
   Faker::Config.locale = 'sv'
 
@@ -40,6 +44,11 @@ RSpec.configure do |config|
     # unless a formatter has already been configured
     # (e.g. via a command-line flag).
     config.default_formatter = 'doc'
+  end
+
+  # Remove all files after each run
+  config.after :all do
+    ActiveRecord::Base.subclasses.each(&:delete_all)
   end
 
 

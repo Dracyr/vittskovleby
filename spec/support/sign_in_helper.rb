@@ -1,8 +1,15 @@
 module SignInHelper
-  def sign_in(user)
-    visit new_user_session_path
-    fill_form(:user, {email: user.email, password: "testtest"})
-    click_button 'Sign in'
-    user
+  def login_admin
+    before(:each) do
+      @request.env["devise.mapping"] = Devise.mappings[:user] if @request
+      admin = FactoryGirl.create(:admin)
+      sign_in :user, admin
+    end
+  end
+
+  def login_user
+    @request.env["devise.mapping"] = Devise.mappings[:user] if @request
+    user ||= FactoryGirl.create(:user)
+    sign_in user
   end
 end

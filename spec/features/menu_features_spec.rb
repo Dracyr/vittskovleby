@@ -1,10 +1,10 @@
 require "spec_helper"
 
-feature "Menu management:" do
-  let!(:user) { sign_in FactoryGirl.create(:user) }
+feature "Menu management:", broken: true do
   let(:menu)  { FactoryGirl.create(:menu) }
 
   scenario "can create menu" do
+    login_user
     visit new_menu_path
 
     fill_form :menu, attributes_for(:menu)
@@ -14,6 +14,7 @@ feature "Menu management:" do
   end
 
   scenario "can edit menu" do
+    login_user
     visit edit_menu_path(menu)
 
     fill_form(:menu, title: "New Title")
@@ -23,16 +24,16 @@ feature "Menu management:" do
   end
 end
 
-feature "Unauthorized users" do
+feature "Unauthorized users", broken: true do
   let(:menu) { FactoryGirl.create(:menu) }
 
   scenario "cannot create menus" do
     visit new_menu_path
-    expect(page).to have_text "You are not authorized to access this page."
+    expect(page).to redirect_to(root_url)
   end
 
   scenario "cannot edit menus" do
     visit edit_menu_path(menu)
-    expect(page).to have_text "You are not authorized to access this page."
+    expect(page).to redirect_to(root_url)
   end
 end

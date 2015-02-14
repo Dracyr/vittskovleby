@@ -10,7 +10,7 @@ class Page < ActiveRecord::Base
   has_one :menu, dependent: :destroy
 
   # TODO: Optimize query
-  scope :orphans, -> { Page.all - Page.joins(:menu) }
+  scope :orphans, -> { where(menu_id: nil) }
 
   def set_permalink
     self.permalink = title.parameterize
