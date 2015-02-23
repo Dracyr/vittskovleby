@@ -33,14 +33,12 @@
           .image-title
             Byn
           .image-caption
-            Historia
       .col-md-4.col-sm-6
         = image_tag 'https://placehold.it/350x450', class: 'img-responsive', size: '350x450'
         .image-text
           .image-title
-            Byalaget
-          .image-caption
             Föreningarna
+          .image-caption
       .col-md-4.col-sm-6
         = image_tag 'https://placehold.it/350x450', class: 'img-responsive', size: '350x450'
         .image-text
@@ -53,9 +51,10 @@
     .col-md-6.footer-map
       /.iframe{height: 400, width: 600, frameborder: 0, src: "https://www.google.com/maps/embed/v1/place?key=AIzaSyA3MipmvaT0HrrUsTLb07ZPkDz6j8gHPEQ&q=Vittskovle"}
       %iframe{height: 300, width:500, frameborder: 0, src: "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d8957.279502831543!2d14.153956051650999!3d55.85711638330903!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNTXCsDUxJzI2LjIiTiAxNMKwMDgnNDMuOCJF!5e0!3m2!1sen!2sse!4v1424715049508"}
-    .col-md-6.footer-text
-      %h2
-        Kontakt
-      %p
-        Vi finns på facebook
+    .col-md-6
+      .footer-text.editable
+        - if can? :edit, Page
+          #quick-edit
+            = button_tag t('helpers.quick_edit'), id: "edit-content", class: "btn btn-edit btn-default"
+        = editable_field :contact_text
 
