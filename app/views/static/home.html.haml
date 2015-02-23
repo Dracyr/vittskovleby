@@ -56,5 +56,19 @@
         - if can? :edit, Page
           #quick-edit
             = button_tag t('helpers.quick_edit'), id: "edit-content", class: "btn btn-edit btn-default"
-        = editable_field :contact_text
+        =# editable_field :contact_text
+        %h2
+          Kontakt
+        .address
+          %p
+            Widtsköfle byalag
+          %p
+            Vittskövlevägen 26
+          %p
+            29791 Vittskövle
+          %p
+            = link_to "alderman@vittskovleby.se", "mailto:#"
+
+
+
 
