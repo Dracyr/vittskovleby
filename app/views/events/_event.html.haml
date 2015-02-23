@@ -8,5 +8,6 @@
     %hr/
     %p
       = truncate(event.content.html_safe, length: 240, separator: ' ')
-    .pull-right
-      = link_to t('.read_more'), event
+    - if event.content.html_safe.length > 240
+      .pull-right
+        = link_to t('.read_more'), event

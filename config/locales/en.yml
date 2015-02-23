@@ -1,5 +1,7 @@
 en:
+  admin: Admin
   helpers:
+    quick_edit: Quick-edit
     submit:
       page:
         create: Create page
@@ -14,15 +16,34 @@ en:
     permalink_reserved: cannot be a reserved name
   time:
     formats:
-      date_slash_month: "%d/%w"
-
+      date_slash_month: "%d/%m"
   layouts:
     navbar:
       sign_in: Sign in
       sign_out: Sign out
-
   events:
     event:
       read_more: Read more
+    new:
+      create_event: Create event
     index:
+      events: Events
+      create_event: Create event
       delete_event: Are you sure you want to remove this event?
+    show:
+      edit_event: Edit event
+  images:
+    index:
+      upload_image: Upload new image
+  pages:
+    index:
+      menus: Menus
+      pages: Pages
+    show:
+      edit_page: Edit page
+  users:
+    index:
+      users: Users
+      email: Email
+      role: Role
+      tools: Tools

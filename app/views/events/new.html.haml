@@ -1,6 +1,7 @@
 - breadcrumb :new_event
 
-.page-header
-  %h1= t('.create_event')
+.col-md-8.col-md-offset-2
+  .page-header
+    %h1= t('.create_event')
 
-= render 'form', event: @event
+  = render 'form', event: @event

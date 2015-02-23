@@ -7,7 +7,7 @@
 .page-content.col-lg-10.col-lg-offset-1
   - if can? :edit, @page
     #quick-edit
-      = button_tag "Quick-Edit", id: "edit-content", class: "btn btn-edit btn-default", data: {page: @page.permalink}
+      = button_tag t('helpers.quick_edit'), id: "edit-content", class: "btn btn-edit btn-default", data: {page: @page.permalink}
   .panel-heading
     %h1= @page.title
   %hr/

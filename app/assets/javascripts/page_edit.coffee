@@ -29,7 +29,7 @@ finished_editing = ->
   if $('[data-editable]').exists()
     patch_editable_fields()
 
-  # Send changed content for pages and posts
+  # Send changed content for pages and events
   if $(".editable-content").exists()
     patch_page_content()
 
@@ -52,11 +52,11 @@ patch_editable_fields = ->
 
 patch_page_content = ->
   # Send Ajax Request
-  if $('#save-content').data('post')
+  if $('#save-content').data('event')
     $.ajax
       type: "PATCH"
-      url: $('#save-content').data('post')
-      data: {"post": {"content": $('.editable-content').html()}}
+      url: $('#save-content').data('event')
+      data: {"event": {"content": $('.editable-content').html()}}
       dataType: "JSON"
   if $('#save-content').data('page')
     $.ajax

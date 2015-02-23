@@ -2,7 +2,7 @@
   .col-lg-6
     .heading
       %h3
-        Menus
+        = t('.menus')
         .pull-right
           = link_to '#', id: 'save-menu-order' do
             %i.glyphicon.glyphicon-floppy-disk
@@ -15,7 +15,7 @@
   .col-lg-6
     .heading
       %h3
-        Pages
+        = t('.pages')
         .pull-right
           = link_to new_page_path do
             %i.glyphicon.glyphicon-plus

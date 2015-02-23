@@ -1,12 +1,18 @@
 - if can? :create, Event
   - content_for :navbar_tools do
-    = link_to t('.create_event'), new_event_path, class: "btn btn-xs btn-primary"
+    %li
+      = link_to t('.create_event'), new_event_path
 
   - breadcrumb :events
 
 .col-md-6.col-md-offset-3
   .heading
-    %h2 Events
+    %h2
+      = t('.events')
+      - if can? :create, Event
+        .pull-right
+          = link_to new_event_path do
+            %i.glyphicon.glyphicon-plus
     %hr/
   %ul.unstyled-list
     - @events.each do |event|

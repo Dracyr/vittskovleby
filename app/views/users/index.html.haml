@@ -1,4 +1,4 @@
-.panel.panel-default
+.col-md-8.col-md-offset-2
   .panel-heading
     %h3
       = t('.users')
@@ -8,9 +8,9 @@
   .panel-body
     %table.table.table-hover
       %thead
-        %th= t(:email)
-        %th= t(:role)
-        %th= t(:tools)
+        %th= t('.email')
+        %th= t('.role')
+        %th= t('.tools')
       %tbody
         - @users.each do |user|
           %tr

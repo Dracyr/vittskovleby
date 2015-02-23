@@ -1,5 +1,7 @@
 sv:
+  admin: Admin
   helpers:
+    quick_edit: Snabbredigera
     submit:
       page:
         create: Skapa sida
@@ -12,13 +14,36 @@ sv:
         update: Spara meny
   errors:
     permalink_reserved: kan inte vara ett reserverat namn
+  time:
+    formats:
+      date_slash_month: "%d/%m"
   layouts:
     navbar:
       sign_in: Logga in
       sign_out: Logga ut
-  time:
-    formats:
-      date_slash_month: "%d/%w"
   events:
+    event:
+      read_more: Läs mer
+    new:
+      create_event: Skapa event
     index:
+      events: Event
+      create_event: Skapa event
       delete_event: Är du säker på att du vill ta bort eventet?
+    show:
+      edit_event: Redigera event
+  images:
+    index:
+      upload_image: Ladda upp ny bild
+  pages:
+    index:
+      menus: Menyer
+      pages: Sidor
+    show:
+      edit_page: Redigera sida
+  users:
+    index:
+      users: Användare
+      email: Email
+      role: Roll
+      tools: Verktyg
