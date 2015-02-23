@@ -1,5 +1,5 @@
 $(document).on "page:change", ->
-  $('#edit-content').click edit_page_content
+  $('.edit-content').click edit_page_content
   $(".img-select").click (event) ->
     $(event.currentTarget).toggleClass('img-selected')
 
@@ -34,10 +34,13 @@ finished_editing = ->
     patch_page_content()
 
   # Change buttons
-  $('#save-content, #edit-content').html('Quick-Edit')
-  $('#save-content').removeClass('btn-success').addClass('btn-edit')
-  $('#save-content').attr('id', 'edit-content')
-  $('#edit-content').off().click edit_page_content
+  $('.save-content, .edit-content').html('Quick-Edit')
+  $('.save-content')
+    .removeClass('btn-success')
+    .removeClass('save-content')
+    .addClass('btn-edit')
+    .addClass('edit-content')
+  $('.edit-content').off().click edit_page_content
 
 patch_editable_fields = ->
   # Create JSON for editable fields
@@ -52,16 +55,16 @@ patch_editable_fields = ->
 
 patch_page_content = ->
   # Send Ajax Request
-  if $('#save-content').data('event')
+  if $('.save-content').data('event')
     $.ajax
       type: "PATCH"
-      url: $('#save-content').data('event')
+      url: $('.save-content').data('event')
       data: {"event": {"content": $('.editable-content').html()}}
       dataType: "JSON"
-  if $('#save-content').data('page')
+  if $('.save-content').data('page')
     $.ajax
       type: "PATCH"
-      url: $('#save-content').data('page')
+      url: $('.save-content').data('page')
       data: {"page": {"content": $('.editable-content').html()}}
       dataType: "JSON"
 
@@ -72,10 +75,13 @@ edit_page_content = ->
   $('[data-editable]').summernote
     airMode: true
   # Change buttons
-  $('#save-content, #edit-content').html('Save changes')
-  $('#edit-content').removeClass('btn-edit').addClass('btn-success')
-  $('#edit-content').attr('id', 'save-content')
-  $('#save-content').off().click finished_editing
+  $('.save-content, .edit-content').html('Save changes')
+  $('.edit-content')
+    .removeClass('btn-edit')
+    .removeClass('edit-content')
+    .addClass('btn-success')
+    .addClass('save-content')
+  $('.save-content').off().click finished_editing
 
 imageDialog = ($editable, $dialog) ->
   $.Deferred (deferred) ->

@@ -113,7 +113,7 @@
   text-align: center;
   font-size: 35px;
   .image-title {
-    width: 175px;
+    width: 220px;
     margin: auto;
   }
 
@@ -130,6 +130,7 @@
 .footer-wrapper {
   padding: 60px 0 50px 0;
   background: $bright-green;
+  color: white;
 
   h1, h2, h3, h4, h5, h6, p, a { color: white; }
   p { font-size: 1.2em; }

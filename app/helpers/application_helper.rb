@@ -11,7 +11,14 @@ module ApplicationHelper
   def editable_field(field_title)
     field = EditableField.find_by_title field_title
     content = field ? field.content : "Field not found: #{field_title}"
-    content_tag :div, data: { editable: field_title } do
+    if can? :edit, EditableField
+      quick_edit = content_tag :div, class: 'quick-edit' do
+        button_tag t('helpers.quick_edit'), class: "edit-content btn btn-edit btn-default"
+      end
+    else
+      quick_edit = ''
+    end
+    quick_edit + content_tag(:div, data: { editable: field_title }) do
       raw content
     end
   end

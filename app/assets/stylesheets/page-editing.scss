@@ -1,4 +1,4 @@
-#quick-edit {
+.quick-edit {
   position: relative;
   top: 20px;
   padding-right: 30px;
@@ -13,12 +13,12 @@
   }
 }
 
-.page-content:hover #quick-edit .btn-edit {
+.page-content:hover .quick-edit .btn-edit {
   opacity:1;
   visibility:visible;
 }
 
-.editable:hover #quick-edit .btn-edit {
+.editable:hover .quick-edit .btn-edit {
   opacity:1;
   visibility:visible;
 }
