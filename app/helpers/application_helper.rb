@@ -18,9 +18,8 @@ module ApplicationHelper
     else
       quick_edit = ''
     end
-    quick_edit + content_tag(:div, data: { editable: field_title }) do
-      raw content
-    end
+    content = content_tag(:div, data: { editable: field_title }) { content.html_safe }
+    (quick_edit + content).html_safe
   end
 
   def i(glyphicon)

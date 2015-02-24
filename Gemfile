@@ -1,5 +1,4 @@
 source 'https://rubygems.org'
-source 'https://rails-assets.org'
 
 ruby '2.2.0'
 
@@ -29,6 +28,8 @@ gem 'remotipart', '~> 1.2' #Ajax file uploads
 gem 'bootstrap_form'
 gem 'icheck-rails'
 gem 'newrelic_rpm'
+gem 'momentjs-rails' #Required by fullcalendar
+gem 'fullcalendar-rails'
 
 group :development do
  	gem 'capistrano-rails'

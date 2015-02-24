@@ -11,6 +11,9 @@
 #= require bootstrap-dialog
 #= require icheck
 #= require jquery.nestable
+#= require moment
+#= require moment/sv.js
+#= require fullcalendar
 #= require_tree .
 
 Turbolinks.enableTransitionCache()
