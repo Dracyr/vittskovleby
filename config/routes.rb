@@ -18,6 +18,8 @@ Rails.application.routes.draw do
 
   patch '/editable_fields', controller: :editable_fields, action: :update
 
+  get 'calendar', controller: :pages, action: :calendar
+
   get 'pages',  controller: :pages, action: :index
   get ':id',    controller: :pages, action: :show, as: :page
   patch  ':id', controller: :pages, action: :update

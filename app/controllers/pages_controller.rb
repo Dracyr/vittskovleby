@@ -35,6 +35,10 @@ class PagesController < ApplicationController
     respond_with @page
   end
 
+  def calendar
+
+  end
+
   private
 
   def page_params

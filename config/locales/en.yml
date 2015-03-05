@@ -2,6 +2,8 @@ en:
   admin: Admin
   helpers:
     quick_edit: Quick-edit
+    edit: Edit
+    destroy: Destroy
     submit:
       page:
         create: Create page
@@ -26,6 +28,8 @@ en:
       read_more: Read more
     new:
       create_event: Create event
+    edit:
+      update_event: Update event
     index:
       events: Events
       create_event: Create event
@@ -41,6 +45,18 @@ en:
       pages: Pages
     show:
       edit_page: Edit page
+  reservations:
+    index:
+      reservations: Reservations
+      location: Location
+      name: Name
+      phone: Phone
+      email: Email
+      date: Date
+      end: End
+      comment: Comment
+      new_reservation: New Reservation
+      confirm: Do you really want to delete this?
   users:
     index:
       users: Users

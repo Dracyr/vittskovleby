@@ -20,6 +20,7 @@
               = navbar_item "Pages", pages_path
               = navbar_item "Images", images_path
               = navbar_item "Events", events_path
+              = navbar_item "Reservations", reservations_path
           - if current_user
             %li= link_to t('.sign_out'), '/sign_out', method: :delete
           - else

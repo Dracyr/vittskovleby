@@ -14,6 +14,10 @@
 #= require moment
 #= require moment/sv.js
 #= require fullcalendar
+#= require fullcalendar/lang/sv.js
+#= require bootstrap-datepicker/core
+#= require bootstrap-datepicker/locales/bootstrap-datepicker.sv.js
+#= require select2
 #= require_tree .
 
 Turbolinks.enableTransitionCache()
@@ -35,6 +39,12 @@ $(document).on "page:change", ->
     bottom: 0
   # Remove class on frontpage
   $('#navbar-wrapper').find('.navbar-fixed-top').removeClass('navbar-fixed-top')
+
+  $('.datepicker').datepicker
+    format: 'yyyy-mm-dd'
+    language: 'sv'
+
+  $('select').select2()
 
 post_menu_order = ->
   data = $('.dd').nestable 'serialize'

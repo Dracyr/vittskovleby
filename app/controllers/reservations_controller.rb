@@ -53,6 +53,6 @@ class ReservationsController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def reservation_params
-      params.require(:reservation).permit(:location, :name, :phone, :email, :comment)
+      params.require(:reservation).permit(:location, :name, :phone, :email, :comment, :start_time, :duration)
     end
 end

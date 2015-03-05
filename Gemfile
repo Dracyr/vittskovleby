@@ -30,6 +30,9 @@ gem 'icheck-rails'
 gem 'newrelic_rpm'
 gem 'momentjs-rails' #Required by fullcalendar
 gem 'fullcalendar-rails'
+gem 'bootstrap-datepicker-rails'
+gem 'validates_overlap'
+gem 'select2-rails'
 
 group :development do
  	gem 'capistrano-rails'

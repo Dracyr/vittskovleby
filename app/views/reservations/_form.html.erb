@@ -1,15 +1,13 @@
-<%= simple_form_for(@reservation) do |f| %>
-  <%= f.error_notification %>
+<%= bootstrap_form_for @reservation, layout: :horizontal do |f| %>
+  <%= f.error_summary %>
 
-  <div class="form-inputs">
-    <%= f.input :location %>
-    <%= f.input :name %>
-    <%= f.input :phone %>
-    <%= f.input :email %>
-    <%= f.input :comment %>
-  </div>
+  <%= f.select :location_ids, Location.all.collect { |l| [l.name, l.id]}, {}, {multiple: true} %>
+  <%= f.text_field :name %>
+  <%= f.text_field :phone %>
+  <%= f.text_field :email %>
+  <%= f.text_field :start_time, class: 'datepicker' %>
+  <%= f.text_field :duration %>
+  <%= f.text_area :comment %>
 
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+  <%= f.submit %>
 <% end %>

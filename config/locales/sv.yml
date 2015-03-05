@@ -2,6 +2,8 @@ sv:
   admin: Admin
   helpers:
     quick_edit: Snabbredigera
+    edit: Redigera
+    destroy: Radera
     submit:
       page:
         create: Skapa sida
@@ -24,6 +26,8 @@ sv:
   events:
     event:
       read_more: Läs mer
+    edit:
+      update_event: Uppdatera event
     new:
       create_event: Skapa event
     index:
@@ -41,6 +45,18 @@ sv:
       pages: Sidor
     show:
       edit_page: Redigera sida
+  reservations:
+    index:
+      reservations: Bokningar
+      location: Plats
+      name: Namn
+      phone: Telenr
+      email: Email
+      date: Tid
+      end: Slutar
+      comment: Kommentarer
+      new_reservation: Ny bokning
+      confirm: Vill du verkligen radera denna bokning?
   users:
     index:
       users: Användare

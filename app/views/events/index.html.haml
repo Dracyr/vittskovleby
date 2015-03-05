@@ -19,7 +19,7 @@
       %h3
         = link_to event.title, event
         %small
-          = event.date.strftime("%Y-%m-%d")
+          = event.start_time.strftime("%Y-%m-%d")
           - if can? :edit, event
             .pull-right
               = link_to edit_event_path(event) do

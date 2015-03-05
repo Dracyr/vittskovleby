@@ -1,0 +1,30 @@
+%h1
+  = t('.reservations')
+
+%table.table
+  %thead
+    %tr
+      %th= t('.name')
+      %th= t('.location')
+      %th= t('.phone')
+      %th= t('.email')
+      %th= t('.date')
+      %th= t('.end')
+      %th= t('.comment')
+      %th{colspan: 3}
+  %tbody
+    %tr
+      - @reservations.each do |reservation|
+        %td= link_to reservation.name, reservation
+        %td= reservation.locations.join(', ')
+        %td= reservation.phone
+        %td= reservation.email
+        %td= reservation.start_time
+        %td= reservation.end_time
+        %td= truncate(reservation.comment, length: 100)
+        %td= link_to t('helpers.edit'), edit_reservation_path(reservation)
+        %td= link_to t('helpers.destroy'), reservation, method: :delete, data: { confirm: t('.confirm') }
+
+%br/
+
+= link_to t('.new_reservation'), new_reservation_path

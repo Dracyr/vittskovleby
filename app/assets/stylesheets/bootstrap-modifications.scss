@@ -192,3 +192,25 @@
 .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus {
   background-color: #70cb63;
 }
+
+/* Override boostrap-datepicker */
+.datepicker {
+  padding: 6px 12px;
+  border-radius: 0px;
+}
+
+/* Override select2-boostrap */
+.select2-container-multi .select2-choices .select2-search-choice {
+  padding: 5px 5px 5px 18px;
+  margin: 4px 0 3px 5px;
+  border: 1px solid #CBCBCB;
+  border-radius: 0;
+  background-color: white;
+  background-image: none;
+}
+
+.select2-drop,
+.form-control.select2-container.select2-dropdown-open,
+.form-control.select2-container .select2-choices {
+  border-radius: 0;
+}

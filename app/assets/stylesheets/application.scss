@@ -37,6 +37,9 @@ $bootstrap-sass-asset-helper: "assets" !default;
 @import "icheck/square/blue";
 @import "nestable";
 @import "fullcalendar";
+@import "bootstrap-datepicker3";
+@import "select2";
+@import "select2-bootstrap";
 
 @import "bootstrap-modifications";
 @import "summernote-modifications";

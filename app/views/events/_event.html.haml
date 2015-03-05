@@ -4,7 +4,7 @@
       = event.title
       %br/
       %small.event-date
-        = l event.date, format: :date_slash_month
+        = l event.start_time, format: :date_slash_month
     %hr/
     %p
       = truncate(event.content.html_safe, length: 240, separator: ' ')
