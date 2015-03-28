@@ -1,9 +1,9 @@
 class ReservationsController < ApplicationController
-  load_resource except: :index
+  load_resource
   authorize_resource except: :index
 
   def index
-    @reservations = Reservation.includes(:locations).order(created_at: :desc)
+    @reservations = @reservations.includes(:locations).order(created_at: :desc)
     authorize!(:index, @reservations) if params[:format] != 'json'
   end
 

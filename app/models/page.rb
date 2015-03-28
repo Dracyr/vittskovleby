@@ -9,7 +9,7 @@ class Page < ActiveRecord::Base
   before_validation :set_permalink
   after_save :touch_menu, if: Proc.new { |page| page.menu.present? }
 
-  scope :orphans, -> { where(menu_id: nil) }
+  scope :orphans, -> { includes(:menu).where('pages.id IS NULL') }
 
   def set_permalink
     self.permalink = title.parameterize

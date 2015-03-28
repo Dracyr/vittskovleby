@@ -1,6 +1,6 @@
 - cache_unless current_user, cache_key_homepage do
   #navbar-wrapper
-    = render 'layouts/navbar'
+    = render 'layouts/navbar', nav_menus: @nav_menus
   .cover-wrapper
     .container-fluid
       .cover-text

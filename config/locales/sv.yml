@@ -35,9 +35,12 @@ sv:
   images:
     index:
       upload_image: Ladda upp ny bild
+  menus:
+    new_menu_modal:
+      create_menu: Skapa menyelement
   pages:
     index:
-      menus: Menyer
+      menus: Menyelement
       pages: Sidor
     show:
       edit_page: Redigera sida
@@ -79,6 +82,15 @@ sv:
   activerecord:
     errors:
       models:
+        menu:
+          attributes:
+            link:
+              should_have_prefix: "Bör börja med 'http://'"
+            page:
+              should_have_page: Måste ange en sida
+              should_have_page_or_title: Måste ange en sida
+            title:
+              should_have_page_or_title: Måste ange en titel
         reservation:
           has_locations: Du måste ange minst en lokal att boka.
           attributes:
@@ -95,8 +107,13 @@ sv:
       reservation: Bokning
       user: Användare
       page: Sida
-      menu: Meny
+      menu: Menyelement
     attributes:
+      menu:
+        page: Sida
+        page_id: Sida
+        title: Titel
+        link: Länk
       reservation:
         location_ids: Lokaler
         name: Ditt namn

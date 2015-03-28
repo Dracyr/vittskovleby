@@ -1,5 +1,8 @@
 $(document).on "page:change", ->
   $('.edit-content').click edit_page_content
+
+  $('#save-menu-order').click post_menu_order
+
   $(".img-select").click (event) ->
     $(event.currentTarget).toggleClass('img-selected')
 
@@ -101,3 +104,17 @@ imageDialog = ($editable, $dialog) ->
         $('#insert-image').off "click"
         deferred.reject() if deferred.state() is "pending"
     ).modal "show"
+
+
+post_menu_order = ->
+  data = $('.dd').nestable 'serialize'
+  json_data = JSON.stringify(data)
+  $.ajax
+    type: "POST",
+    url: "/menus/update_all",
+    data: { menu_data: json_data},
+    success: ->
+      return false
+    error: ->
+      return false
+

@@ -6,8 +6,17 @@ class MenusController < ApplicationController
   end
 
   def create
-    @menu = Menu.create menu_params
-    respond_with @menu, location: pages_path
+    respond_to do |format|
+      format.html { respond_with @menu, location: pages_path }
+
+      format.js do
+        if @menu.save
+          respond_with @menu, location: pages_path
+        else
+          render json: {menu: @menu.errors}, status: :unprocessable_entity
+        end
+      end
+    end
   end
 
   def edit

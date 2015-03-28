@@ -32,19 +32,20 @@ class Menu < ActiveRecord::Base
 
   def has_page_if_page
     if menu_type == 'page' && page_id.blank?
-      errors.add(:base, I18n.t('errors.messages.should_have_page'))
+      errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page'))
     end
   end
 
   def has_title_or_page
     if menu_type != 'page' && self[:title].blank?
-      errors.add(:base, I18n.t('errors.messages.should_have_page_or_title'))
+      errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page_or_title'))
+      errors.add(:title,   I18n.t('activerecord.errors.models.menu.attributes.title.should_have_page_or_title'))
     end
   end
 
   def has_prefix_if_link
     if menu_type == 'link' && ( !link.include?('http') && !link.include?('/'))
-      errors.add(:link, I18n.t('errors.messages.should_have_prefix'))
+      errors.add(:link, I18n.t('activerecord.errors.models.menu.attributes.link.should_have_prefix'))
     end
   end
 
