@@ -13,11 +13,8 @@ module Pvpersson
     # -- all .rb files in that directory are automatically loaded.
     config.autoload_paths += %W(#{config.root}/lib)
     config.autoload_paths += Dir["#{config.root}/lib/**/"]
-    config.assets.paths   += %W("#{Rails.root}/vendor/assets/fonts")
-    config.assets.paths   += %W("#{Rails.root}/app/assets/fonts")
     # iCheck checkboxes
     config.assets.precompile += %w( icheck/square/* )
-    config.assets.precompile += %w( *.svg *.eot *.woff *.ttf )
 
     # Set Time.zone default to the specified zone and make Active Record auto-convert to this zone.
     # Run "rake -D time" for a list of tasks for finding time zone names. Default is UTC.
@@ -25,6 +22,6 @@ module Pvpersson
 
     # The default locale is :en and all translations from config/locales/*.rb,yml are auto loaded.
     # config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}').to_s]
-    # config.i18n.default_locale = :sv
+    config.i18n.default_locale = :sv
   end
 end
