@@ -66,6 +66,10 @@ sv:
     home:
       show_all_events: Visa alla evenemang
   users:
+    new:
+      create_user: Skapa användare
+    edit:
+      edit_user: Uppdatera användare
     index:
       users: Användare
       email: Email
@@ -89,6 +93,9 @@ sv:
     models:
       location: Lokal
       reservation: Bokning
+      user: Användare
+      page: Sida
+      menu: Meny
     attributes:
       reservation:
         location_ids: Lokaler
@@ -97,3 +104,8 @@ sv:
         email: Email
         date: Datum
         comment: Kommentar
+      user:
+        email: Email
+        role: Roll
+        password: Lösenord
+        password_confirmation: Upprepa lösenord

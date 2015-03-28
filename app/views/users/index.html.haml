@@ -19,7 +19,9 @@
             %td
               = user.role.titleize
             %td
-              = link_to edit_user_path(user) do
-                /%i.glyphicon.glyphicon.glyphicon-edit
-              = link_to user_path(user), method: :delete do
-                %i.glyphicon.glyphicon.glyphicon-trash
+              - if can? :destroy, user
+                = link_to user_path(user), method: :delete do
+                  %i.glyphicon.glyphicon.glyphicon-trash
+              - if can? :edit, user
+                = link_to edit_user_path(user) do
+                  %i.glyphicon.glyphicon.glyphicon-edit

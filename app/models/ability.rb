@@ -9,6 +9,8 @@ class Ability
     can [:create, :show], Reservation
     if user.admin?
       can :manage, :all
+      cannot :update, User
+      can :update, user
     end
   end
 end

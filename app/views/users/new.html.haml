@@ -1,0 +1,11 @@
+%h1= t('.create_user')
+%hr/
+= bootstrap_form_for @user do |f|
+  = f.text_field :email
+  = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
+
+  = f.password_field :password
+  = f.password_field :password_confirmation
+
+  = f.submit
+

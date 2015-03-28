@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'static#home'
 
-  resources :users
+  resources :users, except: [:show]
   devise_for :users
   devise_scope :user do
     get    "sign_in",  controller: 'devise/sessions', action: :new

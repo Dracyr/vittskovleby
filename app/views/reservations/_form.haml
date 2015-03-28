@@ -1,5 +1,5 @@
 .col-md-7
-  = bootstrap_form_for(@reservation, layout: :horizontal) do |f|
+  = bootstrap_form_for(reservation, layout: :horizontal) do |f|
     = f.collection_select :location_ids, Location.all, :id, :name, {}, {multiple: true, include_hidden: false}
     = f.text_field :name
     = f.text_field :phone

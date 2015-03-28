@@ -1,0 +1,16 @@
+%h1= t('.edit_user')
+%hr/
+= bootstrap_form_for @user do |f|
+  = f.text_field :email
+  - if can? :change_role, @user
+    = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
+
+  = f.submit
+
+%hr/
+%h2 Uppdatera lösenord
+= bootstrap_form_for @user do |f|
+  = f.password_field :password
+  = f.password_field :password_confirmation
+
+  = f.submit "Spara lösenord"

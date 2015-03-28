@@ -10,7 +10,7 @@
     = csrf_meta_tags
     = render 'shared/google_analytics' if Rails.env == 'production'
   %body
-    = render 'layouts/navbar'
+    = render 'layouts/navbar', nav_menus: @nav_menus
     .container.top-container
       = render 'flash'
       = breadcrumbs separator: ' / '
