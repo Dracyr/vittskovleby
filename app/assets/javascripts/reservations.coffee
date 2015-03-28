@@ -9,7 +9,7 @@ $(document).on "page:change", ->
       },
       {
         url: '/reservations.json',
-        color: '#B10000'
+        color: '#63A0CB'
       }
     ]
 

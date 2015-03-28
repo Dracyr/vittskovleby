@@ -43,6 +43,7 @@ GEM
     autoprefixer-rails (5.1.5)
       execjs
       json
+    awesome_print (1.6.1)
     bcrypt (3.1.10)
     better_errors (2.1.1)
       coderay (>= 1.0.0)
@@ -336,6 +337,7 @@ PLATFORMS
 DEPENDENCIES
   acts_as_list
   autoprefixer-rails
+  awesome_print
   bcrypt (~> 3.1.7)
   better_errors
   binding_of_caller

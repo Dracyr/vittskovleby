@@ -1,58 +1,41 @@
 class ReservationsController < ApplicationController
-  before_action :set_reservation, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
-  # GET /reservations
   def index
-    @reservations = Reservation.all
+    @reservations = @reservations.order(created_at: :desc)
   end
 
-  # GET /reservations/1
   def show
   end
 
-  # GET /reservations/new
   def new
-    @reservation = Reservation.new
   end
 
-  # GET /reservations/1/edit
   def edit
   end
 
-  # POST /reservations
   def create
-    @reservation = Reservation.new(reservation_params)
-
-    if @reservation.save
-      redirect_to @reservation, notice: 'Reservation was successfully created.'
-    else
-      render :new
-    end
+    @reservation = Reservation.create(reservation_params)
+    respond_with @reservation, notice: t('helpers.reservation_created')
   end
 
-  # PATCH/PUT /reservations/1
   def update
-    if @reservation.update(reservation_params)
-      redirect_to @reservation, notice: 'Reservation was successfully updated.'
-    else
-      render :edit
-    end
+    @reservation.update(update_reservation_params)
+    respond_with @reservation
   end
 
-  # DELETE /reservations/1
   def destroy
     @reservation.destroy
-    redirect_to reservations_url, notice: 'Reservation was successfully destroyed.'
+    respond_with @reservation, location: reservations_path
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_reservation
-      @reservation = Reservation.find(params[:id])
-    end
 
-    # Only allow a trusted parameter "white list" through.
-    def reservation_params
-      params.require(:reservation).permit(:location, :name, :phone, :email, :comment, :start_time, :duration)
-    end
+  def reservation_params
+    params.require(:reservation).permit(:name, :phone, :email, :comment, :date, location_ids: [])
+  end
+
+  def update_reservation_params
+    params.require(:reservation).permit(:name, :phone, :email, :comment, :date, :approved, location_ids: [])
+  end
 end

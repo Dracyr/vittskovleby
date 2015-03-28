@@ -32,6 +32,9 @@ class EventsController < ApplicationController
     respond_with @event
   end
 
+  def calendar
+  end
+
   private
 
   def event_params

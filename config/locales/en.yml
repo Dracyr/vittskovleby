@@ -63,3 +63,9 @@ en:
       email: Email
       role: Role
       tools: Tools
+  activerecord:
+    models:
+      location: Location
+    attributes:
+      reservation:
+        location_ids: Locations

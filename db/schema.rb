@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150224202622) do
+ActiveRecord::Schema.define(version: 20150328133237) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -39,8 +39,8 @@ ActiveRecord::Schema.define(version: 20150224202622) do
   end
 
   create_table "location_reservations", force: :cascade do |t|
-    t.integer "location_id",    null: false
-    t.integer "reservation_id", null: false
+    t.integer "location_id"
+    t.integer "reservation_id"
   end
 
   add_index "location_reservations", ["location_id"], name: "index_location_reservations_on_location_id", using: :btree
@@ -77,14 +77,14 @@ ActiveRecord::Schema.define(version: 20150224202622) do
   add_index "pages", ["menu_id"], name: "index_pages_on_menu_id", using: :btree
 
   create_table "reservations", force: :cascade do |t|
-    t.string   "name",                    null: false
-    t.string   "phone",                   null: false
-    t.string   "email",                   null: false
-    t.text     "comment",    default: "", null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
-    t.integer  "duration",   default: 0,  null: false
-    t.datetime "start_time",              null: false
+    t.string   "name",                       null: false
+    t.string   "phone",                      null: false
+    t.string   "email",                      null: false
+    t.text     "comment",    default: "",    null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+    t.date     "date",                       null: false
+    t.boolean  "approved",   default: false, null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -41,7 +41,7 @@ class Menu < ActiveRecord::Base
   end
 
   def has_prefix_if_link
-    if menu_type == 'link' && !link.include?('http')
+    if menu_type == 'link' && ( !link.include?('http') && !link.include?('/'))
       errors.add(:link, I18n.t('errors.messages.should_have_prefix'))
     end
   end

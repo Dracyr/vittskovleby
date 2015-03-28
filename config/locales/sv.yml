@@ -1,19 +1,15 @@
 sv:
   admin: Admin
   helpers:
+    yeah: Ja
+    nope: Nej
     quick_edit: Snabbredigera
     edit: Redigera
     destroy: Radera
+    reservation_created: "Din bokning har skapats, du kommer få ett mail när den är godkänd"
     submit:
-      page:
-        create: Skapa sida
-        update: Spara sida
-      event:
-        create: Skapa event
-        update: Spara event
-      menu:
-        create: Skapa meny
-        update: Spara meny
+      create: Skapa %{model}
+      update: Spara %{model}
   errors:
     permalink_reserved: kan inte vara ett reserverat namn
   time:
@@ -52,14 +48,52 @@ sv:
       name: Namn
       phone: Telenr
       email: Email
-      date: Tid
-      end: Slutar
-      comment: Kommentarer
+      date: Datum
+      approved: Godkänd
+      comment: Kommentar
       new_reservation: Ny bokning
       confirm: Vill du verkligen radera denna bokning?
+      confirm_approve: "Är du säker på att denna bokning från %{name} ska godkännas?"
+    show:
+      date: "Datum:"
+      name: "Namn:"
+      phone: "Telenr:"
+      email: "Email:"
+      date: "Datum:"
+      approved: "Godkänd:"
+      comment: "Kommentar:"
+  static:
+    home:
+      show_all_events: Visa alla evenemang
   users:
     index:
       users: Användare
       email: Email
       role: Roll
       tools: Verktyg
+
+  activerecord:
+    errors:
+      models:
+        reservation:
+          has_locations: Du måste ange minst en lokal att boka.
+          attributes:
+            name:
+              blank: Vad heter du egentligen?
+            phone:
+              blank: Du måste ange ett telefonnummer.
+            email:
+              blank: Du måste ange en email-address.
+            date:
+              blank: När hade du tänkt ha detta underbara evenemang?
+    models:
+      location: Lokal
+      reservation: Bokning
+    attributes:
+      reservation:
+        location_ids: Lokaler
+        name: Ditt namn
+        phone: Telenr
+        email: Email
+        date: Datum
+        comment: Kommentar

@@ -1,0 +1,29 @@
+.col-md-7
+  = bootstrap_form_for(@reservation, layout: :horizontal) do |f|
+    = f.collection_select :location_ids, Location.all, :id, :name, {}, {multiple: true, include_hidden: false}
+    = f.text_field :name
+    = f.text_field :phone
+    = f.text_field :email
+    = f.text_field :date, class: 'datepicker'
+    = f.text_area :comment, placeholder: 'Skriv en kort förklaring på varför du vill boka'
+    = f.submit
+
+.col-md-4
+  %h4 Hyreskostander
+  %p
+    Sockenstugan inrymmer 4 lokaler som hyrs ut, storstugan, lillstugan, galleriet samt bakstugan.
+  %br/
+  %table.table
+    %tbody
+      %tr
+        %td Storstugan inkl. kök (max 50 personer)
+        %td 400 kr/dag
+      %tr
+        %td Lillstugan inkl. kök (max 25 personer)
+        %td 300 kr/dag
+      %tr
+        %td Galleriet (max 50 personer)
+        %td 200 kr/dag
+      %tr
+        %td Bakstugan
+        %td 200 kr/dag

@@ -18,6 +18,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def load_navigation_menu
+    I18n.locale = :sv
     @nav_menus = Menu.orphans
   end
 
