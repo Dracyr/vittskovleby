@@ -14,7 +14,17 @@ Rails.application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-  config.cache_store = :dalli_store, nil, { :namespace => "Vittskovleby_v1", :expires_in => 1.day, :compress => true }
+  config.cache_store = :dalli_store,
+                    (ENV["MEMCACHIER_SERVERS"] || "").split(","),
+                    {username: ENV["MEMCACHIER_USERNAME"],
+                     password: ENV["MEMCACHIER_PASSWORD"],
+                     failover: true,
+                     socket_timeout: 1.5,
+                     socket_failure_delay: 0.2,
+                     namespace: "Vittskovleby_v1",
+                     expires_in: 1.day,
+                     compress: true
+                    }
 
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
