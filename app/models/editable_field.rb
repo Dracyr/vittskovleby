@@ -1,4 +1,5 @@
 class EditableField < ActiveRecord::Base
+  include CacheKey
 
   def self.update_from_hash(editable_fields)
     editable_fields.each do |json_field|

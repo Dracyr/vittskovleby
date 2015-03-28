@@ -1,4 +1,6 @@
 class Event < ActiveRecord::Base
+  include CacheKey
+
   validates :title, presence: true
   validates :content, presence: true
   validates :start_time, presence: true

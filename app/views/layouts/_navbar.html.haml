@@ -1,27 +1,22 @@
-%nav.navbar.navbar-fixed-top{role: 'navigation'}
-  .default-nav.navbar-default
-    .container
-      = navbar_header brand: "#{i(:home)} Hem", brand_link: '/'
-      = navbar_collapse do
-        = navbar_group align: :right, class: 'foo', id: 'menu' do
-          - @nav_menus.each do |menu|
-            - if menu.children.any?
-              = navbar_dropdown menu.title do
-                - menu.children.each do |child|
-                  = navbar_item child.title, "/#{child.link}"
+- cache cache_key_for_navbar do
+  %nav.navbar.navbar-fixed-top{role: 'navigation'}
+    .default-nav.navbar-default
+      .container
+        = navbar_header brand: "#{i(:home)} Hem", brand_link: '/'
+        = navbar_collapse do
+          = navbar_group align: :right, class: 'foo', id: 'menu' do
+            = render partial: 'menus/navbar_menu', collection: @nav_menus, as: :menu
+            - if current_user.try(:admin?)
+              = navbar_dropdown t(:admin) do
+                - if content_for(:navbar_tools)
+                  =  yield :navbar_tools
+                  = navbar_dropdown_divider
+                = navbar_item "Users", users_path
+                = navbar_item "Pages", pages_path
+                = navbar_item "Images", images_path
+                = navbar_item "Events", events_path
+                = navbar_item "Reservations", reservations_path
+            - if current_user
+              %li= link_to t('.sign_out'), '/sign_out', method: :delete
             - else
-              = navbar_item menu.title, "/#{menu.link}"
-          - if current_user.try(:admin?)
-            = navbar_dropdown t(:admin) do
-              - if content_for(:navbar_tools)
-                =  yield :navbar_tools
-                = navbar_dropdown_divider
-              = navbar_item "Users", users_path
-              = navbar_item "Pages", pages_path
-              = navbar_item "Images", images_path
-              = navbar_item "Events", events_path
-              = navbar_item "Reservations", reservations_path
-          - if current_user
-            %li= link_to t('.sign_out'), '/sign_out', method: :delete
-          - else
-            = navbar_item t('.sign_in'), '/sign_in'
+              = navbar_item t('.sign_in'), '/sign_in'

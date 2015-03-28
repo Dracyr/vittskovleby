@@ -98,6 +98,7 @@ GEM
       execjs
     coffee-script-source (1.9.0)
     colorize (0.7.5)
+    dalli (2.6.4)
     debug_inspector (0.0.2)
     devise (3.4.1)
       bcrypt (~> 3.0)
@@ -352,6 +353,7 @@ DEPENDENCIES
   capybara
   codemirror-rails
   coffee-rails (~> 4.0.0)
+  dalli
   devise
   dotenv-rails
   dragonfly (~> 1.0.7)

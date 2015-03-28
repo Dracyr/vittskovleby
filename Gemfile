@@ -33,6 +33,7 @@ gem 'fullcalendar-rails'
 gem 'bootstrap-datepicker-rails'
 gem 'validates_overlap'
 gem 'select2-rails'
+gem 'dalli'
 
 group :development do
  	gem 'capistrano-rails'

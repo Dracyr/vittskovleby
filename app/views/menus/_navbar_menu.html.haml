@@ -1,0 +1,7 @@
+- cache [request.original_fullpath, menu] do
+  - if menu.children.any?
+    = navbar_dropdown menu.title do
+      - menu.children.each do |child|
+        = navbar_item child.title, "/#{child.link}"
+  - else
+    = navbar_item menu.title, "/#{menu.link}"

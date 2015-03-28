@@ -1,7 +1,8 @@
 class EventsController < ApplicationController
-  load_and_authorize_resource
+  load_and_authorize_resource except: :calendar
 
   def index
+    @events = @events.order(created_at: :desc)
   end
 
   def show

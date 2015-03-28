@@ -1,6 +1,8 @@
 class Menu < ActiveRecord::Base
+  include CacheKey
+
   has_many   :children,  class_name: 'Menu', foreign_key: 'parent_id'
-  belongs_to :parent, class_name: 'Menu'
+  belongs_to :parent, class_name: 'Menu', touch: true
   acts_as_list scope: :parent
 
   validate :has_title_or_page

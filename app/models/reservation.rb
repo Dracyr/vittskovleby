@@ -1,4 +1,6 @@
 class Reservation < ActiveRecord::Base
+  include CacheKey
+
   has_many :locations, through: :location_reservations
   has_many :location_reservations, dependent: :destroy
 
