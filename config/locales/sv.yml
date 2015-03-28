@@ -93,6 +93,7 @@ sv:
               should_have_page_or_title: Måste ange en titel
         reservation:
           has_locations: Du måste ange minst en lokal att boka.
+          unique_per_day_and_location: Det finns redan en bokning på en eller flera av dina valda lokaler på detta datum.
           attributes:
             name:
               blank: Vad heter du egentligen?

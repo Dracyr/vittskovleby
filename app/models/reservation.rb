@@ -11,6 +11,7 @@ class Reservation < ActiveRecord::Base
   validates :phone, presence: true
   validates :date, presence: true
   validate :has_locations
+  validate :unique_per_day_and_location
 
   after_create :send_confirmation_mail
   after_save   :send_approved_mail, if: Proc.new {|r| r.approved_changed? }
@@ -34,6 +35,16 @@ class Reservation < ActiveRecord::Base
   def has_locations
     if locations.empty?
       errors.add(:location_ids, I18n.t('activerecord.errors.models.reservation.has_locations'))
+    end
+  end
+
+  def unique_per_day_and_location
+    same_day_reservations = Reservation.where(date: date)
+    if same_day_reservations.count > 0
+      other_locations = same_day_reservations.map(&:location_ids).flatten
+      unless (other_locations & location_ids).empty?
+        errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
+      end
     end
   end
 
