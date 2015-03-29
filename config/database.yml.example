@@ -7,8 +7,8 @@ default: &default
 
 development:
   <<: *default
-  database: pvpersson_developement
+  database: vittskovleby_developement
 
 test:
   <<: *default
-  database: pvpersson_test
+  database: vittskovleby_developement
