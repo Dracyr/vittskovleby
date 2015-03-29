@@ -1,9 +1,11 @@
 $(document).on "page:change", ->
   $(document).bind 'ajaxError', (event, jqxhr, settings, exception) ->
-    $('form').render_form_errors $.parseJSON(jqxhr.responseText)
+    if event.currentTarget.URL.indexOf('/pages') > -1
+      $('form').render_form_errors $.parseJSON(jqxhr.responseText)
   $(document).bind 'ajaxSuccess', (event, jqxhr, settings, exception) ->
-    $('.modal').modal_success()
-    window.location.reload()
+    if event.currentTarget.URL.indexOf('/pages') > -1
+      $('.modal').modal_success()
+      window.location.reload()
 
 
 (($) ->
