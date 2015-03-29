@@ -30,7 +30,7 @@
 
 .cover-wrapper {
   width: 100%;
-  height: 600px;
+  height: 60vh;
 
   background-image: image-url("alle.jpg");
   background-size: cover;
@@ -39,14 +39,14 @@
 
 @import url(//fonts.googleapis.com/css?family=Allura);
 .cover-text {
-  padding-top: 210px;
+  padding-top: 24vh;
   font-family: 'Allura', cursive;
+  color: white;
+  text-align: center;
   font-size: 130px;
   @media (max-height: $screen-sm-max) {
     font-size: 100px;
   }
-  color: white;
-  text-align: center;
 }
 
 .event-wrapper {
@@ -64,6 +64,7 @@
 
 .calendar-link {
   margin-top: 10px;
+  margin-right: 5vw;
   float: right;
 }
 
