@@ -1,18 +1,18 @@
 class Menu < ActiveRecord::Base
   include CacheKey
 
+  belongs_to :page
+  belongs_to :parent,    class_name: 'Menu', touch: true
   has_many   :children,  class_name: 'Menu', foreign_key: 'parent_id'
-  belongs_to :parent, class_name: 'Menu', touch: true
-  acts_as_list scope: :parent
+
+  default_scope -> { order("position ASC") }
+  scope :orphans, -> { where(parent: nil) }
 
   validate :has_title_or_page
   validate :has_page_if_page
   validate :has_prefix_if_link
 
-  belongs_to :page
-
-  default_scope -> { order("position ASC") }
-  scope :orphans, -> { where(parent: nil) }
+  acts_as_list scope: :parent
 
   enum menu_type: [:menu, :page, :link]
 

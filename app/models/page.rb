@@ -1,6 +1,8 @@
 class Page < ActiveRecord::Base
   has_one :menu, dependent: :destroy
 
+  scope :orphans, -> { includes(:menu).where('pages.id IS NULL') }
+
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true
   validates :permalink, presence: true, uniqueness: true,
@@ -8,8 +10,6 @@ class Page < ActiveRecord::Base
 
   before_validation :set_permalink
   after_save :touch_menu, if: Proc.new { |page| page.menu.present? }
-
-  scope :orphans, -> { includes(:menu).where('pages.id IS NULL') }
 
   def set_permalink
     self.permalink = title.parameterize
