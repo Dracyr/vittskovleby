@@ -1,10 +1,10 @@
 class ReservationMailer < ApplicationMailer
-  default from: 'bokningar@vittskovleby.se'
+  default from: 'kontakt@vittskovleby.se'
 
   def reservation_created(reservation)
     @reservation = reservation
     mail({
-      to: 'bokningar@vittskovleby.se',
+      to: 'kontakt@vittskovleby.se',
       subject: "Bokning av #{reservation.locations_to_s} från #{reservation.name}"
       })
   end
