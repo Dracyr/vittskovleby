@@ -77,9 +77,10 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'mail.fdab.se',
     port: 3325,
-    domain: 'vittskovleby.se',
+    domain: 'fdab.se',
     authentication: 'plain',
     enable_starttls_auto: true,
+    openssl_verify_mode: 'none', # För att certifikatet är expired.
     user_name: 'kontakt@vittskovleby.se',
     password: ENV['SMTP_PASSWORD']
   }
