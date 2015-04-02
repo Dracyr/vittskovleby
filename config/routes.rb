@@ -16,7 +16,9 @@ Rails.application.routes.draw do
   resources :menus,  except: [:index, :show] do
     post 'update_all', action: :update_all, on: :collection
   end
-  resources :reservations
+  resources :reservations do
+    post 'approve'
+  end
 
   patch '/editable_fields', controller: :editable_fields, action: :update
 

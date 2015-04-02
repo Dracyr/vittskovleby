@@ -31,6 +31,12 @@ class ReservationsController < ApplicationController
     respond_with @reservation, location: reservations_path
   end
 
+  def approve
+    @reservation = Reservation.find(params[:reservation_id])
+    @reservation.update(approved: true)
+    redirect_to reservations_path
+  end
+
   private
 
   def reservation_params

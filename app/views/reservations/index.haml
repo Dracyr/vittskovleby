@@ -25,7 +25,7 @@
           %td= reservation.approved ? i('ok') : i('remove')
           %td= truncate(reservation.comment, length: 100)
           - if can? :update, reservation
-            %td= link_to i('check'), reservation_path(reservation, reservation: {approved: true}), method: :patch, data: { confirm: t('.confirm_approve', name: reservation.name) }
+            %td= link_to i('check'), reservation_approve_path(reservation), method: :psot, data: { confirm: t('.confirm_approve', name: reservation.name) }
           - if can? :edit, reservation
             %td= link_to i('edit'), edit_reservation_path(reservation)
           - if can? :destroy, reservation
