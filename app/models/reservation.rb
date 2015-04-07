@@ -13,9 +13,6 @@ class Reservation < ActiveRecord::Base
   validate :has_locations
   validate :unique_per_day_and_location
 
-  after_create :send_confirmation_mail
-  after_save   :send_approved_mail, if: Proc.new {|r| r.approved_changed? }
-
   def as_json(options = {})
     url = Rails.application.routes.url_helpers.reservation_path(self)
     {
@@ -39,20 +36,12 @@ class Reservation < ActiveRecord::Base
   end
 
   def unique_per_day_and_location
-    same_day_reservations = Reservation.where(date: date)
+    same_day_reservations = Reservation.where(date: date).where.not(id: self)
     if same_day_reservations.count > 0
       other_locations = same_day_reservations.map(&:location_ids).flatten
       unless (other_locations & location_ids).empty?
         errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
       end
     end
-  end
-
-  def send_confirmation_mail
-    ReservationMailer.reservation_created(self).deliver
-  end
-
-  def send_approved_mail
-    ReservationMailer.reservation_approved(self).deliver
   end
 end

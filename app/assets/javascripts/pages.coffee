@@ -31,17 +31,17 @@ finished_editing = ->
   # Send changed content for editable fields
   if $('[data-editable]').exists()
     patch_editable_fields()
+    $('.save-content').addClass('btn-edit')
 
   # Send changed content for pages and events
   if $(".editable-content").exists()
     patch_page_content()
 
   # Change buttons
-  $('.save-content, .edit-content').html('Quick-Edit')
+  $('.save-content, .edit-content').html('Snabbredigera')
   $('.save-content')
     .removeClass('btn-success')
     .removeClass('save-content')
-    .addClass('btn-edit')
     .addClass('edit-content')
   $('.edit-content').off().click edit_page_content
 
@@ -78,7 +78,7 @@ edit_page_content = ->
   $('[data-editable]').summernote
     airMode: true
   # Change buttons
-  $('.save-content, .edit-content').html('Save changes')
+  $('.save-content, .edit-content').html('Spara ändringar')
   $('.edit-content')
     .removeClass('btn-edit')
     .removeClass('edit-content')

@@ -18,6 +18,8 @@ class ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.create(reservation_params)
+
+    ReservationMailer.reservation_created(@reservation).deliver
     respond_with @reservation, notice: t('helpers.reservation_created')
   end
 
@@ -34,6 +36,10 @@ class ReservationsController < ApplicationController
   def approve
     @reservation = Reservation.find(params[:reservation_id])
     @reservation.update(approved: true)
+
+    if params[:send_approval_mail] == 'true'
+      ReservationMailer.reservation_approved(@reservation).deliver
+    end
     redirect_to reservations_path
   end
 
@@ -44,6 +50,6 @@ class ReservationsController < ApplicationController
   end
 
   def update_reservation_params
-    params.require(:reservation).permit(:name, :phone, :email, :comment, :date, :approved, location_ids: [])
+    params.require(:reservation).permit(:approved, :name, :phone, :email, :comment, :date, location_ids: [])
   end
 end

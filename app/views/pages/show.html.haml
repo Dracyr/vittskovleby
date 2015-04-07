@@ -1,14 +1,16 @@
 - cache_unless((can? :edit, @page), @page) do
   - if can? :edit, @page
-    - content_for :navbar_tools do
-      = navbar_item t('.edit_page'), edit_page_path(@page)
-
     - breadcrumb :page, @page
 
   .page-content.col-lg-10.col-lg-offset-1
     - if can? :edit, @page
       .quick-edit
-        = button_tag t('helpers.quick_edit'), class: "edit-content btn btn-edit btn-default", data: {page: @page.permalink}
+        .btn-group
+          = button_tag t('helpers.quick_edit'), class: "edit-content btn btn-info", data: {page: @page.permalink}
+          %button.btn.btn-info.dropdown-toggle{"data-toggle" => "dropdown"}
+            %span.caret
+          %ul.dropdown-menu
+            = navbar_item t('.edit_page'), edit_page_path(@page)
     .panel-heading
       %h1= @page.title
     %hr/
