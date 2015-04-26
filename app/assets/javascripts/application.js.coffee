@@ -36,7 +36,7 @@ $(document).on "page:change", ->
   $('#navbar-wrapper').find('.navbar-fixed-top').removeClass('navbar-fixed-top')
 
 menu_modal_animate_height = ->
-  $('.modal').on "shown.bs.tab shown.bs.modal", ->
+  $('.modal-navtabs').on "shown.bs.tab shown.bs.modal", ->
     $(".modal-content").height($('.tab-pane.active').trueHeight())
 
 (($) ->
