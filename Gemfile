@@ -35,10 +35,6 @@ gem 'select2-rails'
 gem 'dalli'
 
 group :development do
- 	gem 'capistrano-rails'
- 	gem 'capistrano-unicorn-nginx', '~> 3.1.0'
- 	gem 'capistrano-bundler', '~> 1.1.2'
- 	gem 'capistrano-rbenv'
 	gem 'spring'
   gem 'guard-rspec', require: false
   gem 'better_errors'
