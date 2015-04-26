@@ -23,7 +23,6 @@ gem 'font-awesome-sass', '~> 4.3.0'
 gem 'acts_as_list'
 gem 'dragonfly', '~> 1.0.7'
 gem 'rails_bootstrap_navbar'
-gem 'gretel' # Bredcrumbs
 gem 'remotipart', '~> 1.2' #Ajax file uploads
 gem 'bootstrap_form'
 gem 'icheck-rails'
