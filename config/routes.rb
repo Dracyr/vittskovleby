@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post 'update_all', action: :update_all, on: :collection
   end
   resources :reservations do
-    post 'approve'
+    post 'approve', on: :member
   end
 
   patch '/editable_fields', controller: :editable_fields, action: :update

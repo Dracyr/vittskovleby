@@ -13,6 +13,7 @@ class ReservationMailer < ApplicationMailer
     @reservation = reservation
     mail({
       to: reservation.email,
+      bcc: 'kontakt@vittskovleby.se',
       subject: "Bokning av #{reservation.locations_to_s} godkändes!"
       })
   end

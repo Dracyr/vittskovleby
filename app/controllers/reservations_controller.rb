@@ -34,13 +34,18 @@ class ReservationsController < ApplicationController
   end
 
   def approve
-    @reservation = Reservation.find(params[:reservation_id])
-    @reservation.update(approved: true)
-
-    if params[:send_approval_mail] == 'true'
-      ReservationMailer.reservation_approved(@reservation).deliver
+    if @reservation.update(approved: true)
+      if params[:send_approval_mail] == '1'
+        ReservationMailer.reservation_approved(@reservation).deliver
+      end
+      redirect_to reservations_path, success: t('.reservation_approved')
+    else
+      @reservations = Reservation
+        .accessible_by(current_ability)
+        .includes(:locations)
+        .order(created_at: :desc)
+      render 'index'
     end
-    redirect_to reservations_path
   end
 
   private

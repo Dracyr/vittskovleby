@@ -24,9 +24,29 @@
           %td= reservation.date
           %td= reservation.approved ? i('ok') : i('remove')
           %td= truncate(reservation.comment, length: 100)
-          - if can? :update, reservation
-            %td= link_to i('check'), reservation_approve_path(reservation), method: :psot, data: { confirm: t('.confirm_approve', name: reservation.name) }
+          - if !reservation.approved? && can?(:update, reservation)
+            /%td= link_to i('check'), approve_reservation_path(reservation), method: :psot, data: { confirm: t('.confirm_approve', name: reservation.name) }
+
+            %td= link_to i('check'), '#', class: 'confirm_approve', data: { reservation: reservation.id, target: "#approveModal", toggle: "modal" }
+          - else
+            %td
           - if can? :edit, reservation
             %td= link_to i('edit'), edit_reservation_path(reservation)
           - if can? :destroy, reservation
             %td= link_to i('trash'), reservation, method: :delete, data: { confirm: t('.confirm') }
+
+#approveModal.modal.fade
+  .modal-dialog
+    .modal-content
+      .modal-header
+        %button.close{"data-dismiss" => "modal"} ×
+        %h4#myModalLabel.modal-title Godkänn bokning
+      .modal-body
+        %p
+          Är du säker på att denna bokning ska godkännas?
+      .modal-footer
+        = bootstrap_form_tag url: approve_reservation_path(id: 0), html: {id: 'send_approval_mail_link' } do |f|
+          .pull-left
+            = f.check_box :send_approval_mail, id: 'send_approval_mail', label: 'Skicka mail om godkännandet.', checked: true
+          %button.btn.btn-default{"data-dismiss" => "modal"} Avbryt
+          = submit_tag 'Godkänn', class: 'btn btn-primary'

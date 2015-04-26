@@ -37,7 +37,7 @@ class Reservation < ActiveRecord::Base
 
   def unique_per_day_and_location
     same_day_reservations = Reservation.where(date: date).where.not(id: self)
-    if same_day_reservations.count > 0
+    if same_day_reservations.any?
       other_locations = same_day_reservations.map(&:location_ids).flatten
       unless (other_locations & location_ids).empty?
         errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
