@@ -1,7 +1,4 @@
 - cache_unless((can? :edit, @page), @page) do
-  - if can? :edit, @page
-    - breadcrumb :page, @page
-
   .page-content.col-lg-10.col-lg-offset-1
     - if can? :edit, @page
       .quick-edit

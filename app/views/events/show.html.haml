@@ -3,8 +3,6 @@
     %li
       = link_to t('.edit_event'), edit_event_path(@event)
 
-  - breadcrumb :event, @event
-
 .row.editable
   .col-md-6.col-md-offset-3
     - if can? :edit, @event

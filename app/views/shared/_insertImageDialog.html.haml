@@ -1,27 +1,29 @@
 / Modal
-#insertImageModal.modal.fade
+#insertImageModal.modal.fade.modal-navtabs
   .modal-dialog.modal-lg
     .modal-content
       .modal-header
-        %h2#myModalLabel.modal-title Insert Image
-      .tab-content
-        #select-image.tab-pane.active
-          .modal-body
+        %h2#myModalLabel.modal-title= t('.insert_image')
+      .modal-body
+        .tab-content
+          #select-image.tab-pane.active
             = render partial: 'images/image_small', collection: Image.all, as: :image
-          .modal-footer
-            = button_tag "Insert Image", id: 'insert-image', class: "btn btn-primary"
-        #upload-image.tab-pane
-          .modal-body
+            .modal-footer
+              = button_tag "Insert Image", id: 'insert-image', class: "btn btn-primary"
+          #upload-image.tab-pane
             - image = Image.new
             = simple_form_for image, html: { class: 'form-horizontal' }, remote: true do |f|
               = f.input :title
               = f.input :file, as: :file
-              .modal-footer
-                = f.button :submit, class: "btn btn-primary"
+              = f.button :submit, class: "btn btn-primary"
+    .tabs-below
       %ul.nav.nav-tabs
         %li.active
           %a{href: '#select-image', role: 'tab', data: {toggle: 'tab'}}
-            Select Image
+            = t('.select_image')
         %li
           %a{href: '#upload-image', data: {toggle: 'tab'}}
-            Upload Image
+            = t('.upload_image')
+
+
+

@@ -36,15 +36,18 @@ $(document).on "page:change", ->
   $('#navbar-wrapper').find('.navbar-fixed-top').removeClass('navbar-fixed-top')
 
 menu_modal_animate_height = ->
-  $('a[data-toggle="tab"').on "shown.bs.tab", ->
-    new_height = $('.tab-pane.active').trueHeight()
-    $(".modal-content").height(new_height + 180)
+  $('.modal').on "shown.bs.tab shown.bs.modal", ->
+    $(".modal-content").height($('.tab-pane.active').trueHeight())
 
 (($) ->
   $.fn.trueHeight = ->
-    height = $(this).find('input[type="submit"]').height()
-    $(this).find('.form-group').each ->
-      height += $(this).outerHeight()
+    if $(this).find('input[type="submit"]').exists()
+      height = $(this).find('input[type="submit"]').height()
+      $(this).find('.form-group').each ->
+        height += $(this).outerHeight()
+      height += 170
+    else
+      height = $(this).outerHeight() + 90
     height
 ) jQuery
 

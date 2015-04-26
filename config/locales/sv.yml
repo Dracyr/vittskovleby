@@ -40,6 +40,11 @@ sv:
   images:
     index:
       upload_image: Ladda upp ny bild
+      images: Bilder
+    edit:
+      edit_image: Redigera bild
+    new:
+      new_image: Ladda upp bild
   menus:
     new_menu_modal:
       create_menu: Skapa menyelement
@@ -49,6 +54,10 @@ sv:
       pages: Sidor
     show:
       edit_page: Redigera sida
+    edit:
+      edit_page: Redigera sida
+    new:
+      new_page: Skapa sida
   reservations:
     index:
       reservations: Bokningar
@@ -70,6 +79,11 @@ sv:
       date: "Datum:"
       approved: "Godkänd:"
       comment: "Kommentar:"
+  shared:
+    insertImageDialog:
+      select_image: Välj bild
+      upload_image: Ladda upp bild
+      insert_image: Välj bild
   static:
     home:
       show_all_events: Visa alla evenemang
@@ -108,12 +122,21 @@ sv:
               blank: Du måste ange en email-address.
             date:
               blank: När hade du tänkt ha detta underbara evenemang?
+        image:
+          attributes:
+            title: Bildtitel
+            file: Fil
+        page:
+          attributes:
+            title: Titel
+            content: Innehåll
     models:
       location: Lokal
       reservation: Bokning
       user: Användare
       page: Sida
       menu: Menyelement
+      image: Bild
     attributes:
       menu:
         page: Sida

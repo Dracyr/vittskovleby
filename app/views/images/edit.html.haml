@@ -1,3 +1,9 @@
-- breadcrumb :edit_image, @image
+%h1= t('.edit_image')
+%hr/
 
-= render 'form', image: @image
+= simple_form_for @image, html: { class: 'form-horizontal' } do |f|
+  = f.input :title
+
+  = f.button :submit, class: "btn btn-primary"
+
+= image_tag @image.file.thumb('x400').url, class: 'img-responsive edit-image-preview'

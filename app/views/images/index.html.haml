@@ -1,13 +1,12 @@
-- if can? :create, Image
-  - content_for :navbar_tools do
-    = navbar_item "Upload image", new_image_path
-
-  - breadcrumb :images
-
-
-- if can? :create, Image
-  %h3
-    = link_to t('.upload_image'), new_image_path
-  %hr/
+.row
+  .col-md-6.col-md-offset-3
+    .heading
+      %h2
+        = t('.images')
+        - if can? :create, Image
+          .pull-right
+            = link_to new_image_path do
+              %i.glyphicon.glyphicon-plus
+      %hr/
 .row
   = render @images

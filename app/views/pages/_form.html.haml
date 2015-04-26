@@ -1,13 +1,10 @@
-.panel.panel-default
-  .panel-heading
-    %h3
-      Page form
-  .panel-body
-    = simple_form_for page, html: { class: 'form-horizontal' } do |f|
-      = f.input :title
-      = f.input :content, input_html: { class: "summernote_editor" }
+= simple_form_for page, html: { class: 'form-horizontal' } do |f|
+  = f.input :title
+  = f.input :content, input_html: { class: "summernote_editor" }
 
-      = f.input :menu_id, as: :hidden, input_html: { value: params[:menu_id] }
+  = f.input :menu_id, as: :hidden, input_html: { value: params[:menu_id] }
 
-      = f.button :submit, class: "btn-primary"
-      = link_to 'Cancel', pages_path, class: "btn btn-default"
+  = f.button :submit, class: "btn-primary"
+  = link_to 'Cancel', pages_path, class: "btn btn-default"
+
+= render 'shared/insertImageDialog'
