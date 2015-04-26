@@ -11,11 +11,11 @@
                 - if content_for(:navbar_tools)
                   =  yield :navbar_tools
                   = navbar_dropdown_divider
-                = navbar_item "Users", users_path
-                = navbar_item "Pages", pages_path
-                = navbar_item "Images", images_path
-                = navbar_item "Events", events_path
-                = navbar_item "Reservations", reservations_path
+                = navbar_item t('.users'), users_path
+                = navbar_item t('.pages'), pages_path
+                = navbar_item t('.images'), images_path
+                = navbar_item t('.events'), events_path
+                = navbar_item t('.reservations'), reservations_path
             - if current_user
               %li= link_to t('.sign_out'), '/sign_out', method: :delete
             - else

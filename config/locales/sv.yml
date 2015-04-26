@@ -19,6 +19,11 @@ sv:
     navbar:
       sign_in: Logga in
       sign_out: Logga ut
+      users: Användare
+      pages: Sidor
+      images: Bilder
+      events: Evenemang
+      reservations: Bokningar
   events:
     event:
       read_more: Läs mer
