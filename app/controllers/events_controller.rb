@@ -4,7 +4,7 @@ class EventsController < ApplicationController
 
   def index
     @events = @events.order(created_at: :desc)
-    authorize!(:index, @events) if params[:format] != 'json'
+    authorize!(:index, @events) unless params[:format] == 'json'
   end
 
   def show

@@ -6,7 +6,7 @@ class Ability
 
     can :read, Page
     can :read, Event
-    can [:create, :show], Reservation
+    can [:create, :read], Reservation
     if user.admin?
       can :manage, :all
       cannot :update, User

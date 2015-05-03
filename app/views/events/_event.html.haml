@@ -8,7 +8,7 @@
           = l event.start_time, format: :date_slash_month
       %hr/
       %p
-        = truncate(event.content.html_safe, length: 240, separator: ' ')
+        = truncate(sanitize(event.content, tags: []), length: 240, separator: ' ')
       - if event.content.html_safe.length > 240
         .pull-right
           = link_to t('.read_more'), event
