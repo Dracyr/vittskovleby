@@ -15,8 +15,7 @@
 #= require moment/sv.js
 #= require fullcalendar
 #= require fullcalendar/lang/sv.js
-#= require bootstrap-datepicker/core
-#= require bootstrap-datepicker/locales/bootstrap-datepicker.sv.js
+#= require bootstrap-datetimepicker
 #= require select2
 #= require_tree .
 

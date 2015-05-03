@@ -1,6 +1,6 @@
 .row
   .col-md-4
-    %h4 Hyreskostander
+    %h4 Hyreskostnader
     %p
       Sockenstugan inrymmer 4 lokaler som hyrs ut, storstugan, lillstugan, galleriet samt bakstugan.
     %br/
@@ -24,7 +24,7 @@
       = f.text_field :name
       = f.text_field :phone
       = f.text_field :email
-      = f.text_field :date, class: 'datepicker'
+      = f.text_field :date, id: 'reservation-datepicker'
       = f.text_area :comment, placeholder: 'Skriv en kort förklaring på varför du vill boka'
       .pull-right
         = f.submit

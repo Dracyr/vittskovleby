@@ -7,9 +7,16 @@ $(document).on "page:change", ->
     maxDepth: 2
 
 $(document).on "page:change", ->
-  $('.datepicker').datepicker
-    format: 'yyyy-mm-dd'
-    language: 'sv'
+  $('#reservation-datepicker').datetimepicker
+    format: 'YYYY-MM-DD'
+    keepOpen: true
+    locale: 'sv'
+
+  $('#event-datetimepicker').datetimepicker
+    locale: 'sv'
+    inline: true
+    sideBySide: true
+    keepOpen: true
 
 $(document).on "page:change", ->
   $('select').select2()

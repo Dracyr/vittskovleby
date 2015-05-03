@@ -1,7 +1,10 @@
 class Page < ActiveRecord::Base
   has_one :menu, dependent: :destroy
 
-  scope :orphans, -> { includes(:menu).where('pages.id IS NULL') }
+  scope :orphans, -> {
+    joins("LEFT OUTER JOIN menus ON pages.id = menus.page_id")
+    .where(menus: {page_id: nil})
+  }
 
   validates :title, presence: true, uniqueness: true
   validates :content, presence: true

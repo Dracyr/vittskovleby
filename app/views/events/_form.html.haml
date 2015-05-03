@@ -2,7 +2,6 @@
   = f.text_field :title
   = f.text_area  :content
 
-  = f.text_field :start_time, class: 'datepicker'
+  = f.text_field :start_time, id: 'event-datetimepicker', class: 'hidden'
 
   = f.submit
-  = link_to 'Cancel', :back, class: "btn btn-default"

@@ -138,6 +138,7 @@ sv:
       page: Sida
       menu: Menyelement
       image: Bild
+      event: Evenemang
     attributes:
       menu:
         page: Sida
@@ -156,3 +157,7 @@ sv:
         role: Roll
         password: Lösenord
         password_confirmation: Upprepa lösenord
+      event:
+        title: Titel
+        content: Beskrivning
+        start_time: Tid
