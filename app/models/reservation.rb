@@ -7,7 +7,7 @@ class Reservation < ActiveRecord::Base
   scope :approved, -> { where(approved: true) }
 
   validates :name, presence: true
-  validates :email, presence: true
+  validates :email, presence: true, format: /\A\S+@.+\.\S+\z/
   validates :phone, presence: true
   validates :date, presence: true
   validate :has_locations

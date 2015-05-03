@@ -117,9 +117,10 @@ sv:
             name:
               blank: Vad heter du egentligen?
             phone:
-              blank: Du måste ange ett telefonnummer.
+              blank: Du måste ange ett telefonnummer
             email:
-              blank: Du måste ange en email-address.
+              blank: Måste ange en email-address
+              invalid: ogiltig email-address
             date:
               blank: När hade du tänkt ha detta underbara evenemang?
         image:
