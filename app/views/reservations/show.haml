@@ -9,9 +9,9 @@
     %p= @reservation.date
     %h3= t('.name')
     %p= @reservation.name
-    %h3= t('.approved')
-    %p= @reservation.approved? ? t('helpers.yeah') : t('helpers.nope')
     - if can? :edit, @reservation
+      %h3= t('.approved')
+      %p= @reservation.approved? ? t('helpers.yeah') : t('helpers.nope')
       %h3= t('.phone')
       %p= @reservation.phone
       %h3= t('.email')
