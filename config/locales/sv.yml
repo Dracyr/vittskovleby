@@ -46,12 +46,15 @@ sv:
     new:
       new_image: Ladda upp bild
   menus:
+    menu:
+      confirm_delete_menu: Är du säker på att du vill radera menyelementet %{menu}?
     new_menu_modal:
       create_menu: Skapa menyelement
   pages:
     index:
       menus: Menyelement
       pages: Sidor
+      confirm_delete_page: Är du säker på att du vill radera sidan %{page}?
     show:
       edit_page: Redigera sida
     edit:

@@ -9,11 +9,11 @@ $ ->
     return true  unless link.is("[data-confirm]")
     BootstrapDialog.show
       type: BootstrapDialog.TYPE_DANGER
-      title: "Confirm"
+      title: "Varning!"
       message: link.attr("data-confirm")
       buttons: [
         {
-          label: "Accept"
+          label: "Verkställ"
           cssClass: "btn-primary"
           action: (dialogRef) ->
             link.removeAttr "data-confirm"
@@ -22,7 +22,7 @@ $ ->
             return
         }
         {
-          label: "Cancel"
+          label: "Avbryt"
           action: (dialogRef) ->
             dialogRef.close()
             return

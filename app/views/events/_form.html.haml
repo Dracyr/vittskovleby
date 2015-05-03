@@ -1,7 +1,6 @@
 = bootstrap_form_for event do |f|
   = f.text_field :title
-  = f.text_area  :content
-
   = f.text_field :start_time, id: 'event-datetimepicker', class: 'hidden'
+  = f.text_area  :content, class: 'event-summernote'
 
   = f.submit

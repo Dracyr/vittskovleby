@@ -12,11 +12,5 @@ $(document).on "page:change", ->
     keepOpen: true
     locale: 'sv'
 
-  $('#event-datetimepicker').datetimepicker
-    locale: 'sv'
-    inline: true
-    sideBySide: true
-    keepOpen: true
-
 $(document).on "page:change", ->
   $('select').select2()

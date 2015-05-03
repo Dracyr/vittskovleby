@@ -14,7 +14,7 @@
         = link_to menu_path(menu), method: :delete do
           %i.glyphicon.glyphicon.glyphicon-trash
       - else
-        = link_to menu_path(menu), method: :delete do
+        = link_to menu_path(menu), method: :delete, 'data-confirm' => t('.confirm_delete_menu', menu: menu.title) do
           %i.glyphicon.glyphicon.glyphicon-trash
   - if menu.children.any?
     %ol.dd-list
@@ -26,5 +26,5 @@
               - unless child.page?
                 = link_to edit_menu_path(child) do
                   %i.glyphicon.glyphicon.glyphicon-edit
-              = link_to menu_path(child), method: :delete do
+              = link_to menu_path(child), method: :delete, 'data-confirm' => t('.confirm_delete_menu', menu: child.title) do
                 %i.glyphicon.glyphicon.glyphicon-trash
