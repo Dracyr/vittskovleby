@@ -1,8 +1,10 @@
 class EventsController < ApplicationController
-  load_and_authorize_resource except: :calendar
+  load_resource
+  authorize_resource except: [:calendar, :index]
 
   def index
     @events = @events.order(created_at: :desc)
+    authorize!(:index, @events) if params[:format] != 'json'
   end
 
   def show
