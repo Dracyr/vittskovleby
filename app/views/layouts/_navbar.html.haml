@@ -6,7 +6,7 @@
         = navbar_collapse do
           = navbar_group align: :right, class: 'foo', id: 'menu' do
             = render partial: 'menus/navbar_menu', collection: nav_menus, as: :menu
-            - if current_user.try(:admin?)
+            - if current_user.try(:admin?) || current_user.try(:super_admin?)
               = navbar_dropdown t(:admin) do
                 - if content_for(:navbar_tools)
                   =  yield :navbar_tools
