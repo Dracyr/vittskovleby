@@ -4,13 +4,23 @@ require 'dragonfly'
 Dragonfly.app.configure do
   plugin :imagemagick
 
-  secret "efe219648781beea716b55423d2916b39275225b1b95741d0577737ea47e4960"
+  secret Rails.application.secrets.dragonfly_dos_protection
 
   url_format "/media/:job/:name"
 
-  datastore :file,
-    root_path: Rails.root.join('public/system/dragonfly', Rails.env),
-    server_root: Rails.root.join('public')
+  if Rails.env.production?
+    protect_from_dos_attacks true
+
+    datastore :s3,
+      bucket_name: Rails.application.secrets.dragonfly_bucket,
+      access_key_id: Rails.application.secrets.dragonfly_access_key_id,
+      secret_access_key: Rails.application.secrets.dragonfly_secret_access_key,
+      region: 'eu-west-1'
+  else
+    datastore :file,
+      root_path: Rails.root.join('public/system/dragonfly', Rails.env),
+      server_root: Rails.root.join('public')
+  end
 end
 
 # Logger
