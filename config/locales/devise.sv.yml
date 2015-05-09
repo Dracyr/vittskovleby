@@ -24,10 +24,24 @@ sv:
     sessions:
       signed_in: 'Loggade in.'
       signed_out: 'Loggade ut.'
+
+      new:
+        sign_in: Logga in
+        email: Email
+        password: Lösenord
+        remember_me: Kom ihåg mig
+        forgot_password: Glömt lösenord?
+        click_here: Klicka här
+        to_get_new_password: för att få ett nytt.
     passwords:
       send_instructions: 'Du kommer få epost med instruktioner om hur du kan återställa ditt lösenord inom några minuter.'
       updated: 'Ditt lösenord har uppdaterats. Du är nu inloggad.'
       send_paranoid_instructions: "Om din email är i vår databas, kommer du att få en lösenordslänk till din mail."
+
+      new:
+        forgot_password: Glömt lösenord?
+        email: Email
+        send_reset: Skicka återställningsinstruktioner
     confirmations:
       send_instructions: 'Du kommer att få epost med instruktioner om hur du kan bekräfta ditt konto inom några minuter.'
       send_paranoid_instructions: 'Om din email är i vår databas, kommer du att få ett mail med instruktioner om hur du ska aktivera ditt konto inom några minuter.'
