@@ -36,3 +36,7 @@ $(document).on "page:change", ->
 # Convenience function for checking if jquery has selected something
 $.fn.exists = ->
   @length isnt 0
+
+$(document).on "page:change", ->
+  $.each $('.event-wrapper .event-text h2'), (i, heading) ->
+    $(heading).css("font-size", "-=1") while $(heading).height() > 80
