@@ -22,8 +22,10 @@ sv:
       user:
         not_found_in_database: 'Ogiltig epost eller lösenord.'
     sessions:
-      signed_in: 'Loggade in.'
-      signed_out: 'Loggade ut.'
+      #signed_in: 'Loggade in.'
+      #signed_out: 'Loggade ut.'
+      signed_in:  ''
+      signed_out: ''
 
       new:
         sign_in: Logga in
