@@ -28,24 +28,18 @@
     .container
       .standing-images.row
         .col-md-4.col-sm-6.image-container
-          = image_tag 'https://placehold.it/350x450', class: 'img-responsive', size: '350x450'
-          .image-text
-            .image-title
-              =# link_to 'Byn', 'byn-vittskovle'
-              Byn
-            .image-caption
+          = image_tag 'byn_vittskovle_back.jpg', size: '350x450'
+          .image-text Byn
+          =# link_to 'Byn', 'byn-vittskovle'
         .col-md-4.col-sm-6.image-container
-          = image_tag 'https://placehold.it/350x450', class: 'img-responsive', size: '350x450'
-          .image-text
-            .image-title
-              = link_to 'Föreningarna', 'foreningarna-i-vittskovle'
-            .image-caption
+          = link_to 'foreningarna-i-vittskovle' do
+            = image_tag 'foreningar_barn_vid_back_resize.jpg', size: '350x450'
+            .image-text Föreningarna
+
         .col-md-4.col-sm-6.image-container
-          = image_tag 'https://placehold.it/350x450', class: 'img-responsive', size: '350x450'
-          .image-text
-            .image-title
-              = link_to 'Företagen', 'foretagen-i-vittskovle'
-            .image-caption
+          = link_to 'foretagen-i-vittskovle' do
+            = image_tag 'foretag_manga_bollar_i_luften.jpg', size: '350x450'
+            .image-text Företagen
 
   .footer-wrapper
     .container

@@ -99,41 +99,34 @@
 }
 
 .standing-images {
-  text-align:center;
-
   .image-container {
     display:inline-block;
     float:none;
-    /* reset the text-align */
-    text-align:left;
     /* inline-block space fix */
     margin-right:-4px;
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
   }
+
+  .image-text {
+    position: relative;
+    top:  -140px;
+    width: 100%;
+
+    text-align: center;
+    font-family: 'Raleway';
+    font-size: 40px;
+    text-shadow: 2px 2px 8px #000;
+    color: #FFF;
+  }
+
+  a {text-decoration: none;}
 
   @media (max-width: $grid-float-breakpoint) {
     &> div { max-width: 350px; }
-  }
-}
-
-.image-text {
-  position: relative;
-  top:  -140px;
-  width: 100%;
-
-  text-align: center;
-  font-size: 35px;
-  .image-title {
-    width: 220px;
-    margin: auto;
-  }
-
-  .image-caption {
-    font-style: italic;
-    font-size: 30px;
-    font-weight: lighter;
-    width: 75%;
-    margin: auto;
-    border-top: 1px solid rgb(166, 160, 160);
   }
 }
 
