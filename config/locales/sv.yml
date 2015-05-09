@@ -43,6 +43,7 @@ sv:
       images: Bilder
     image:
       unknown_title: Okänd titel
+      delete_image: Är du säker på att du vill ta bort denna bilden?
     edit:
       edit_image: Redigera bild
     new:

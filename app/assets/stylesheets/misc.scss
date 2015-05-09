@@ -71,3 +71,11 @@
 .heading a:hover {
   text-decoration: none;
 }
+
+.page-content img {
+  // img-responsive
+  display: block;
+  width: 100% \9;
+  max-width: 100%;
+  height: auto;
+}

@@ -1,4 +1,4 @@
-.col-sm-3
+.col-sm-3.col-xs-6
   .photo
     .head
       %h4
@@ -9,6 +9,6 @@
         .links
           = link_to edit_image_path(image) do
             %i.glyphicon.glyphicon-edit
-          = link_to image_path(image), method: :delete, data: {confirm: "Do you really want to delete this?"} do
+          = link_to image_path(image), method: :delete, data: {confirm: t('.delete_image')} do
             %i.glyphicon.glyphicon-trash
 

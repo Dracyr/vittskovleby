@@ -1,8 +1,12 @@
 .quick-edit {
-  position: relative;
-  top: 10px;
-  padding-right: 15px;
-  float: right;
+  @media (min-width: $screen-md-min) {
+    float: right;
+    padding-top:   20px;
+    padding-right: 20px;
+    @media (max-width: $screen-md-max) {
+      padding-top:   0px;
+    }
+  }
 
   .btn-edit {
     opacity: 0;

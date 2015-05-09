@@ -41,6 +41,7 @@ en:
       upload_image: Upload new image
     image:
       unknown_title: Unknown title
+      delete_image: Do you really want to delete this image?
   pages:
     index:
       menus: Menus
