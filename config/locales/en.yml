@@ -39,6 +39,8 @@ en:
   images:
     index:
       upload_image: Upload new image
+    image:
+      unknown_title: Unknown title
   pages:
     index:
       menus: Menus

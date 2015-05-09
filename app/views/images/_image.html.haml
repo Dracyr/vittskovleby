@@ -2,8 +2,7 @@
   .photo
     .head
       %h4
-        = image.title
-        = "Unknown title" if image.title?
+        = image.title.present? ? image.title : t('.unknown_title')
     .img
       = image_tag image.file.thumb('300x300#').url
       .overlay

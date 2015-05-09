@@ -41,6 +41,8 @@ sv:
     index:
       upload_image: Ladda upp ny bild
       images: Bilder
+    image:
+      unknown_title: Okänd titel
     edit:
       edit_image: Redigera bild
     new:
