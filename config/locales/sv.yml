@@ -124,6 +124,8 @@ sv:
 
   activerecord:
     errors:
+      messages:
+        record_invalid: inte korrekt
       models:
         menu:
           attributes:
@@ -155,6 +157,16 @@ sv:
           attributes:
             title: Titel
             content: Innehåll
+        user:
+          attributes:
+            email:
+              blank: Email måste anges
+            password:
+              blank: Måste anges
+              too_short: Lösenordet är för kort
+            password_confirmation:
+              blank: Måste anges
+              confirmation: Måste anges
     models:
       location: Lokal
       reservation: Bokning
