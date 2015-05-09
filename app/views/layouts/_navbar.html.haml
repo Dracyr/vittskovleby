@@ -8,9 +8,6 @@
             = render partial: 'menus/navbar_menu', collection: nav_menus, as: :menu
             - if current_user.try(:admin?) || current_user.try(:super_admin?)
               = navbar_dropdown t(:admin) do
-                - if content_for(:navbar_tools)
-                  =  yield :navbar_tools
-                  = navbar_dropdown_divider
                 = navbar_item t('.users'), users_path
                 = navbar_item t('.pages'), pages_path
                 = navbar_item t('.images'), images_path
