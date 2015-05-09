@@ -7,6 +7,7 @@ sv:
     edit: Redigera
     destroy: Radera
     reservation_created: "Din bokning har skapats, du kommer få ett mail när den är godkänd"
+    cancel: Avbryt
     submit:
       create: Skapa %{model}
       update: Spara %{model}
@@ -57,6 +58,8 @@ sv:
     new:
       new_image: Ladda upp bild
   menus:
+    edit:
+      edit_menu: Redigera menyelement
     menu:
       confirm_delete_menu: Är du säker på att du vill radera menyelementet %{menu}?
     new_menu_modal:
@@ -73,6 +76,8 @@ sv:
     new:
       new_page: Skapa sida
   reservations:
+    edit:
+      edit_reservation: Redigera bokning
     index:
       reservations: Bokningar
       location: Plats
@@ -84,7 +89,11 @@ sv:
       comment: Kommentar
       new_reservation: Ny bokning
       confirm: Vill du verkligen radera denna bokning?
-      confirm_approve: "Är du säker på att denna bokning från %{name} ska godkännas?"
+      approve_reservation: Godkänn bokning
+      confirm_approve: "Är du säker på att denna bokning ska godkännas?"
+      send_approval_mail: Skicka mail om godkännandet.
+    new:
+      create_reservation: Boka lokal?
     show:
       date: "Datum:"
       name: "Namn:"
@@ -93,6 +102,7 @@ sv:
       date: "Datum:"
       approved: "Godkänd:"
       comment: "Kommentar:"
+      booked_locations: Bokning av
   shared:
     insertImageDialog:
       select_image: Välj bild

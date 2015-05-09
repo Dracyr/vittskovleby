@@ -3,10 +3,7 @@
     .heading
       %h2
         = t('.images')
-        - if can? :create, Image
-          .pull-right
-            = link_to new_image_path do
-              %i.glyphicon.glyphicon-plus
+        = link_to i(:plus), new_image_path, class: 'pull-right' if can? :create, Image
       %hr/
 .row
   = render @images

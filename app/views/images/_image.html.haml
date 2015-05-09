@@ -1,14 +1,11 @@
 .col-sm-3.col-xs-6
   .photo
     .head
-      %h4
-        = image.title.present? ? image.title : t('.unknown_title')
+      %h4= image.title.present? ? image.title : t('.unknown_title')
     .img
       = image_tag image.file.thumb('300x300#').url
       .overlay
         .links
-          = link_to edit_image_path(image) do
-            %i.glyphicon.glyphicon-edit
-          = link_to image_path(image), method: :delete, data: {confirm: t('.delete_image')} do
-            %i.glyphicon.glyphicon-trash
+          = link_to i(:edit), edit_image_path(image)
+          = link_to i(:trash), image_path(image), method: :delete, data: {confirm: t('.delete_image')}
 

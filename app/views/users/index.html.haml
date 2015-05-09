@@ -1,10 +1,8 @@
 .col-md-8.col-md-offset-2
   .panel-heading
-    %h3
+    %h1
       = t('.users')
-      .pull-right
-        = link_to new_user_path do
-          %i.glyphicon.glyphicon-plus
+      = link_to i(:plus), new_user_path, class: 'pull-right'
   .panel-body
     %table.table.table-hover
       %thead
@@ -14,14 +12,8 @@
       %tbody
         - @users.each do |user|
           %tr
+            %td= user.email
+            %td= user.role.titleize
             %td
-              = user.email
-            %td
-              = user.role.titleize
-            %td
-              - if can? :destroy, user
-                = link_to user_path(user), method: :delete do
-                  %i.glyphicon.glyphicon.glyphicon-trash
-              - if can? :edit, user
-                = link_to edit_user_path(user) do
-                  %i.glyphicon.glyphicon.glyphicon-edit
+              = link_to i(:trash), user_path(user), method: :delete if can? :destroy, user
+              = link_to i(:edit), edit_user_path(user) if can? :edit, user

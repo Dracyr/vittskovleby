@@ -24,7 +24,7 @@ class Reservation < ActiveRecord::Base
   end
 
   def locations_to_s
-    locations.map(&:name).join(', ').downcase
+    locations.pluck(:name).to_sentence
   end
 
   private

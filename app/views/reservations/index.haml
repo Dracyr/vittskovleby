@@ -13,7 +13,7 @@
         %th= t('.approved')
         %th= t('.comment')
         - if can? [:edit, :destroy], @reservations
-          %th{colspan: 3}
+          %th{colspan: 2}
     %tbody
       - @reservations.each do |reservation|
         %tr{class: reservation.approved? ? '' : 'danger'}
@@ -24,29 +24,27 @@
           %td= reservation.date
           %td= reservation.approved ? i('ok') : i('remove')
           %td= truncate(reservation.comment, length: 100)
-          - if !reservation.approved? && can?(:update, reservation)
-            /%td= link_to i('check'), approve_reservation_path(reservation), method: :psot, data: { confirm: t('.confirm_approve', name: reservation.name) }
-
-            %td= link_to i('check'), '#', class: 'confirm_approve', data: { reservation: reservation.id, target: "#approveModal", toggle: "modal" }
-          - else
-            %td
-          - if can? :edit, reservation
-            %td= link_to i('edit'), edit_reservation_path(reservation)
-          - if can? :destroy, reservation
-            %td= link_to i('trash'), reservation, method: :delete, data: { confirm: t('.confirm') }
+          %td
+            - if !reservation.approved? && can?(:update, reservation)
+              = link_to i('check'), '#', class: 'confirm_approve', data: { reservation: reservation.id, target: "#approveModal", toggle: "modal" }
+          %td
+            - if can? :edit, reservation
+              = link_to i('edit'), edit_reservation_path(reservation)
+            - if can? :destroy, reservation
+              = link_to i('trash'), reservation, method: :delete, data: { confirm: t('.confirm') }
 
 #approveModal.modal.fade
   .modal-dialog
     .modal-content
       .modal-header
         %button.close{"data-dismiss" => "modal"} ×
-        %h4#myModalLabel.modal-title Godkänn bokning
+        %h4.modal-title= t('.approve_reservation')
       .modal-body
-        %p
-          Är du säker på att denna bokning ska godkännas?
+        %p= t('.confirm_approve')
       .modal-footer
         = bootstrap_form_tag url: approve_reservation_path(id: 0), html: {id: 'send_approval_mail_link' } do |f|
           .pull-left
-            = f.check_box :send_approval_mail, id: 'send_approval_mail', label: 'Skicka mail om godkännandet.', checked: true
-          %button.btn.btn-default{"data-dismiss" => "modal"} Avbryt
+            = f.check_box :send_approval_mail, id: 'send_approval_mail', label: t('.send_approval_mail'), checked: true
+
           = submit_tag 'Godkänn', class: 'btn btn-primary'
+          %button.btn.btn-default{"data-dismiss" => "modal"}= t('helpers.cancel')

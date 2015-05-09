@@ -1,11 +1,7 @@
 .col-md-8.col-md-offset-2
   %h2
     = t('.documents')
-    - if can? :create, Document
-      .pull-right
-        = link_to new_document_path do
-          %i.glyphicon.glyphicon-plus
-
+    = link_to i(:plus), new_document_path, class: 'pull-right' if can? :create, Document
   %table.table.table-hover
     %thead
       %tr
@@ -15,4 +11,4 @@
         %tr
           %td= link_to document.file_name, document
           - if can? :destroy, document
-            %td= link_to t('.destroy'), document, method: :delete, data: { confirm: t('.delete_document') }
+            %td= link_to i(:trash), document, method: :delete, data: { confirm: t('.delete_document') }

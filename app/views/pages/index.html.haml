@@ -4,10 +4,8 @@
       %h3
         = t('.menus')
         .pull-right
-          = link_to '#', id: 'save-menu-order' do
-            %i.glyphicon.glyphicon-floppy-disk
-          = link_to "#", data: {toggle: "modal", target: "#meny_modal"} do
-            %i.glyphicon.glyphicon-plus
+          = link_to i('floppy-disk'), '#', id: 'save-menu-order'
+          = link_to i(:plus), "#", data: {toggle: "modal", target: "#meny_modal"}
     %hr/
     .dd
       %ol.dd-list
@@ -16,18 +14,14 @@
     .heading
       %h3
         = t('.pages')
-        .pull-right
-          = link_to new_page_path do
-            %i.glyphicon.glyphicon-plus
+        = link_to i(:plus), new_page_path, class: 'pull-right'
     %hr/
     %ol.unstyled-list
       - @orphan_pages.each do |page|
         %li
           = link_to page.title, page
           .pull-right
-            = link_to edit_page_path(page) do
-              %i.glyphicon.glyphicon.glyphicon-edit
-            = link_to page_path(page), method: :delete, 'data-confirm' => t('.confirm_delete_page', page: page.title) do
-              %i.glyphicon.glyphicon.glyphicon-trash
+            = link_to i(:edit), edit_page_path(page)
+            = link_to i(:trash), page_path(page), method: :delete, 'data-confirm' => t('.confirm_delete_page', page: page.title)
 
 = render 'menus/new_menu_modal'

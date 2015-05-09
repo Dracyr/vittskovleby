@@ -2,9 +2,8 @@
   .col-md-6.col-md-offset-3
     .heading
       %h1
-        Bokning av
-        %small
-          = @reservation.locations.map(&:name).join(', ')
+        = t('.booked_locations')
+        %small= @reservation.locations_to_s
     %h3= t('.date')
     %p= @reservation.date
     %h3= t('.name')
