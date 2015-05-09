@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     post 'approve', on: :member
   end
 
+  resources :documents, except: [:edit, :update]
+
   patch '/editable_fields', controller: :editable_fields, action: :update
 
   get 'pages',  controller: :pages, action: :index

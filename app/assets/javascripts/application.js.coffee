@@ -17,6 +17,7 @@
 #= require fullcalendar/lang/sv.js
 #= require bootstrap-datetimepicker
 #= require select2
+#= require fileinput
 #= require_tree .
 
 Turbolinks.enableTransitionCache()
@@ -32,6 +33,9 @@ $(document).on "page:change", ->
 
 $(document).on "page:change", ->
   $('select').select2()
+
+$(document).on "page:change", ->
+  $('#document_file').fileinput()
 
 # Convenience function for checking if jquery has selected something
 $.fn.exists = ->

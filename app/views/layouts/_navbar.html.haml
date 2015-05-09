@@ -16,6 +16,7 @@
                 = navbar_item t('.images'), images_path
                 = navbar_item t('.events'), events_path
                 = navbar_item t('.reservations'), reservations_path
+                = navbar_item t('.documents'), documents_path
             - if current_user
               %li= link_to t('.sign_out'), '/sign_out', method: :delete
             - else

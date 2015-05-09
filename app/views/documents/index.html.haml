@@ -1,0 +1,18 @@
+.col-md-8.col-md-offset-2
+  %h2
+    = t('.documents')
+    - if can? :create, Document
+      .pull-right
+        = link_to new_document_path do
+          %i.glyphicon.glyphicon-plus
+
+  %table.table.table-hover
+    %thead
+      %tr
+        %th{colspan: "2"}
+    %tbody
+      - @documents.each do |document|
+        %tr
+          %td= link_to document.file_name, document
+          - if can? :destroy, document
+            %td= link_to t('.destroy'), document, method: :delete, data: { confirm: t('.delete_document') }
