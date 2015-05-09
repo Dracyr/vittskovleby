@@ -6,5 +6,9 @@ class User < ActiveRecord::Base
 
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
-  enum role: [:user, :admin]
+  enum role: [:user, :admin, :super_admin]
+
+  def self.admin_emails
+    admin.pluck(:email)
+  end
 end
