@@ -1,13 +1,13 @@
 .col-md-8.col-md-offset-2
-  %h2
+  %h1
     = t('.documents')
     = link_to i(:plus), new_document_path, class: 'pull-right' if can? :create, Document
 
-  %ul.list-unstyled
-    - @documents.each do |year, documents|
-      %h3= year
+  - @documents.each do |year, documents|
+    %h2= year
+    %table.table.table-hover.table-condensed
       - documents.each do |document|
-        %li
-          = link_to document
-          = link_to i(:trash), document, method: :delete, class: 'pull-right', data: { confirm: t('.delete_document') } if can? :destroy, document
+        %tr
+          %td= link_to document
+          %td= link_to i(:trash), document, method: :delete, class: 'pull-right', data: { confirm: t('.delete_document') } if can? :destroy, document
 
