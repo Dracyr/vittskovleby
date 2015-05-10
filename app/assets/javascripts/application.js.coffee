@@ -37,6 +37,12 @@ $(document).on "page:change", ->
 $(document).on "page:change", ->
   $('#document_file').fileinput()
 
+$(document).on "page:change", ->
+  $('#datepicker').datetimepicker
+    format: 'YYYY-MM-DD'
+    keepOpen: true
+    locale: 'sv'
+
 # Convenience function for checking if jquery has selected something
 $.fn.exists = ->
   @length isnt 0

@@ -25,14 +25,14 @@ sv:
       images: Bilder
       events: Evenemang
       reservations: Bokningar
-      documents: Dokument
+      documents: Protokoll
   documents:
     index:
-      documents: Dokument
-      destroy: Radera dokument
-      delete_document: Är du säker på att du vill radera dokumentet?
+      documents: Protokoll
+      destroy: Radera Protokoll
+      delete_document: Är du säker på att du vill radera Protokollet?
     new:
-      new_document: Ladda upp dokument
+      new_document: Ladda upp Protokoll
   events:
     event:
       read_more: Läs mer

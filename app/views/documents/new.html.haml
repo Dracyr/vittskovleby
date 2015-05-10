@@ -1,7 +1,10 @@
 %h1= t('.new_document')
 %hr/
 
-= bootstrap_form_for @document do |f|
-  = f.file_field :file, multiple: true
+.row
+  .col-md-8.col-md-offset-2
+    = bootstrap_form_for @document do |f|
+      = f.file_field :file, multiple: true
+      = f.text_field :date, id: 'datepicker'
 
-  = f.submit
+      = f.submit

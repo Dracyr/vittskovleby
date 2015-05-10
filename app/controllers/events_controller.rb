@@ -3,8 +3,8 @@ class EventsController < ApplicationController
   authorize_resource except: [:calendar, :index]
 
   def index
-    @events = @events.order(created_at: :desc)
     authorize!(:index, @events) unless params[:format] == 'json'
+    @events = @events.order(created_at: :desc)
   end
 
   def show
@@ -19,7 +19,6 @@ class EventsController < ApplicationController
   end
 
   def edit
-
   end
 
   def update

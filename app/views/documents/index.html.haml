@@ -2,13 +2,12 @@
   %h2
     = t('.documents')
     = link_to i(:plus), new_document_path, class: 'pull-right' if can? :create, Document
-  %table.table.table-hover
-    %thead
-      %tr
-        %th{colspan: "2"}
-    %tbody
-      - @documents.each do |document|
-        %tr
-          %td= link_to document.file_name, document
-          - if can? :destroy, document
-            %td= link_to i(:trash), document, method: :delete, data: { confirm: t('.delete_document') }
+
+  %ul.list-unstyled
+    - @documents.each do |year, documents|
+      %h3= year
+      - documents.each do |document|
+        %li
+          = link_to document
+          = link_to i(:trash), document, method: :delete, class: 'pull-right', data: { confirm: t('.delete_document') } if can? :destroy, document
+

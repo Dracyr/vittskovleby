@@ -3,6 +3,7 @@ class DocumentsController < ApplicationController
   authorize_resource
 
   def index
+    @documents = @documents.by_year
   end
 
   def show
@@ -25,6 +26,6 @@ class DocumentsController < ApplicationController
   private
 
   def document_params
-    params.require(:document).permit(:file, file: [])
+    params.require(:document).permit(:date, :file, file: [])
   end
 end
