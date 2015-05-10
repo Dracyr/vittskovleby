@@ -6,12 +6,12 @@ class Reservation < ActiveRecord::Base
 
   scope :approved, -> { where(approved: true) }
 
-  validates :name, presence: true
+  validates :name,  presence: true
   validates :email, presence: true, format: /\A\S+@.+\.\S+\z/
   validates :phone, presence: true
-  validates :date, presence: true
-  validate :has_locations
-  validate :unique_per_day_and_location
+  validates :date,  presence: true
+  validate  :has_locations
+  validate  :unique_per_day_and_location
 
   def as_json(options = {})
     url = Rails.application.routes.url_helpers.reservation_path(self)

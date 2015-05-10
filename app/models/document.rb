@@ -1,13 +1,13 @@
 class Document < ActiveRecord::Base
+  scope :by_year, -> { order(date: :desc).group_by(&:year) }
+
   validates :file, presence: true
   validates :date, presence: true
 
-  dragonfly_accessor :file
-  delegate :url, to: :file
-
   before_validation :set_date, on: :create
 
-  scope :by_year, -> { order(date: :desc).group_by(&:year) }
+  dragonfly_accessor :file
+  delegate :url, to: :file
 
   def self.create_documents(document_params)
     document_params[:file].map do |file|
@@ -17,10 +17,6 @@ class Document < ActiveRecord::Base
 
   def title
     file_name.split('.').first.titlize
-  end
-
-  def file_type
-    file_name.split('.').last.upcase
   end
 
   def year

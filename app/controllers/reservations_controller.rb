@@ -51,10 +51,25 @@ class ReservationsController < ApplicationController
   private
 
   def reservation_params
-    params.require(:reservation).permit(:name, :phone, :email, :comment, :date, location_ids: [])
+    params.require(:reservation).permit(
+      :name,
+      :phone,
+      :email,
+      :comment,
+      :date,
+      location_ids: []
+    )
   end
 
   def update_reservation_params
-    params.require(:reservation).permit(:approved, :name, :phone, :email, :comment, :date, location_ids: [])
+    params.require(:reservation).permit(
+      :approved,
+      :name,
+      :phone,
+      :email,
+      :comment,
+      :date,
+      location_ids: []
+    )
   end
 end

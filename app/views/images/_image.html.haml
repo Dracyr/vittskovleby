@@ -1,7 +1,7 @@
 .col-sm-3.col-xs-6
   .photo
     .head
-      %h4= image.title.present? ? image.title : t('.unknown_title')
+      %h4= image.title? ? image.title : t('.unknown_title')
     .img
       = image_tag image.file.thumb('300x300#').url
       .overlay
