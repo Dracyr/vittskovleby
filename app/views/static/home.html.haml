@@ -6,6 +6,7 @@
       .cover-text
         %p
           Vittskövle
+          .subtitle byalag
   .event-wrapper
     .container
       .row
@@ -28,9 +29,9 @@
     .container
       .standing-images.row
         .col-md-4.col-sm-6.image-container
-          =# link_to 'byn-vittskovle' do
-          = image_tag 'byn_vittskovle_back.jpg', size: '350x450'
-          .image-text Byn
+          = link_to 'http://www.vittskovle.se' do
+            = image_tag 'byn_vittskovle_back.jpg', size: '350x450'
+            .image-text Byn
         .col-md-4.col-sm-6.image-container
           = link_to 'foreningarna-i-vittskovle' do
             = image_tag 'foreningar_barn_vid_back_resize.jpg', size: '350x450'

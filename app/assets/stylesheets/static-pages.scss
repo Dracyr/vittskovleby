@@ -35,6 +35,7 @@
   background-image: image-url("alle.jpg");
   background-size: cover;
   background-position: center;
+
 }
 
 @import url(//fonts.googleapis.com/css?family=Allura);
@@ -46,6 +47,16 @@
   font-size: 130px;
   @media (max-height: $screen-sm-max) {
     font-size: 100px;
+  }
+
+  .subtitle {
+    position: relative;
+    bottom: 70px;
+    left: 94px;
+    font-size: 75px;
+  }
+  @media (max-height: $screen-sm-min) {
+    .subtitle { left: 0px; }
   }
 }
 
