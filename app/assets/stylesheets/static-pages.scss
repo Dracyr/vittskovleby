@@ -31,6 +31,7 @@
 .cover-wrapper {
   width: 100%;
   height: 60vh;
+  min-height: 300px;
 
   background-image: image-url("alle.jpg");
   background-size: cover;
@@ -40,6 +41,9 @@
 
 @import url(//fonts.googleapis.com/css?family=Allura);
 .cover-text {
+  max-width: 600px;
+  margin: auto;
+
   padding-top: 24vh;
   font-family: 'Allura', cursive;
   color: white;
@@ -53,8 +57,10 @@
   .subtitle {
     position: relative;
     bottom: 70px;
-    left: 94px;
+    right: 120px;
+    float: right;
     font-size: 75px;
+    max-width: 300px;
   }
   @media (max-height: $screen-sm-min) {
     .subtitle { left: 0px; }
@@ -112,10 +118,7 @@
 
 .standing-images {
   .image-container {
-    display:inline-block;
-    float:none;
-    /* inline-block space fix */
-    margin-right:-4px;
+    margin: auto;
 
     img, a {
       max-width: 100%;
@@ -125,8 +128,7 @@
 
   .image-text {
     position: relative;
-    top:  -140px;
-    width: 100%;
+    top:  -110px;
 
     text-align: center;
     font-family: 'Raleway';
