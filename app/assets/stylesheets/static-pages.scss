@@ -22,7 +22,7 @@
       background-color: rgba(100, 100, 100, 0.30);
     }
 
-    &.affix .default-nav {
+    &.affix .default-nav, &:hover .default-nav {
       background-color: $bright-green;
     }
   }
@@ -45,6 +45,7 @@
   color: white;
   text-align: center;
   font-size: 130px;
+  text-shadow: 2px 3px 3px #444;
   @media (max-height: $screen-sm-max) {
     font-size: 100px;
   }
@@ -116,7 +117,7 @@
     /* inline-block space fix */
     margin-right:-4px;
 
-    img {
+    img, a {
       max-width: 100%;
       height: auto;
     }

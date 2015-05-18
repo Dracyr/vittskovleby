@@ -47,6 +47,6 @@ $(document).on "page:change", ->
 $.fn.exists = ->
   @length isnt 0
 
-$(document).on "page:change", ->
+$(document).on "page:change page:load", ->
   $.each $('.event-wrapper .event-text h2'), (i, heading) ->
     $(heading).css("font-size", "-=1") while $(heading).height() > 80
