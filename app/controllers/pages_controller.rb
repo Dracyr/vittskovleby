@@ -1,6 +1,8 @@
 class PagesController < ApplicationController
   load_resource find_by: :permalink
   authorize_resource
+  respond_to :html, :json
+
 
   def index
     @orphan_pages = @pages.orphans
@@ -19,15 +21,11 @@ class PagesController < ApplicationController
   end
 
   def edit
-
   end
 
   def update
     @page.update page_params
-    respond_to do |format|
-      format.html { respond_with @page }
-      format.js   { head :ok }
-    end
+    respond_with @page
   end
 
   def destroy

@@ -2,8 +2,6 @@
   .dd-handle
     = menu.menu? ? menu.title : link_to(menu.title, menu.link)
     .pull-right
-      - if menu.menu?
-        = link_to i('plus-sign'), new_menu_path(parent_id: menu.id)
       - if menu.menu? || menu.link?
         = link_to i(:edit), edit_menu_path(menu)
         = link_to i(:trash), menu_path(menu), method: :delete

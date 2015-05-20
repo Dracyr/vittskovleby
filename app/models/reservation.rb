@@ -16,7 +16,7 @@ class Reservation < ActiveRecord::Base
   def as_json(options = {})
     url = Rails.application.routes.url_helpers.reservation_path(self)
     {
-      title: "Bokning av #{locations.map(&:name).join(', ').downcase}",
+      title: "Bokning av #{locations_to_s}",
       start: date,
       url: url,
       allDay: true
@@ -36,12 +36,14 @@ class Reservation < ActiveRecord::Base
   end
 
   def unique_per_day_and_location
-    same_day_reservations = Reservation.where(date: date).where.not(id: self)
-    if same_day_reservations.any?
-      other_locations = same_day_reservations.map(&:location_ids).flatten
-      unless (other_locations & location_ids).empty?
-        errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
-      end
+    other_locations = Reservation
+      .joins(:locations)
+      .where(date: date)
+      .where.not(id: self)
+      .pluck(:location_id)
+
+    unless (other_locations & location_ids).empty?
+      errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
     end
   end
 end

@@ -1,47 +1,51 @@
 require 'spec_helper'
 
 describe Page do
-  it "is invalid without a title" do
-    page = FactoryGirl.build(:page, title: "")
-    expect(page).to be_invalid
+  context "is invalid" do
+    it "without a title" do
+      page = build(:page, title: "")
+      expect(page).to be_invalid
+    end
+
+    it "without content" do
+      page = build(:page, content: "")
+      expect(page).to be_invalid
+    end
+
+    it "without a permalink" do
+      page = build(:page, title: "")
+      expect(page).to be_invalid
+    end
+
+    it "when permalink is a reserved name" do
+      page = build(:page, title: "users")
+      expect(page).to be_invalid
+    end
+
+    it "with a duplicate title" do
+      create(:page, title: "Page title")
+      page = build(:page, title: "Page title")
+      expect(page).to be_invalid
+    end
   end
 
-  it "is invalid without content" do
-    page = FactoryGirl.build(:page, content: "")
-    expect(page).to be_invalid
+  context ".permalink" do
+    it "exists" do
+      page = create(:page, title: "Some text right here")
+      expect(page.permalink).to eq(page.title.parameterize)
+    end
   end
 
-  it "is invalid without a permalink" do
-    page = FactoryGirl.build(:page, title: "")
-    expect(page).to be_invalid
-  end
+  describe "orphans" do
+    let(:menu) { create(:menu) }
+    let(:page) { create(:page, menu: menu) }
+    let(:other_page) { create(:page) }
 
-  it "is invalid when permalink is a reserved name" do
-    page = FactoryGirl.build(:page, title: "users")
-    expect(page).to be_invalid
-  end
-
-  it "creates a permalink" do
-    page = FactoryGirl.create(:page, title: "Some text right here")
-    expect(page.permalink).to eq(page.title.parameterize)
-  end
-
-  it "does not allow duplicate titles" do
-    FactoryGirl.create(:page, title: "Page title")
-    page = FactoryGirl.build(:page, title: "Page title")
-    expect(page).to be_invalid
-  end
-
-  describe "orphans", broken: true do
-    let(:menu) { FactoryGirl.create(:menu) }
-    let(:page) { FactoryGirl.create(:page, menu: menu) }
-    let(:other_page) { FactoryGirl.create(:page) }
-
-    it "should include parent page" do
+    it "includes children" do
       expect(Page.orphans).to include(other_page)
     end
 
-    it "should not include children" do
+    it "doesn't include a parent page" do
       expect(Page.orphans).to_not include(page)
     end
   end

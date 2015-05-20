@@ -6,10 +6,10 @@ class Page < ActiveRecord::Base
     .where(menus: {page_id: nil})
   }
 
-  validates :title, presence: true, uniqueness: true
-  validates :content, presence: true
+  validates :content,   presence: true
+  validates :title,     presence: true, uniqueness: true
   validates :permalink, presence: true, uniqueness: true,
-                    exclusion: { in: %w(users events pages images editable_fields reservations) }
+    exclusion: { in: %w(users events pages images editable_fields reservations) }
 
   before_validation :set_permalink
   after_save :touch_menu, if: Proc.new { |page| page.menu.present? }

@@ -13,7 +13,7 @@ Rails.application.routes.draw do
   get  'calendar', controller: :events, action: :calendar, as: :calendar
 
   resources :images, except: :show
-  resources :menus,  except: [:index, :show] do
+  resources :menus,  except: [:index, :show, :new] do
     post 'update_all', action: :update_all, on: :collection
   end
   resources :reservations do

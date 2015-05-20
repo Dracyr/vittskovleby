@@ -6,19 +6,16 @@ class Event < ActiveRecord::Base
   validates :start_time, presence: true
 
   def end_time
-    if duration != 0
-      start_time + duration.hours
-    else
-      start_time.end_of_day
-    end
+    duration != 0 ? start_time + duration.hours : start_time.end_of_day
   end
 
   def as_json(options = {})
     url = Rails.application.routes.url_helpers.event_path(self)
+    data = { title: title, url: url }
     if start_time.hour != 0
-      { title: title, start: start_time, end: end_time, url: url }
+      data.merge({ start: start_time, end: end_time })
     else
-      { title: title, start: start_time.strftime('%Y-%m-%d'), url: url }
+      data.merge({ start: start_time.strftime('%Y-%m-%d') })
     end
   end
 end

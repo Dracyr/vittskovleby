@@ -50,11 +50,9 @@ class Menu < ActiveRecord::Base
   end
 
   def self.update_order(menus, parent_id = nil)
-    menus.each_with_index do |child_element, index|
-      Menu.update(child_element['id'], parent_id: parent_id, position: index + 1)
-      if child_element['children']
-        update_order(child_element['children'], child_element['id'])
-      end
+    menus.each_with_index do |child, index|
+      Menu.update(child['id'], parent_id: parent_id, position: index + 1)
+      update_order(child['children'], child['id']) if child['children']
     end
   end
 end

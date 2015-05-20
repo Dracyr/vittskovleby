@@ -12,13 +12,13 @@ RSpec.configure do |config|
   # Include FactoryGirl
   config.include FactoryGirl::Syntax::Methods
 
-  config.include Devise::TestHelpers, :type => :controller
   config.extend SignInHelper#, :type => :controller
+  config.include Devise::TestHelpers, :type => :controller
+  config.include SignInHelper
+  config.include TestsHelper
 
   Faker::Config.locale = 'sv'
 
-  config.include SignInHelper
-  config.include TestsHelper
 
   config.filter_run_excluding :broken => true
 

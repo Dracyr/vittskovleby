@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   load_resource
   authorize_resource except: [:calendar, :index]
+  respond_to :html, :json
 
   def index
     authorize!(:index, @events) unless params[:format] == 'json'
@@ -23,10 +24,7 @@ class EventsController < ApplicationController
 
   def update
     @event.update event_params
-    respond_to do |format|
-      format.html { respond_with @event }
-      format.js   { head :ok }
-    end
+    respond_with @event
   end
 
   def destroy

@@ -22,10 +22,6 @@ class ApplicationController < ActionController::Base
   end
 
   def layout_by_resource
-    if devise_controller?
-      "session_layout"
-    else
-      "application"
-    end
+    devise_controller? ? 'session_layout' : 'application'
   end
 end
