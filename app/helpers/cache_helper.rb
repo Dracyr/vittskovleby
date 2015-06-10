@@ -5,6 +5,6 @@ module CacheHelper
   end
 
   def cache_key_homepage
-    [cache_key_for_navbar, Event.cache_key, EditableField.cache_key].flatten
+    ['v1', cache_key_for_navbar, Event.cache_key, EditableField.cache_key].flatten
   end
 end
