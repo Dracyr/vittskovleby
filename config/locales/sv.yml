@@ -110,7 +110,7 @@ sv:
       insert_image: Välj bild
   static:
     home:
-      show_all_events: Visa alla evenemang
+      show_all_events: Visa alla evenemang och bokningar
   users:
     new:
       create_user: Skapa användare
