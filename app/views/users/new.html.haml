@@ -2,7 +2,7 @@
 %hr/
 = bootstrap_form_for @user do |f|
   = f.text_field :email
-  = f.select(:role, User.roles.keys.map {|role| [role.titleize,role]})
+  = f.collection_select :role_ids, Role.all, :id, :to_s, {selected: @user.role_ids}, {multiple: true}
 
   = f.password_field :password
   = f.password_field :password_confirmation
