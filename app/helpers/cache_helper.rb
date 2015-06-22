@@ -1,7 +1,7 @@
 module CacheHelper
   def cache_key_for_navbar
     path = request.original_fullpath
-    [Menu.cache_key, path.gsub('/', '_'), (current_user.try(:role) || 'guest')]
+    [Menu.cache_key, path.gsub('/', '_'), (current_user.roles || 'guest')]
   end
 
   def cache_key_homepage

@@ -4,7 +4,7 @@ class ReservationMailer < ApplicationMailer
   def reservation_created(reservation)
     @reservation = reservation
     mail({
-      to: User.admin_emails,
+      to: User.with_role('reservation_manager').pluck(:email),
       subject: "Bokning av #{reservation.locations_to_s} från #{reservation.name}"
     })
   end

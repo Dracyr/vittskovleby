@@ -4,7 +4,7 @@ class ReservationsController < ApplicationController
 
   def index
     @reservations = @reservations.includes(:locations).order(created_at: :desc)
-    authorize!(:index, @reservations) unless params[:format] == 'json'
+    authorize!(:index, Reservation) unless params[:format] == 'json'
   end
 
   def show

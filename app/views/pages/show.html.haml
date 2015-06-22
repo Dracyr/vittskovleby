@@ -1,4 +1,4 @@
-- cache_unless((can? :edit, @page), @page) do
+- cache_unless((current_user.roles.present?), @page) do
   .page-content.col-lg-10.col-lg-offset-1
     - if can? :edit, @page
       .quick-edit

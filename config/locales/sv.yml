@@ -193,6 +193,10 @@ sv:
         role: Roll
         password: Lösenord
         password_confirmation: Upprepa lösenord
+      role:
+        admin: Admin
+        editor: Editor
+        reservation_manager: Bokningsansvarig
       event:
         title: Titel
         content: Beskrivning

@@ -12,10 +12,21 @@ class Ability
       can :read, Document
     end
 
-    if user.admin? || user.super_admin?
+    if user.admin?
       can :manage, :all
-      cannot :update, User
+      #cannot :update, User
       can :update, user
+    end
+
+    if user.has_role?('editor')
+      can :manage, Page
+      can :manage, Event
+    end
+
+    if user.has_role?('reservation_manager')
+      can :manage,  Reservation
+      can :approve, Reservation
+      can :read, Location
     end
   end
 end

@@ -6,15 +6,15 @@
         = navbar_collapse do
           = navbar_group align: :right, class: 'foo', id: 'menu' do
             = render partial: 'menus/navbar_menu', collection: nav_menus, as: :menu
-            - if current_user.try(:admin?) || current_user.try(:super_admin?)
+            - if current_user.try(:roles).present?
               = navbar_dropdown t(:admin) do
-                = navbar_item t('.users'), users_path
-                = navbar_item t('.pages'), pages_path
-                = navbar_item t('.images'), images_path
-                = navbar_item t('.events'), events_path
-                = navbar_item t('.reservations'), reservations_path
-                = navbar_item t('.documents'), documents_path
-            - if current_user && current_user.user? && can?(:read, Document)
+                = navbar_item t('.users'), users_path if can? :manage, User
+                = navbar_item t('.pages'), pages_path if can? :edit, Page
+                = navbar_item t('.images'), images_path if can? :edit, Image
+                = navbar_item t('.events'), events_path if can? :edit, Event
+                = navbar_item t('.reservations'), reservations_path if can? :edit, Reservation
+                = navbar_item t('.documents'), documents_path if can? :edit, Document
+            - if current_user && current_user.roles.blank? && can?(:read, Document)
               = navbar_item t('.documents'), documents_path
             - if current_user
               %li= link_to t('.sign_out'), '/sign_out', method: :delete
