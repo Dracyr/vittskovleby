@@ -5,12 +5,12 @@ class Menu < ActiveRecord::Base
   belongs_to :parent,    class_name: 'Menu', touch: true
   has_many   :children,  class_name: 'Menu', foreign_key: 'parent_id'
 
-  default_scope -> { order("position ASC") }
+  default_scope -> { order('position ASC') }
   scope :orphans, -> { where(parent: nil) }
 
-  validate :has_title_or_page
-  validate :has_page_if_page
-  validate :has_prefix_if_link
+  validate :title_or_page?
+  validate :page_if_page?
+  validate :prefix_if_link?
 
   acts_as_list scope: :parent
 
@@ -30,23 +30,20 @@ class Menu < ActiveRecord::Base
 
   private
 
-  def has_page_if_page
-    if menu_type == 'page' && page_id.blank?
-      errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page'))
-    end
+  def page_if_page?
+    return unless menu_type == 'page' && page_id.blank?
+    errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page'))
   end
 
-  def has_title_or_page
-    if menu_type != 'page' && self[:title].blank?
-      errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page_or_title'))
-      errors.add(:title,   I18n.t('activerecord.errors.models.menu.attributes.title.should_have_page_or_title'))
-    end
+  def title_or_page?
+    return unless menu_type != 'page' && self[:title].blank?
+    errors.add(:page_id, I18n.t('activerecord.errors.models.menu.attributes.page.should_have_page_or_title'))
+    errors.add(:title,   I18n.t('activerecord.errors.models.menu.attributes.title.should_have_page_or_title'))
   end
 
-  def has_prefix_if_link
-    if menu_type == 'link' && ( !link.include?('http') && !link.include?('/'))
-      errors.add(:link, I18n.t('activerecord.errors.models.menu.attributes.link.should_have_prefix'))
-    end
+  def prefix_if_link?
+    return unless menu_type == 'link' && !link.include?('http') && !link.include?('/')
+    errors.add(:link, I18n.t('activerecord.errors.models.menu.attributes.link.should_have_prefix'))
   end
 
   def self.update_order(menus, parent_id = nil)

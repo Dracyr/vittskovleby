@@ -8,22 +8,19 @@ class Ability
     can :read, Event
     can [:create, :read], Reservation
 
-    if user.persisted?
-      can :read, Document
-    end
+    can :read, Document if user.persisted?
 
     if user.admin?
       can :manage, :all
-      #cannot :update, User
       can :update, user
     end
 
-    if user.has_role?('editor')
+    if user.role?('editor')
       can :manage, Page
       can :manage, Event
     end
 
-    if user.has_role?('reservation_manager')
+    if user.role?('reservation_manager')
       can :manage,  Reservation
       can :approve, Reservation
       can :read, Location

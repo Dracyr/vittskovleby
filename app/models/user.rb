@@ -7,10 +7,10 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :recoverable, :rememberable, :validatable
 
   def admin?
-    has_role?('admin')
+    role?('admin')
   end
 
-  def has_role?(role_name)
+  def role?(role_name)
     roles.pluck(:role_name).include?(role_name)
   end
 end

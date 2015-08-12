@@ -3,7 +3,6 @@ class PagesController < ApplicationController
   authorize_resource
   respond_to :html, :json
 
-
   def index
     @orphan_pages = @pages.orphans
     @menus = Menu.orphans

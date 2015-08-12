@@ -8,19 +8,16 @@ class Document < ActiveRecord::Base
 
   dragonfly_accessor :file
   delegate :url, to: :file
+  delegate :year, to: :date
 
   def self.create_documents(document_params)
     document_params[:file].map do |file|
-      document = Document.create(file: file, date: document_params[:date])
+      Document.create(file: file, date: document_params[:date])
     end
   end
 
   def title
     file_name.split('.').first.titlize
-  end
-
-  def year
-    date.year
   end
 
   def to_s

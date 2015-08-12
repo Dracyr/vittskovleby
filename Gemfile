@@ -36,7 +36,7 @@ gem 'select2-rails'
 gem 'dalli'
 
 group :development do
-	gem 'spring'
+  gem 'spring'
   gem 'guard-rspec', require: false
   gem 'better_errors'
   gem 'binding_of_caller'
@@ -58,7 +58,7 @@ gem 'factory_girl_rails', :group => [:development, :test]
 gem 'rspec-rails', '~> 3.0.0', :group => [:development, :test]
 
 group :production do
-	gem 'unicorn'
+  gem 'unicorn'
   gem 'rack-cache', :require => 'rack/cache'
   gem 'rails_12factor' # Heroku
 end

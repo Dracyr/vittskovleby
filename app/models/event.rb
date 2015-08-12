@@ -13,9 +13,9 @@ class Event < ActiveRecord::Base
     url = Rails.application.routes.url_helpers.event_path(self)
     data = { title: title, url: url }
     if start_time.hour != 0
-      data.merge({ start: start_time, end: end_time })
+      data.merge(start: start_time, end: end_time)
     else
-      data.merge({ start: start_time.strftime('%Y-%m-%d') })
+      data.merge(start: start_time.strftime('%Y-%m-%d'))
     end
   end
 end

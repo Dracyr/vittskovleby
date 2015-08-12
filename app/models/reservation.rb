@@ -10,7 +10,7 @@ class Reservation < ActiveRecord::Base
   validates :email, presence: true, format: /\A\S+@.+\.\S+\z/
   validates :phone, presence: true
   validates :date,  presence: true
-  validate  :has_locations
+  validate  :locations?
   validate  :unique_per_day_and_location
 
   def as_json(options = {})
@@ -29,10 +29,9 @@ class Reservation < ActiveRecord::Base
 
   private
 
-  def has_locations
-    if locations.empty?
-      errors.add(:location_ids, I18n.t('activerecord.errors.models.reservation.has_locations'))
-    end
+  def locations?
+    return unless locations.empty?
+    errors.add(:location_ids, I18n.t('activerecord.errors.models.reservation.has_locations'))
   end
 
   def unique_per_day_and_location
@@ -42,8 +41,7 @@ class Reservation < ActiveRecord::Base
       .where.not(id: self)
       .pluck(:location_id)
 
-    unless (other_locations & location_ids).empty?
-      errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
-    end
+    return if (other_locations & location_ids).empty?
+    errors.add(:date, I18n.t('activerecord.errors.models.reservation.unique_per_day_and_location'))
   end
 end
