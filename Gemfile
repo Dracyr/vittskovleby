@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.0'
+ruby '2.2.3'
 
 gem 'rails', '4.2.0'
 gem 'bcrypt', '~> 3.1.7'
@@ -21,7 +21,7 @@ gem 'dotenv-rails'
 gem 'codemirror-rails'
 gem 'font-awesome-sass', '~> 4.3.0'
 gem 'acts_as_list'
-gem 'dragonfly', '~> 1.0.7'
+gem 'dragonfly', '~> 1.0.12'
 gem 'dragonfly-s3_data_store' # Store images on s3
 gem 'rails_bootstrap_navbar'
 gem 'remotipart', '~> 1.2' #Ajax file uploads
