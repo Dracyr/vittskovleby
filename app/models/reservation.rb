@@ -10,6 +10,7 @@ class Reservation < ActiveRecord::Base
   validates :email, presence: true, format: /\A\S+@.+\.\S+\z/
   validates :phone, presence: true
   validates :date,  presence: true
+  validates :invoice_address,  presence: true
   validate  :locations?
   validate  :unique_per_day_and_location
 

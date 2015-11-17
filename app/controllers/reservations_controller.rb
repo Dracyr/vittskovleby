@@ -57,6 +57,7 @@ class ReservationsController < ApplicationController
       :email,
       :comment,
       :date,
+      :invoice_address,
       location_ids: []
     )
   end
@@ -69,6 +70,7 @@ class ReservationsController < ApplicationController
       :email,
       :comment,
       :date,
+      :invoice_address,
       location_ids: []
     )
   end

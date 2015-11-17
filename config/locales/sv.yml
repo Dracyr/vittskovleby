@@ -85,6 +85,7 @@ sv:
       phone: Telenr
       email: Email
       date: Datum
+      invoice_address: Fakturaadress
       approved: Godkänd
       comment: Kommentar
       new_reservation: Ny bokning
@@ -102,6 +103,7 @@ sv:
       date: "Datum:"
       approved: "Godkänd:"
       comment: "Kommentar:"
+      invoice_address: "Fakturaadress:"
       booked_locations: Bokning av
   shared:
     insertImageDialog:
@@ -126,6 +128,7 @@ sv:
     errors:
       messages:
         record_invalid: inte korrekt
+        blank: Måste anges
       models:
         menu:
           attributes:
@@ -184,10 +187,11 @@ sv:
       reservation:
         location_ids: Lokaler
         name: Ditt namn
-        phone: Telenr
+        phone: Telefonnummer
         email: Email
         date: Datum
         comment: Kommentar
+        invoice_address: Fakturaadress
       user:
         email: Email
         role: Roll

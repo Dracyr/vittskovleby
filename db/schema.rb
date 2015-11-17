@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150622203950) do
+ActiveRecord::Schema.define(version: 20151117100950) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -85,14 +85,15 @@ ActiveRecord::Schema.define(version: 20150622203950) do
   add_index "pages", ["menu_id"], name: "index_pages_on_menu_id", using: :btree
 
   create_table "reservations", force: :cascade do |t|
-    t.string   "name",                       null: false
-    t.string   "phone",                      null: false
-    t.string   "email",                      null: false
-    t.text     "comment",    default: "",    null: false
-    t.datetime "created_at",                 null: false
-    t.datetime "updated_at",                 null: false
-    t.date     "date",                       null: false
-    t.boolean  "approved",   default: false, null: false
+    t.string   "name",                            null: false
+    t.string   "phone",                           null: false
+    t.string   "email",                           null: false
+    t.text     "comment",         default: "",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
+    t.date     "date",                            null: false
+    t.boolean  "approved",        default: false, null: false
+    t.string   "invoice_address", default: "",    null: false
   end
 
   create_table "role_memberships", force: :cascade do |t|

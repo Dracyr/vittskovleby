@@ -10,6 +10,7 @@
         %th= t('.phone')
         %th= t('.email')
         %th= t('.date')
+        %th= t('.invoice_address')
         %th= t('.approved')
         %th= t('.comment')
         - if can? [:edit, :destroy], @reservations
@@ -22,6 +23,7 @@
           %td= reservation.phone
           %td= reservation.email
           %td= reservation.date
+          %td= reservation.invoice_address
           %td= reservation.approved ? i('ok') : i('remove')
           %td= truncate(reservation.comment, length: 100)
           %td
