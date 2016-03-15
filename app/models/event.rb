@@ -5,6 +5,8 @@ class Event < ActiveRecord::Base
   validates :content, presence: true
   validates :start_time, presence: true
 
+  scope :upcoming, -> { where("start_time > :yesterday", yesterday: Date.yesterday).order(:start_time) }
+
   def end_time
     duration != 0 ? start_time + duration.hours : start_time.end_of_day
   end
