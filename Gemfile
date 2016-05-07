@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.3'
+ruby '2.3.0'
 
 gem 'rails', '4.2.0'
 gem 'bcrypt', '~> 3.1.7'
@@ -34,6 +34,7 @@ gem 'bootstrap3-datetimepicker-rails', '~> 4.7.14'
 gem 'validates_overlap'
 gem 'select2-rails'
 gem 'dalli'
+gem 'recaptcha', require: 'recaptcha/rails'
 
 group :development do
   gem 'spring'

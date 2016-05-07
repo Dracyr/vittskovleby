@@ -17,10 +17,14 @@ class ReservationsController < ApplicationController
   end
 
   def create
-    @reservation = Reservation.create(reservation_params)
+    @reservation = Reservation.new(reservation_params)
 
-    ReservationMailer.reservation_created(@reservation).deliver
-    respond_with @reservation, notice: t('helpers.reservation_created')
+    if verify_recaptcha(model: @reservation) && @reservation.save
+      ReservationMailer.reservation_created(@reservation).deliver
+      redirect_to @reservation
+    else
+      render 'new'
+    end
   end
 
   def update

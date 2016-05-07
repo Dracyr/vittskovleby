@@ -29,6 +29,8 @@
       = f.text_field :invoice_address
       = f.text_field :date, id: 'reservation-datepicker'
       = f.text_area :comment, placeholder: 'Skriv en kort förklaring på varför du vill boka'
+      = f.form_group do
+        = recaptcha_tags
       .pull-right
         = f.submit
 
