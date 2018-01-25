@@ -8,6 +8,6 @@
     %table.table.table-hover.table-condensed
       - documents.each do |document|
         %tr
-          %td= link_to document, document
+          %td= link_to document, document&.file&.url
           %td= link_to i(:trash), document, method: :delete, class: 'pull-right', data: { confirm: t('.delete_document') } if can? :destroy, document
 
