@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('#event-datetimepicker').datetimepicker
     locale: 'sv'
     inline: true
@@ -17,7 +17,7 @@ $(document).on "page:change", ->
       ['help', ['help']],
     ]
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('#calendar').fullCalendar
     firstDay: 1
     lang: 'sv'

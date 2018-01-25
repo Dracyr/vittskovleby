@@ -9,7 +9,6 @@
 #= require summernote
 #= require summernote-sv-SE
 #= require bootstrap-dialog
-#= require icheck
 #= require jquery.nestable
 #= require moment
 #= require moment/sv.js
@@ -20,24 +19,18 @@
 #= require fileinput
 #= require_tree .
 
-Turbolinks.enableTransitionCache()
-
 # Initializers
-$(document).on "page:change", ->
-  $('input').iCheck
-    checkboxClass: 'icheckbox_square-blue'
-
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('.dd').nestable
     maxDepth: 2
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('select').select2()
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('#document_file').fileinput()
 
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('#datepicker').datetimepicker
     format: 'YYYY-MM-DD'
     keepOpen: true
@@ -47,6 +40,6 @@ $(document).on "page:change", ->
 $.fn.exists = ->
   @length isnt 0
 
-$(document).on "page:change page:load", ->
+$(document).on "turbolinks:load", ->
   $.each $('.event-wrapper .event-text h2'), (i, heading) ->
     $(heading).css("font-size", "-=1") while $(heading).height() > 80

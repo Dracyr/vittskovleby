@@ -1,10 +1,8 @@
-@font-face {
-  font-family: 'Raleway';
-  src: font-url('Raleway-ExtraLight.ttf');
-}
+@import url('https://fonts.googleapis.com/css?family=Alegreya|Raleway:400,400i,500,700');
 
 $dark-black-green: #242C27;
-$bright-green: #87D37C;
+$bright-green: #73956f;
+$medium-green: #7bae7f;
 
 @import "font-awesome-sprockets";
 @import "font-awesome";

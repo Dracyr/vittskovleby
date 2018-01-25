@@ -87,7 +87,7 @@
 }
 
 .info-wrapper {
-  background: $brand-primary;
+  background: $medium-green;
   h1, h2, h3, h4, h5, h6, p, a { color: white; }
   p { font-size: 1.2em; }
 }
@@ -103,6 +103,7 @@
   margin-left: auto;
   padding: 30px 15px 50px 15px;
   overflow: hidden;
+  font-size: 14px;
 }
 
 @media (min-width: $grid-float-breakpoint) {

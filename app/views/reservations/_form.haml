@@ -21,16 +21,16 @@
           %td Bakstugan
           %td 200 kr/dag
   .col-md-7
-    = bootstrap_form_for(reservation, layout: :horizontal) do |f|
-      = f.collection_select :location_ids, Location.all, :id, :name, {}, {multiple: true, include_hidden: false}
+    = bootstrap_form_for(reservation, layout: :horizontal, label_col: "col-sm-3", control_col: "col-sm-9") do |f|
+      = f.collection_select :location_ids, Location.all, :id, :name, {}, {multiple: true, include_hidden: false, required: true}
       = f.text_field :name
       = f.text_field :phone
       = f.text_field :email
       = f.text_field :invoice_address
+      = f.collection_radio_buttons :invoice_option, Reservation.invoice_options.keys.collect { |io| [Reservation.human_enum_name(:invoice_option, io), io] }, :second, :first, {checked: "pdf"}
       = f.text_field :date, id: 'reservation-datepicker'
-      = f.text_area :comment, placeholder: 'Skriv en kort förklaring på varför du vill boka'
+      = f.text_area :comment, help: 'Skriv en kort förklaring på vad du ska boka lokalen för'
       = f.form_group do
         = recaptcha_tags
       .pull-right
         = f.submit
-

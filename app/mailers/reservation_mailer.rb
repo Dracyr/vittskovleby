@@ -1,5 +1,5 @@
 class ReservationMailer < ApplicationMailer
-  default from: 'kontakt@vittskovleby.se'
+  default from: 'Vittskövle Byalag <kontakt@vittskovleby.se>'
 
   def reservation_created(reservation)
     @reservation = reservation

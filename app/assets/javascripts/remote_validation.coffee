@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $(document).bind 'ajaxError', (event, jqxhr, settings, exception) ->
     if event.currentTarget.URL.indexOf('/pages') > -1
       $('form').render_form_errors $.parseJSON(jqxhr.responseText)

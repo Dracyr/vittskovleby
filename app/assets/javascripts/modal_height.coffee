@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   menu_modal_animate_height()
   $('#navbar-wrapper').affix offset:
     top: ->

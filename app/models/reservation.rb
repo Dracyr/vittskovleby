@@ -1,8 +1,8 @@
 class Reservation < ApplicationRecord
   include CacheKey
 
-  has_many :locations, through: :location_reservations
   has_many :location_reservations, dependent: :destroy
+  has_many :locations, through: :location_reservations
 
   scope :approved, -> { where(approved: true) }
 
@@ -11,8 +11,11 @@ class Reservation < ApplicationRecord
   validates :phone, presence: true
   validates :date,  presence: true
   validates :invoice_address,  presence: true
+  validates :invoice_option,  presence: true
   validate  :locations?
   validate  :unique_per_day_and_location
+
+  enum invoice_option: [:pdf, :mail]
 
   def as_json(options = {})
     url = Rails.application.routes.url_helpers.reservation_path(self)

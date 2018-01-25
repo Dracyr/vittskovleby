@@ -104,6 +104,7 @@ sv:
       approved: "Godkänd:"
       comment: "Kommentar:"
       invoice_address: "Fakturaadress:"
+      invoice_option: "Faktura via: "
       booked_locations: Bokning av
   shared:
     insertImageDialog:
@@ -192,6 +193,10 @@ sv:
         date: Datum
         comment: Kommentar
         invoice_address: Fakturaadress
+        invoice_option: Faktura på
+        invoice_options:
+          mail: Papper
+          pdf: PDF
       user:
         email: Email
         role: Roll

@@ -1,4 +1,4 @@
 class ApplicationMailer < ActionMailer::Base
-  default from: "kontakt@vittskovleby.se"
+  default from: 'Vittskövle Byalag <kontakt@vittskovleby.se>'
   layout 'mailer'
 end

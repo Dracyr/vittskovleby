@@ -1,4 +1,6 @@
 class Document < ApplicationRecord
+  extend Dragonfly::Model
+
   scope :by_year, -> { order(date: :desc).group_by(&:year) }
 
   validates :file, presence: true

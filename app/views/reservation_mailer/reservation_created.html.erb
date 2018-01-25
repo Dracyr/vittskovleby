@@ -14,5 +14,11 @@
 <h3>Email: </h3>
 <p><%= @reservation.email %></p>
 
+<h3>Fakturaadress: </h3>
+<p><%= @reservation.invoice_address %></p>
+
+<h3>Faktura via: </h3>
+<p><%= Reservation.human_enum_name :invoice_option, @reservation.invoice_option %></p>
+
 <h3>Kommentar: </h3>
 <p><%= @reservation.comment %></p>

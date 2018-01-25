@@ -17,6 +17,8 @@
       %p= @reservation.email
       %h3= t('.invoice_address')
       %p= @reservation.invoice_address
+      %h3= t('.invoice_option')
+      %p= Reservation.human_enum_name :invoice_option, @reservation.invoice_option
     %h3= t('.comment')
     %p= @reservation.comment
 

@@ -62,6 +62,7 @@ class ReservationsController < ApplicationController
       :comment,
       :date,
       :invoice_address,
+      :invoice_option,
       location_ids: []
     )
   end
@@ -75,6 +76,7 @@ class ReservationsController < ApplicationController
       :comment,
       :date,
       :invoice_address,
+      :invoice_option,
       location_ids: []
     )
   end

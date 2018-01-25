@@ -1,4 +1,4 @@
-$(document).on "page:change", ->
+$(document).on "turbolinks:load", ->
   $('.edit-content').click edit_page_content
 
   $('#save-menu-order').click post_menu_order
