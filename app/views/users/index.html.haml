@@ -15,5 +15,5 @@
             %td= user.email
             %td= user.roles.to_sentence
             %td
-              = link_to i(:trash), user_path(user), method: :delete if can? :destroy, user
+              = link_to i(:trash), user_path(user), method: :delete, data: { confirm: "Är du säker på att du vill ta bort denna användare?"} if can? :destroy, user
               = link_to i(:edit), edit_user_path(user) if can? :edit, user

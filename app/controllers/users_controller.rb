@@ -22,8 +22,8 @@ class UsersController < ApplicationController
   end
 
   def destroy
-    @user.save
-    respond_with @user, location: users_path
+    @user.destroy
+    redirect_to users_path
   end
 
   private
