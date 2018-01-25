@@ -6,10 +6,7 @@
     %thead
       %tr
         %th= t('.name')
-        %th= t('.location')
-        %th= t('.phone')
-        %th= t('.email')
-        %th= t('.date')
+        %th= "#{t('.location')}, #{t('.date')}"
         %th= t('.invoice_address')
         %th= t('.approved')
         %th= t('.comment')
@@ -18,11 +15,16 @@
     %tbody
       - @reservations.each do |reservation|
         %tr{class: reservation.approved? ? '' : 'danger'}
-          %td= link_to reservation.name, reservation
-          %td= reservation.locations.map(&:name).join(', ')
-          %td= reservation.phone
-          %td= reservation.email
-          %td= reservation.date
+          %td
+            = link_to reservation.name, reservation
+            %br/
+            = reservation.phone
+            %br/
+            = reservation.email
+          %td
+            = reservation.locations.map(&:name).join(', ')
+            %br/
+            = reservation.date.to_s
           %td= reservation.invoice_address
           %td= reservation.approved ? i('ok') : i('remove')
           %td= truncate(reservation.comment, length: 100)
