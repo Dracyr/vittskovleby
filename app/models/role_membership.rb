@@ -1,4 +1,4 @@
-class RoleMembership < ActiveRecord::Base
+class RoleMembership < ApplicationRecord
   belongs_to :user
   belongs_to :role
 

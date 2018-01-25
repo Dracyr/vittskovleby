@@ -1,4 +1,4 @@
-class User < ActiveRecord::Base
+class User < ApplicationRecord
   has_many :role_memberships
   has_many :roles, through: :role_memberships
 

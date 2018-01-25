@@ -60,6 +60,9 @@ en:
       comment: Comment
       new_reservation: New Reservation
       confirm: Do you really want to delete this?
+  static:
+    home:
+      show_all_events: Show all events
   users:
     index:
       users: Users

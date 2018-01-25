@@ -1,30 +1,29 @@
 source 'https://rubygems.org'
 
-ruby '2.3.0'
+ruby '2.5.0'
 
-gem 'rails', '4.2.0'
-gem 'bcrypt', '~> 3.1.7'
-gem 'pg'
-gem 'sass-rails', '~> 4.0.3'
-gem 'bootstrap-sass', '~> 3.2.0'
-gem 'uglifier', '>= 1.3.0'
-gem 'coffee-rails', '~> 4.0.0'
+gem 'rails', '5.1.0'
+gem 'pg', '~> 0.20'
+gem 'sass-rails', '~> 5.0.7'
+gem 'bootstrap-sass', '~> 3.3.7'
+gem 'uglifier', '~> 4.1.4'
+gem 'coffee-rails', '~> 4.2.2'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'haml'
 gem 'autoprefixer-rails'
-gem 'simple_form', '>= 3.1.0.rc1'
+gem 'simple_form', '~> 3.5.0'
 gem 'responders'
 gem 'devise'
-gem 'cancancan', '~> 1.9'
+gem 'cancancan', '~> 2.1.3'
 gem 'dotenv-rails'
 gem 'codemirror-rails'
-gem 'font-awesome-sass', '~> 4.3.0'
+gem 'font-awesome-sass', '~> 4.7.0'
 gem 'acts_as_list'
-gem 'dragonfly', '~> 1.0.12'
+gem 'dragonfly', '~> 1.1.4'
 gem 'dragonfly-s3_data_store' # Store images on s3
 gem 'rails_bootstrap_navbar'
-gem 'remotipart', '~> 1.2' #Ajax file uploads
+gem 'remotipart', '~> 1.3' #Ajax file uploads
 gem 'bootstrap_form'
 gem 'icheck-rails'
 gem 'newrelic_rpm'
@@ -55,8 +54,10 @@ group :test do
   gem 'fuubar'
 end
 
-gem 'factory_girl_rails', :group => [:development, :test]
-gem 'rspec-rails', '~> 3.0.0', :group => [:development, :test]
+group :development, :test do
+  gem 'factory_bot_rails'
+  gem 'rspec-rails', '~> 3.7.2'
+end
 
 group :production do
   gem 'unicorn'

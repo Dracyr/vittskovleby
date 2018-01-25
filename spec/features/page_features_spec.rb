@@ -1,7 +1,7 @@
 require "spec_helper"
 
 feature "Page management,", broken: true do
-  let(:this_page) { FactoryGirl.create(:page) }
+  let(:this_page) { FactoryBot.create(:page) }
 
   scenario "can create pages" do
     login_user
@@ -39,7 +39,7 @@ feature "When user visits page index,", broken: true do
 
   scenario "he can destroy pages" do
     login_user
-    FactoryGirl.create(:page)
+    FactoryBot.create(:page)
     visit pages_path
     expect { find_parent(".glyphicon-trash").click }.to change { Page.count }.by(-1)
   end

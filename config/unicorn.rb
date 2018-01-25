@@ -10,8 +10,8 @@ before_fork do |server, worker|
     Process.kill 'QUIT', Process.pid
   end
 
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.connection.disconnect!
+  defined?(ApplicationRecord) and
+    ApplicationRecord.connection.disconnect!
 end
 
 after_fork do |server, worker|
@@ -23,6 +23,6 @@ after_fork do |server, worker|
   # Reset the memcache-based object store
   Rails.cache.instance_variable_get(:@data).reset if Rails.cache.instance_variable_get(:@data).respond_to?(:reset)
 
-  defined?(ActiveRecord::Base) and
-    ActiveRecord::Base.establish_connection
+  defined?(ApplicationRecord) and
+    ApplicationRecord.establish_connection
 end

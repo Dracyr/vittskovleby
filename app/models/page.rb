@@ -1,4 +1,4 @@
-class Page < ActiveRecord::Base
+class Page < ApplicationRecord
   has_one :menu, dependent: :destroy
 
   scope :orphans, lambda {

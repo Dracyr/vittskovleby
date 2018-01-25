@@ -1,7 +1,7 @@
 require "spec_helper"
 
 feature "Menu management:", broken: true do
-  let(:menu)  { FactoryGirl.create(:menu) }
+  let(:menu)  { FactoryBot.create(:menu) }
 
   scenario "can create menu" do
     login_user
@@ -25,7 +25,7 @@ feature "Menu management:", broken: true do
 end
 
 feature "Unauthorized users", broken: true do
-  let(:menu) { FactoryGirl.create(:menu) }
+  let(:menu) { FactoryBot.create(:menu) }
 
   scenario "cannot create menus" do
     visit new_menu_path

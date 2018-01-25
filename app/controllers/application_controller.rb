@@ -12,7 +12,7 @@ class ApplicationController < ActionController::Base
     redirect_to root_url, :alert => exception.message
   end
 
-  before_filter :load_navigation_menu
+  before_action :load_navigation_menu
   layout :layout_by_resource
 
   protected

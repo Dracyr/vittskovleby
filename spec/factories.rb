@@ -1,5 +1,5 @@
 require 'faker'
-FactoryGirl.define do
+FactoryBot.define do
 
   sequence :title, aliases: [:name] do
     Faker::Lorem.word.titleize

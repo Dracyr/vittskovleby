@@ -1,4 +1,4 @@
-class Document < ActiveRecord::Base
+class Document < ApplicationRecord
   scope :by_year, -> { order(date: :desc).group_by(&:year) }
 
   validates :file, presence: true

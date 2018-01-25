@@ -1,3 +1,3 @@
-class LocationReservation < ActiveRecord::Base
+class LocationReservation < ApplicationRecord
   belongs_to :location
 end

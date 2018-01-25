@@ -1,4 +1,4 @@
-class Menu < ActiveRecord::Base
+class Menu < ApplicationRecord
   include CacheKey
 
   belongs_to :page

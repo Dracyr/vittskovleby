@@ -9,8 +9,8 @@ Dir[Rails.root.join("spec/support/**/*.rb")].each { |f| require f }
 RSpec.configure do |config|
   # Include Formulaic
   config.include Formulaic::Dsl, type: :feature
-  # Include FactoryGirl
-  config.include FactoryGirl::Syntax::Methods
+  # Include FactoryBot
+  config.include FactoryBot::Syntax::Methods
 
   config.extend SignInHelper#, :type => :controller
   config.include Devise::TestHelpers, :type => :controller
@@ -48,7 +48,7 @@ RSpec.configure do |config|
 
   # Remove all files after each run
   config.after :all do
-    ActiveRecord::Base.subclasses.each(&:delete_all)
+    ApplicationRecord.subclasses.each(&:delete_all)
   end
 
 

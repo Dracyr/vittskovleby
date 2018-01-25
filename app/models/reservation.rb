@@ -1,4 +1,4 @@
-class Reservation < ActiveRecord::Base
+class Reservation < ApplicationRecord
   include CacheKey
 
   has_many :locations, through: :location_reservations

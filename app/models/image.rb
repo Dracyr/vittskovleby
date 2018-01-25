@@ -1,3 +1,3 @@
-class Image < ActiveRecord::Base
+class Image < ApplicationRecord
   dragonfly_accessor :file
 end

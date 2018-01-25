@@ -1,4 +1,4 @@
-class EditableField < ActiveRecord::Base
+class EditableField < ApplicationRecord
   include CacheKey
 
   def self.update_from_hash(editable_fields)
