@@ -1,4 +1,4 @@
-- cache cache_key_for_navbar do
+- cache_unless current_user do
   %nav.navbar.navbar-fixed-top{role: 'navigation'}
     .default-nav.navbar-default
       .container
