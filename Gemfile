@@ -34,6 +34,7 @@ gem 'validates_overlap'
 gem 'select2-rails'
 gem 'dalli'
 gem 'recaptcha', require: 'recaptcha/rails'
+gem 'mime-types'
 
 group :development do
   gem 'spring'
