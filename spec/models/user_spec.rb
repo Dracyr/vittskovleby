@@ -12,10 +12,12 @@ describe User do
       user = FactoryBot.build(:user, password: "test", password_confirmation: "test")
       expect(user).to be_invalid
     end
+  end
 
+  context "is valid" do
     it "without a role" do
-      user = FactoryBot.build(:user, role: nil)
-      expect(user).to be_invalid
+      user = FactoryBot.build(:user, roles: [])
+      expect(user).to be_valid
     end
   end
 end

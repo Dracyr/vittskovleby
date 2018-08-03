@@ -15,6 +15,8 @@ FactoryBot.define do
     comment { Faker::Lorem.paragraph }
     date { Date.today }
     approved false
+    invoice_address "Testvägen 1"
+    invoice_option 0
 
     after(:build) do |reservation|
       reservation.locations << build(:location)
@@ -38,10 +40,7 @@ FactoryBot.define do
     email { Faker::Internet.email }
     password "testtest"
     password_confirmation "testtest"
-    role :user
-    factory :admin do
-      role :admin
-    end
+    roles []
   end
 
   factory :event do
