@@ -89,13 +89,13 @@ Rails.application.configure do
   # Mailer settings
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
+    address: 'smtp.fastmail.com',
     port: 587,
-    domain: 'gmail.com',
+    domain: 'vittskovleby.se',
     user_name: ENV['SMTP_USERNAME'],
     password: ENV['SMTP_PASSWORD'],
     authentication: :plain,
-    enable_starttls_auto: true
+    enable_starttls_auto: true,
   }
 
   # Do not dump schema after migrations.
