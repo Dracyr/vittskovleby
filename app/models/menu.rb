@@ -1,8 +1,8 @@
 class Menu < ApplicationRecord
   include CacheKey
 
-  belongs_to :page
-  belongs_to :parent,    class_name: 'Menu', touch: true
+  belongs_to :page, required: false
+  belongs_to :parent,    class_name: 'Menu', touch: true, required: false
   has_many   :children,  class_name: 'Menu', foreign_key: 'parent_id'
 
   default_scope -> { order('position ASC') }
