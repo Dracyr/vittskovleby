@@ -16,9 +16,10 @@ Rails.application.routes.draw do
   resources :menus,  except: [:index, :show, :new] do
     post 'update_all', action: :update_all, on: :collection
   end
-  resources :reservations do
-    post 'approve', on: :member
-  end
+  # Disable this for people
+  # resources :reservations do
+  #   post 'approve', on: :member
+  # end
 
   resources :documents, except: [:edit, :update]
 
